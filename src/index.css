@@ -1,7 +1,88 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/src/assets/fonts/webfonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/src/assets/fonts/webfonts/Vazirmatn-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/src/assets/fonts/webfonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/src/assets/fonts/webfonts/Vazirmatn-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/src/assets/fonts/webfonts/Vazirmatn-ExtraLight.woff2")
+    format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/src/assets/fonts/webfonts/Vazirmatn-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/src/assets/fonts/webfonts/Vazirmatn-SemiBold.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/src/assets/fonts/webfonts/Vazirmatn-ExtraBold.woff2")
+    format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/src/assets/fonts/webfonts/Vazirmatn-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
+@theme {
+  --font-vazir: "Vazirmatn", system-ui, sans-serif;
+}
+body {
+  font-family: var(--font-vazir);
+}
 
 :root {
   --radius: 0.625rem;
@@ -13,39 +94,38 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
-  --primary-50: #5B21CB;
-  --primary-40: #6C33DB;
-  --primary-30: #7743DB;
-  --primary-20: #AD8EE9;
-  --primary-10: #E4D9F8;
-  --secondary-50: #FECE8D;  
-  --secondary-40: #FAD7A7;
-  --secondary-30: #F8EAD7;
-  --secondary-20: #FFF3E4;
-  --secondary-10: #FFFCF8;
+  --primary-50: #5b21cb;
+  --primary-40: #6c33db;
+  --primary-30: #7743db;
+  --primary-20: #ad8ee9;
+  --primary-10: #e4d9f8;
+  --secondary-50: #fece8d;
+  --secondary-40: #fad7a7;
+  --secondary-30: #f8ead7;
+  --secondary-20: #fff3e4;
+  --secondary-10: #fffcf8;
   --success-50: #035244;
-  --success-40: #006D5A;
-  --success-30: #1B9C85;
-  --success-20: #6EFDE3;
-  --success-10: #C2FFF4;
+  --success-40: #006d5a;
+  --success-30: #1b9c85;
+  --success-20: #6efde3;
+  --success-10: #c2fff4;
   --danger-50: #770022;
-  --danger-40: #A2002E;
-  --danger-30: #C70039;
-  --danger-20: #FF6F98;
-  --danger-10: #FFBACE;
+  --danger-40: #a2002e;
+  --danger-30: #c70039;
+  --danger-20: #ff6f98;
+  --danger-10: #ffbace;
   --neutral-100: #000000;
-  --neutral-90: #0A0203;
-  --neutral-80: #1D2939;
+  --neutral-90: #0a0203;
+  --neutral-80: #1d2939;
   --neutral-70: #344054;
   --neutral-60: #475467;
   --neutral-50: #667085;
-  --neutral-40: #B9BEC6;
-  --neutral-30: #D0D5DD;
-  --neutral-20: #F2F4F7;
-  --neutral-10: #F9FAFB;
-  --neutral-5: #FFFFFF;  
-  
-  
+  --neutral-40: #b9bec6;
+  --neutral-30: #d0d5dd;
+  --neutral-20: #f2f4f7;
+  --neutral-10: #f9fafb;
+  --neutral-5: #ffffff;
+
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -80,7 +160,7 @@
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  
+
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -119,39 +199,39 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary-50: #5B21CB;
-  --color-primary-40: #6C33DB;
-  --color-primary-30: #7743DB;
-  --color-primary-20: #AD8EE9;
-  --color-primary-10: #E4D9F8;
+  --color-primary-50: #5b21cb;
+  --color-primary-40: #6c33db;
+  --color-primary-30: #7743db;
+  --color-primary-20: #ad8ee9;
+  --color-primary-10: #e4d9f8;
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary-50: #FECE8D;  
-  --color-secondary-40: #FAD7A7;
-  --color-secondary-30: #F8EAD7;
-  --color-secondary-20: #FFF3E4;
-  --color-secondary-10: #FFFCF8;
+  --color-secondary-50: #fece8d;
+  --color-secondary-40: #fad7a7;
+  --color-secondary-30: #f8ead7;
+  --color-secondary-20: #fff3e4;
+  --color-secondary-10: #fffcf8;
   --color-success-50: #035244;
-  --color-success-40: #006D5A;
-  --color-success-30: #1B9C85;
-  --color-success-20: #6EFDE3;
-  --color-success-10: #C2FFF4;
+  --color-success-40: #006d5a;
+  --color-success-30: #1b9c85;
+  --color-success-20: #6efde3;
+  --color-success-10: #c2fff4;
   --color-danger-50: #770022;
-  --color-danger-40: #A2002E;
-  --color-danger-30: #C70039;
-  --color-danger-20: #FF6F98;
-  --color-danger-10: #FFBACE;
+  --color-danger-40: #a2002e;
+  --color-danger-30: #c70039;
+  --color-danger-20: #ff6f98;
+  --color-danger-10: #ffbace;
   --color-neutral-100: #000000;
-  --color-neutral-90: #0A0203;
-  --color-neutral-80: #1D2939;
+  --color-neutral-90: #0a0203;
+  --color-neutral-80: #1d2939;
   --color-neutral-70: #344054;
   --color-neutral-60: #475467;
   --color-neutral-50: #667085;
-  --color-neutral-40: #B9BEC6;
-  --color-neutral-30: #D0D5DD;
-  --color-neutral-20: #F2F4F7;
-  --color-neutral-10: #F9FAFB;
-  --color-neutral-5: #FFFFFF;
+  --color-neutral-40: #b9bec6;
+  --color-neutral-30: #d0d5dd;
+  --color-neutral-20: #f2f4f7;
+  --color-neutral-10: #f9fafb;
+  --color-neutral-5: #ffffff;
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
@@ -180,6 +260,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }
