@@ -16,7 +16,6 @@ export const AllRouters: RouteObject[] = [
   {
     path: "/home",
     element: <HomeLayout />,
-    children: [],
   },
   {
     path: "/auth",

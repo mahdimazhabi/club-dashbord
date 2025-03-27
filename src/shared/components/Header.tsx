@@ -15,7 +15,7 @@ const Header = () => {
           <h1 className="text-white text-lg">سلام دانیال</h1>
         </div>
         <div>
-          <ul className="flex bg-white/15 rounded-t-lg px-4 py-2.5 justify-between text-white ">
+          <ul className="flex bg-white/15 rounded-t-lg px-4 py-5 justify-between text-white ">
             {DataList.map((item) => (
               <li key={item.id} className="flex items-center gap-4 ">
                 {item.icon}
