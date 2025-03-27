@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "@/shared/components/Header";
+import Navbar from "@/shared/components/Navbar";
 const HomeLayout = () => {
   return (
     <div>
@@ -7,7 +8,7 @@ const HomeLayout = () => {
       <main>
         <Outlet />
       </main>
-      
+      <Navbar />
     </div>
   );
 };

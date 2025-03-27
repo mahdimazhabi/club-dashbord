@@ -4,3 +4,7 @@ export { default as ChevronRightIcon } from "@/assets/svg/chevron-right.svg?reac
 export { default as TierIcon } from "@/assets/svg/tier.svg?react";
 export { default as PointsIcon } from "@/assets/svg/points.svg?react";
 export { default as VoucherIcon } from "@/assets/svg/voucher.svg?react";
+export { default as HomeIcon } from "@/assets/svg/home.svg?react";
+export { default as RewardIcon } from "@/assets/svg/reward.svg?react";
+export { default as ChallengeIcon } from "@/assets/svg/challenge.svg?react";
+export { default as ProfileIcon } from "@/assets/svg/profile.svg?react";
