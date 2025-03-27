@@ -10,7 +10,7 @@ import { ProgressBar } from "@/shared/components/progress-bar";
 
 export function Mission() {
   const DataList = [
-    { point: "100", title: "بازدید روزانه از وب سایت", progress: { current: 5, total: 7 } },
+    { point: "100", title: "بازدید روزانه از وب سایت", progress: { current: 7, total: 7 } },
     { point: "500", title: "یکبار خرید در ماه گذشته", progress: { current: 3, total: 5 } },
     { point: "100", title: "بازدید روزانه از وب سایت", progress: { current: 2, total: 4 } },
     { point: "500", title: "یکبار خرید در ماه گذشته", progress: { current: 1, total: 3 } },
