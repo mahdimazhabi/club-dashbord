@@ -10,12 +10,12 @@ const Header = () => {
   return (
     <header>
       <div className="bg-gradient-to-br from-primary-50 via-primary-40 to-primary-30  ">
-        <div className="flex items-center gap-2 p-5">
-          <NotiIcon className="text-white font-bold" />
+        <div className="flex justify-between items-center gap-2 p-5">
           <h1 className="text-white ">سلام دانیال</h1>
+          <NotiIcon className="text-white font-bold" />
         </div>
         <div>
-          <ul className="flex bg-white/15 rounded-t-lg px-4 py-5 justify-between text-white text-sm ">
+          <ul className="flex bg-white/15 rounded-t-lg px-4 py-4 justify-between text-white text-sm ">
             {DataList.map((item) => (
               <li key={item.id} className="flex items-center gap-2 ">
                 {item.icon}
