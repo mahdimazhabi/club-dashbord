@@ -2,7 +2,7 @@ import { RouteObject } from "react-router-dom";
 import AuthLayout from "@/shared/layout/AuthLayout/AuthLayout";
 import { Navigate } from "react-router-dom";
 import HomeLayout from "@/shared/layout/HomeLayout/HomeLayout.tsx";
-import WellcomeLayout from "@/shared/layout/WellcomeLayout/WellcomeLayout";
+import WellcomeLayout from "@/shared/layout/WellcomeLayout/WellcomeLayout.tsx";
 
 export const AllRouters: RouteObject[] = [
   {

@@ -13,7 +13,7 @@ const Navbar = () => {
         <ul className="flex justify-between w-full px-4 py-2 border-t-2 ">
           {DataList.map((item, index) => (
             <Link to={item.path} key={index}>
-              <li className="flex flex-col items-center gap-1 text-xs font-semibold">
+              <li className="flex flex-col items-center gap-1 text-xs font-semibold m-2">
                 {item.icon}
                 {item.title}
               </li>

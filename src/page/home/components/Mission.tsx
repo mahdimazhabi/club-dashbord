@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ProgressBar } from "@/components/ui/progress-bar";
+import { ProgressBar } from "@/shared/components/progress-bar";
 
 export function Mission() {
   const DataList = [
