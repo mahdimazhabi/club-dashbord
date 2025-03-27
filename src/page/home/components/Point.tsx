@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import img from "@/assets/img/Rectangle 870.png";
+import { Link } from "react-router-dom";
 
 const Point = () => {
   const DataList = [
@@ -38,46 +39,48 @@ const Point = () => {
       <h1 className="mb-5 text-lg font-bold">
         امتیاز های خود را به تخفیف تبدیل کن
       </h1>
-      <Carousel
-        opts={{
-          align: "start",
-        }}
-        className="w-full"
-      >
-        <CarouselContent>
-          {DataList.map((item, index) => (
-            <CarouselItem
-              key={index}
-              className="md:basis-1/2 lg:basis-1/3 mb-20 cursor-pointer"
-            >
-              <div className="p-1">
-                <Card className="border-0 overflow-hidden">
-                  <CardContent className="p-0">
-                    <img
-                      src={img}
-                      alt="background"
-                      className="w-full  object-cover"
-                    />
-                    <div className="p-4">
-                      <div className="flex flex-col gap-2">
-                        <p className="text-xs font-bold">{item.amount}</p>
-                        <p className="text-xs text-gray-600">
-                          {item.description}
-                        </p>
-                        <div className="flex items-center gap-2 text-amber-500">
-                          <span className="text-xs">{item.point} امتیاز</span>
+      <Link to={"/auth"}>
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {DataList.map((item, index) => (
+              <CarouselItem
+                key={index}
+                className="md:basis-1/2 lg:basis-1/3 mb-20 cursor-pointer"
+              >
+                <div className="p-1">
+                  <Card className="border-0 overflow-hidden">
+                    <CardContent className="p-0">
+                      <img
+                        src={img}
+                        alt="background"
+                        className="w-full  object-cover"
+                      />
+                      <div className="p-4">
+                        <div className="flex flex-col gap-2">
+                          <p className="text-xs font-bold">{item.amount}</p>
+                          <p className="text-xs text-gray-600">
+                            {item.description}
+                          </p>
+                          <div className="flex items-center gap-2 text-amber-500">
+                            <span className="text-xs">{item.point} امتیاز</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </Link>
     </div>
   );
 };
