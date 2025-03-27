@@ -1,13 +1,15 @@
 import Header from "@/shared/components/Header";
 import Navbar from "@/shared/components/Navbar";
 import CardBunk from "@/page/home/components/CardBunk";
+import { Mission } from "@/page/home/components/Mission";
 
 const HomeLayout = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       <Header />
       <main className="container mx-auto px-4 py-6 bg-white rounded-t-xl  relative bottom-2.5 h-screen ">
-          <CardBunk />
+        <CardBunk />
+        <Mission />
       </main>
       <Navbar />
     </div>
