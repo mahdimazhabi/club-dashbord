@@ -3,7 +3,7 @@ import AuthLayout from "@/shared/layout/AuthLayout/AuthLayout";
 import { Navigate } from "react-router-dom";
 import HomeLayout from "@/shared/layout/HomeLayout/HomeLayout.tsx";
 import WellcomeLayout from "@/shared/layout/WellcomeLayout/WellcomeLayout.tsx";
-
+import ProfileLayout from "@/shared/layout/ProfileLayout/ProfileLayout";
 export const AllRouters: RouteObject[] = [
   {
     index: true,
@@ -16,6 +16,10 @@ export const AllRouters: RouteObject[] = [
   {
     path: "/home",
     element: <HomeLayout />,
+  },
+  {
+    path: "profile",
+    element: <ProfileLayout />,
   },
   {
     path: "/auth",
