@@ -2,7 +2,7 @@ import { ProfileIcon, HomeIcon, RewardIcon, ChallengeIcon } from "@/assets";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const DataList = [
-    { icon: <HomeIcon />, path: "/" },
+    { icon: <HomeIcon />, path: "/home" },
     { icon: <RewardIcon />, path: "/reward" },
     { icon: <ChallengeIcon />, path: "/mission" },
     { icon: <ProfileIcon />, path: "/profile" },
