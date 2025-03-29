@@ -1,6 +1,7 @@
 import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import { LogOut } from "lucide-react";
 
 const MneuProfile = () => {
   const DataList1 = [
@@ -40,7 +41,10 @@ const MneuProfile = () => {
           ))}
         </ul>
       </div>
-      <p className="bg-inherit text-danger-30 text-xs p-3 mt-2">خروج</p>
+      <div className="flex items-center p-2">
+        <LogOut size={18} className="text-danger-30 relative top-1" />
+        <p className="bg-inherit text-danger-30 text-sm p-3 mt-2">خروج</p>
+      </div>
       <Outlet />
     </div>
   );
