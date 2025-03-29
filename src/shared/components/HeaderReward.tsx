@@ -1,5 +1,6 @@
 import { ChevronRightIcon } from "@/assets";
 import { VoucherIcon, PointsIcon } from "@/assets";
+import { ArrowLeft } from "lucide-react";
 const HeaderReward = () => {
   const DataList = [
     { id: 1, title: "   5 کوپن موجود است ", icon: <VoucherIcon /> },
@@ -13,7 +14,10 @@ const HeaderReward = () => {
             <span className="text-white text-2xl font-bold">1.200 </span>
             <span className="text-white text-xs">امتیاز</span>
           </div>
-          <span className="text-white text-xs">جزییات امتیاز</span>
+          <div className="flex items-center gap-2">
+            <span className="text-white text-xs">جزییات امتیاز</span>
+            <ArrowLeft size={15} className="text-secondary-50" />
+          </div>
         </div>
 
         <div>
