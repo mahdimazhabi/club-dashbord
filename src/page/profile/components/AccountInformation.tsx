@@ -6,7 +6,7 @@ import { InfoIcon, CopyIcon } from "@/assets";
 const AccountInformation = () => {
   const navigate = useNavigate();
   return (
-    <div className="p-5 space-y-10">
+    <div className="  container mx-auto p-5 space-y-10">
       <div className="space-y-10 ">
         <div className="flex justify-between ">
           <h1 className="font-bold">اطلاعات اکانت کاربری</h1>
