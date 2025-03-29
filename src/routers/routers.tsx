@@ -6,6 +6,7 @@ import WellcomeLayout from "@/shared/layout/WellcomeLayout/WellcomeLayout.tsx";
 import ProfileLayout from "@/shared/layout/ProfileLayout/ProfileLayout";
 import AccountInformation from "@/page/profile/components/AccountInformation";
 import RewardLayout from "@/shared/layout/RewardLayout/RewardLayout";
+import MissionLayout from "@/shared/layout/MissionLayout/MissionLayout";
 export const AllRouters: RouteObject[] = [
   {
     index: true,
@@ -30,6 +31,10 @@ export const AllRouters: RouteObject[] = [
   {
     path: "reward",
     element: <RewardLayout />,
+  },
+  {
+    path: "mission",
+    element: <MissionLayout />,
   },
   {
     path: "/auth",
