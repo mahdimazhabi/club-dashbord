@@ -5,6 +5,7 @@ import HomeLayout from "@/shared/layout/HomeLayout/HomeLayout.tsx";
 import WellcomeLayout from "@/shared/layout/WellcomeLayout/WellcomeLayout.tsx";
 import ProfileLayout from "@/shared/layout/ProfileLayout/ProfileLayout";
 import AccountInformation from "@/page/profile/components/AccountInformation";
+import RewardLayout from "@/shared/layout/RewardLayout/RewardLayout";
 export const AllRouters: RouteObject[] = [
   {
     index: true,
@@ -25,6 +26,10 @@ export const AllRouters: RouteObject[] = [
   {
     path: "profile/information",
     element: <AccountInformation />,
+  },
+  {
+    path: "reward",
+    element: <RewardLayout />,
   },
   {
     path: "/auth",
