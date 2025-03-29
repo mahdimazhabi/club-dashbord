@@ -9,7 +9,6 @@ export function ProgressBar({
   total,
   className = "",
 }: ProgressBarProps) {
-  // Calculate percentage
   const percentage = Math.min(Math.max((current / total) * 100, 0), 100);
 
   return (
