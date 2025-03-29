@@ -11,3 +11,5 @@ export { default as ProfileIcon } from "@/assets/svg/profile.svg?react";
 export { default as ArrowLeftIcon } from "@/assets/svg/arrow-left.svg?react";
 export { default as CopyIcon } from "@/assets/svg/copy.svg?react";
 export { default as InfoIcon } from "@/assets/svg/info.svg?react";
+export { default as SearchIcon } from "@/assets/svg/search.svg?react";
+export { default as FilterIcon } from "@/assets/svg/filter.svg?react";

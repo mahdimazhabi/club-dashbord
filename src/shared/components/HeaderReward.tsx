@@ -17,7 +17,7 @@ const HeaderReward = () => {
         </div>
 
         <div>
-          <ul className="flex bg-white/15 rounded-t-lg px-4 py-4 justify-between text-white text-sm ">
+          <ul className="flex bg-white/15 rounded-t-lg px-4 py-5 justify-between text-white text-sm ">
             {DataList.map((item) => (
               <li key={item.id} className="flex items-center gap-2 ">
                 {item.icon}

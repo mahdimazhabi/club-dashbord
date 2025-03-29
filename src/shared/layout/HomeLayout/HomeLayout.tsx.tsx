@@ -8,7 +8,7 @@ const HomeLayout = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="container mx-auto px-4 py-6 bg-white rounded-t-xl  relative bottom-2.5 h-screen ">
+      <main className="flex-1 container mx-auto px-4 py-12 bg-white rounded-t-xl ">
         <CardBunk />
         <Mission />
         <Point />
