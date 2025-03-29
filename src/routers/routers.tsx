@@ -4,6 +4,7 @@ import { Navigate } from "react-router-dom";
 import HomeLayout from "@/shared/layout/HomeLayout/HomeLayout.tsx";
 import WellcomeLayout from "@/shared/layout/WellcomeLayout/WellcomeLayout.tsx";
 import ProfileLayout from "@/shared/layout/ProfileLayout/ProfileLayout";
+import AccountInformation from "@/page/profile/components/AccountInformation";
 export const AllRouters: RouteObject[] = [
   {
     index: true,
@@ -20,6 +21,10 @@ export const AllRouters: RouteObject[] = [
   {
     path: "profile",
     element: <ProfileLayout />,
+  },
+  {
+    path: "profile/information",
+    element: <AccountInformation />,
   },
   {
     path: "/auth",

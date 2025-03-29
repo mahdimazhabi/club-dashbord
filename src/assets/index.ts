@@ -8,3 +8,6 @@ export { default as HomeIcon } from "@/assets/svg/home.svg?react";
 export { default as RewardIcon } from "@/assets/svg/reward.svg?react";
 export { default as ChallengeIcon } from "@/assets/svg/challenge.svg?react";
 export { default as ProfileIcon } from "@/assets/svg/profile.svg?react";
+export { default as ArrowLeftIcon } from "@/assets/svg/arrow-left.svg?react";
+export { default as CopyIcon } from "@/assets/svg/copy.svg?react";
+export { default as InfoIcon } from "@/assets/svg/info.svg?react";
