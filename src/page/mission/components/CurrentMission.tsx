@@ -39,7 +39,7 @@ const CurrentMission = () => {
         {DataList.map((item, index) => (
           <div key={index}>
             <Card>
-              <CardContent className="flex flex-col p-4">
+              <CardContent className="flex flex-col p-4 border-b">
                 <span className=" font-semibold  text-xs bg-secondary-20 text-amber-400 w-min px-3 py-1 rounded-2xl">
                   {item.point}امتیاز
                 </span>
@@ -49,6 +49,9 @@ const CurrentMission = () => {
                   total={item.progress.total}
                 />
               </CardContent>
+              <span className="text-[8px] mt-3 px-4">
+                تکمیل شده قبل از ۲۳/۱۲/۲۳
+              </span>
             </Card>
           </div>
         ))}
