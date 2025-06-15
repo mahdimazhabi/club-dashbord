@@ -41,7 +41,7 @@ const Reward = () => {
                   </span>
                 </div>
                 <Button variant={"secondary"} className="h-7 text-xs mt-5">
-                  بازخرید
+                  خرید
                 </Button>
               </div>
             </div>

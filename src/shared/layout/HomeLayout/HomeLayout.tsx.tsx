@@ -6,9 +6,9 @@ import Point from "@/page/home/components/Point";
 
 const HomeLayout = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="flex flex-col h-screen bg-white   max-w-[26rem] mx-auto">
       <Header />
-      <main className="flex-1 container mx-auto px-4 py-12 bg-white rounded-t-xl ">
+      <main className="flex-1 container mx-auto px-4 py-12 bg-white rounded-t-xl overflow-auto max-h-[calc(100vh-120px)]">
         <CardBunk />
         <Mission />
         <Point />

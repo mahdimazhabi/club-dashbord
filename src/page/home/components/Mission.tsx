@@ -7,16 +7,45 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { ProgressBar } from "@/shared/components/progress-bar";
-
-export function Mission() {
+import "@/shared/StyleEmbla/embla.css";
+import { EmblaOptionsType } from "embla-carousel";
+import EmblaCarousel from "@/components/EmblaCarousel";
+export const Mission = () => {
   const DataList = [
-    { point: "100", title: "بازدید روزانه از وب سایت", progress: { current: 7, total: 7 } },
-    { point: "500", title: "یکبار خرید در ماه گذشته", progress: { current: 3, total: 5 } },
-    { point: "100", title: "بازدید روزانه از وب سایت", progress: { current: 2, total: 4 } },
-    { point: "500", title: "یکبار خرید در ماه گذشته", progress: { current: 1, total: 3 } },
-    { point: "100", title: "بازدید روزانه از وب سایت", progress: { current: 4, total: 6 } },
-    { point: "500", title: "یکبار خرید در ماه گذشته", progress: { current: 2, total: 4 } },
+    {
+      point: "100",
+      title: "بازدید روزانه از وب سایت",
+      progress: { current: 7, total: 7 },
+    },
+    {
+      point: "500",
+      title: "یکبار خرید در ماه گذشته",
+      progress: { current: 3, total: 5 },
+    },
+    {
+      point: "100",
+      title: "بازدید روزانه از وب سایت",
+      progress: { current: 2, total: 4 },
+    },
+    {
+      point: "500",
+      title: "یکبار خرید در ماه گذشته",
+      progress: { current: 1, total: 3 },
+    },
+    {
+      point: "100",
+      title: "بازدید روزانه از وب سایت",
+      progress: { current: 4, total: 6 },
+    },
+    {
+      point: "500",
+      title: "یکبار خرید در ماه گذشته",
+      progress: { current: 2, total: 4 },
+    },
   ];
+  const OPTIONS: EmblaOptionsType = { dragFree: true };
+  const SLIDE_COUNT = 16;
+  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   return (
     <div className="mt-5">
       <h1 className="mb-5 text-lg font-bold">اخرین ماموریت ها</h1>
@@ -24,7 +53,7 @@ export function Mission() {
         opts={{
           align: "start",
         }}
-        className="w-full max-w-sm"
+        className=""
       >
         <CarouselContent>
           {DataList.map((item, index) => (
@@ -36,7 +65,10 @@ export function Mission() {
                       امتیاز{item.point}دریافت
                     </span>
                     <p className="text-xs mt-3 font-semibold">{item.title}</p>
-                    <ProgressBar current={item.progress.current} total={item.progress.total} />
+                    <ProgressBar
+                      current={item.progress.current}
+                      total={item.progress.total}
+                    />
                   </CardContent>
                 </Card>
               </div>
@@ -46,6 +78,7 @@ export function Mission() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
+      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
     </div>
   );
-}
+};

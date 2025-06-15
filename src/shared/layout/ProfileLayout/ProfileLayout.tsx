@@ -5,7 +5,7 @@ const ProfileLayout = () => {
   return (
     <div>
       <HeaderProfile />
-      <main className="container mx-auto">
+      <main className="container w-xl mx-auto">
         <MneuProfile />
       </main>
       <Navbar />
