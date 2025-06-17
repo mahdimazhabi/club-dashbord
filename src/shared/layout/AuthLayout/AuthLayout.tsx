@@ -25,9 +25,11 @@ const AuthLayout = () => {
             ورود
           </Button>
         </Link>
-        <Button variant="default" className="w-full">
-          عضویت
-        </Button>
+        <Link to={"/auth/signup"}>
+          <Button variant="default" className="w-full">
+            عضویت
+          </Button>
+        </Link>
       </div>
 
       <Outlet />

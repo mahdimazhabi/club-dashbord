@@ -7,6 +7,7 @@ import { SignUpSchema } from "@/shared/schema/AuthSchema";
 import * as yup from "yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useAuth } from "@/shared/api/useAuth";
+import { yupResolver } from "@hookform/resolvers/yup";
 const SignUp = () => {
   type FormInput = yup.InferType<typeof SignUpSchema>;
   const [loading, setLoading] = useState(false);
@@ -15,7 +16,7 @@ const SignUp = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormInput>();
+  } = useForm<FormInput>({ resolver: yupResolver(SignUpSchema) });
 
   const onsubmit: SubmitHandler<FormInput> = async (data) => {
     try {

@@ -1,7 +1,10 @@
 import * as yup from "yup";
 
 export const SignUpSchema = yup.object().shape({
-  name: yup.string().required("نام الزامی است"),
+  name: yup
+    .string()
+    .required("نام الزامی است")
+    .matches(/^[\u0600-\u06FF\s]+$/, "لطفاً فقط حروف فارسی وارد کنید"),
   email: yup.string().email("ایمیل نامعتبر است").required("ایمیل الزامی است"),
   password: yup.string().required("پسورد الزامی است"),
   phone: yup.string().required("تلفن همراه الزامی است"),

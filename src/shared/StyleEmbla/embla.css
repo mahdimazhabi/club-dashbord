@@ -1,5 +1,5 @@
 .embla {
-  max-width: 48rem;
+  max-width: 100rem;
   margin: auto;
   --slide-height: 10rem;
   --slide-spacing: 1rem;
@@ -13,11 +13,12 @@
   display: flex;
   touch-action: pan-y pinch-zoom;
   margin-left: calc(var(--slide-spacing) * -1);
+  margin-bottom: 10px;
 }
 .embla__slide {
   transform: translate3d(0, 0, 0);
   flex: 0 0 var(--slide-size);
-  min-width: 0;
+  min-width: 300px;
   padding-left: var(--slide-spacing);
 }
 .embla__slide__number {
@@ -37,11 +38,12 @@
   justify-content: space-between;
   gap: 1.2rem;
   margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  padding: 0 2px;
 }
 .embla__buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem;
   align-items: center;
 }
 .embla__button {
@@ -53,14 +55,12 @@
   display: inline-flex;
   text-decoration: none;
   cursor: pointer;
-  border: 0;
-  padding: 0;
+  /* border: 0; */
+  padding: 0 2px;
   margin: 0;
   box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
-  width: 3.6rem;
-  height: 3.6rem;
-  z-index: 1;
-  border-radius: 50%;
+  /* border: burlywood 0rem solid; */
+  /* border-radius: 50%; */
   color: var(--text-body);
   display: flex;
   align-items: center;

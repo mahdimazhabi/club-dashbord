@@ -32,7 +32,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   return (
     <section className="embla">
       <div className="embla__controls">
-        <div className="embla__buttons">
+        <div className="embla__buttons flex gap-2">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
@@ -42,11 +42,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           snapCount={snapCount}
         />
       </div>
-      <div className="embla__viewport" ref={emblaRef}>
+      <div className="embla__viewport " ref={emblaRef}>
         <div className="embla__container">
           {slides.map((index) => (
-            <div className="embla__slide " key={index}>
-              <div className="embla__slide__number border">{index + 1}</div>
+            <div className="embla__slide  " key={index}>
+              <div className="embla__slide__number border-2">{index + 1}</div>
             </div>
           ))}
         </div>

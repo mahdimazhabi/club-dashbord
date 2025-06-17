@@ -1,84 +1,88 @@
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { ProgressBar } from "@/shared/components/progress-bar";
 import "@/shared/StyleEmbla/embla.css";
-import { EmblaOptionsType } from "embla-carousel";
-import EmblaCarousel from "@/components/EmblaCarousel";
+import { useMission } from "@/shared/api/useMission";
+import {
+  PrevButton,
+  NextButton,
+  usePrevNextButtons,
+} from "@/components/EmblaCarouselArrowButtons";
+import {
+  SelectedSnapDisplay,
+  useSelectedSnapDisplay,
+} from "@/components/EmblaCarouselSelectedSnapDisplay";
+import useEmblaCarousel from "embla-carousel-react";
+import { Skeleton } from "@/components/ui/skeleton";
 export const Mission = () => {
-  const DataList = [
-    {
-      point: "100",
-      title: "بازدید روزانه از وب سایت",
-      progress: { current: 7, total: 7 },
-    },
-    {
-      point: "500",
-      title: "یکبار خرید در ماه گذشته",
-      progress: { current: 3, total: 5 },
-    },
-    {
-      point: "100",
-      title: "بازدید روزانه از وب سایت",
-      progress: { current: 2, total: 4 },
-    },
-    {
-      point: "500",
-      title: "یکبار خرید در ماه گذشته",
-      progress: { current: 1, total: 3 },
-    },
-    {
-      point: "100",
-      title: "بازدید روزانه از وب سایت",
-      progress: { current: 4, total: 6 },
-    },
-    {
-      point: "500",
-      title: "یکبار خرید در ماه گذشته",
-      progress: { current: 2, total: 4 },
-    },
-  ];
-  const OPTIONS: EmblaOptionsType = { dragFree: true };
-  const SLIDE_COUNT = 16;
-  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
+  const [emblaRef, emblaApi] = useEmblaCarousel();
+
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick,
+  } = usePrevNextButtons(emblaApi);
+
+  const { selectedSnap, snapCount } = useSelectedSnapDisplay(emblaApi);
+  const { data, isLoading } = useMission();
+  const datalengh = data?.length;
+
   return (
     <div className="mt-5">
       <h1 className="mb-5 text-lg font-bold">اخرین ماموریت ها</h1>
-      <Carousel
-        opts={{
-          align: "start",
-        }}
-        className=""
-      >
-        <CarouselContent>
-          {DataList.map((item, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-1">
-                <Card>
-                  <CardContent className="flex flex-col p-4">
-                    <span className=" font-semibold  text-xs bg-secondary-20 text-amber-400 w-min px-3 py-1 rounded-2xl">
-                      امتیاز{item.point}دریافت
-                    </span>
-                    <p className="text-xs mt-3 font-semibold">{item.title}</p>
-                    <ProgressBar
-                      current={item.progress.current}
-                      total={item.progress.total}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+      <div className="embla">
+        <div className="embla__controls">
+          <div className="embla__buttons flex gap-2">
+            <PrevButton
+              onClick={onPrevButtonClick}
+              disabled={prevBtnDisabled}
+            />
+            <NextButton
+              onClick={onNextButtonClick}
+              disabled={nextBtnDisabled}
+            />
+          </div>
+
+          <SelectedSnapDisplay
+            selectedSnap={selectedSnap}
+            snapCount={snapCount}
+          />
+        </div>
+        <div className="embla__viewport " ref={emblaRef}>
+          <div className="embla__container">
+            {isLoading
+              ? Array.from({ length: datalengh ?? 3 }).map((_, index) => (
+                  <div className="embla__slide " key={index}>
+                    <div className=" ">
+                      <Skeleton className="h-[125px] w-[250px] rounded-xl" />
+                    </div>
+                  </div>
+                ))
+              : data?.map((items, index) => (
+                  <div className="embla__slide min-w-[10000px]" key={index}>
+                    <div className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 rounded-xl shadow-md border border-indigo-100 p-4 text-right h-[180px] flex flex-col hover:shadow-lg transition-shadow duration-300">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-semibold bg-gradient-to-r from-amber-400 to-amber-300 text-white px-3 py-1.5 rounded-full shadow-sm">
+                          {items.points} امتیاز
+                        </span>
+                        <span className="text-xs font-semibold bg-gradient-to-r from-blue-400 to-blue-300 text-white px-3 py-1.5 rounded-full shadow-sm">
+                          {items.coins} سکه
+                        </span>
+                      </div>
+                      <h2 className="text-sm font-bold mb-2 text-gray-800">{items.title}</h2>
+                      <p className="text-xs text-gray-600 mb-3 line-clamp-2 flex-grow leading-relaxed">{items.description}</p>
+                      <div className="flex items-center justify-between text-xs mt-auto pt-2 border-t border-indigo-100">
+                        <span className={`px-2 py-1 rounded-full ${items.is_repeatable ? 'bg-gradient-to-r from-green-400 to-green-300 text-white' : 'bg-gray-100 text-gray-600'}`}>
+                          {items.is_repeatable ? 'قابل تکرار' : 'یکبار مصرف'}
+                        </span>
+                        <span className={`px-2 py-1 rounded-full ${items.is_active ? 'bg-gradient-to-r from-emerald-400 to-emerald-300 text-white' : 'bg-red-100 text-red-600'}`}>
+                          {items.is_active ? 'فعال' : 'غیرفعال'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

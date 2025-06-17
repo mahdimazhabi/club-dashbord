@@ -12,22 +12,22 @@ const MneuProfile = () => {
   ];
   const DataList2 = [{ title: "درباره ما" }, { title: "سوالات متداول" }];
   return (
-    <div>
+    <div className="mb-12">
       <div>
-        <h1 className="px-3 text-lg font-bold text-neutral-50 mt-5">عمومی</h1>
+        <h1 className="px-3 text-lg font-bold text-gray-coustom mt-5">عمومی</h1>
         <ul className="mt-2">
           {DataList1.map((item, index) => (
             <Link key={index} to={item.path}>
               <li className="flex  justify-between text-xs p-3 border-b">
                 {item.title}
-                <ChevronLeft size={20} className="text-neutral-50 " />
+                <ChevronLeft size={20} className="text-gray-coustom " />
               </li>
             </Link>
           ))}
         </ul>
       </div>
       <div>
-        <h1 className="px-3 text-lg font-bold text-neutral-50 mt-5">
+        <h1 className="px-3 text-lg font-bold text-gray-coustom mt-5">
           پشتیبانی
         </h1>
         <ul className="mt-2">
@@ -35,7 +35,7 @@ const MneuProfile = () => {
             <Link key={index} to={""}>
               <li className="flex  justify-between text-xs p-3 border-b">
                 {item.title}
-                <ChevronLeft size={20} className="text-neutral-50 " />
+                <ChevronLeft size={20} className="text-gray-coustom " />
               </li>
             </Link>
           ))}

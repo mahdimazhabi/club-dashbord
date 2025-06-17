@@ -9,6 +9,8 @@ import RewardLayout from "@/shared/layout/RewardLayout/RewardLayout";
 import MissionLayout from "@/shared/layout/MissionLayout/MissionLayout";
 import SignUp from "@/page/auth/SignUp";
 import Login from "@/page/auth/Login";
+import ChckingIsLogin from "@/shared/common/ChckingIsLogin";
+import CheckingLogin from "@/shared/common/checkingLogin";
 export const AllRouters: RouteObject[] = [
   {
     index: true,
@@ -20,34 +22,58 @@ export const AllRouters: RouteObject[] = [
   },
   {
     path: "/home",
-    element: <HomeLayout />,
+    element: (
+      <CheckingLogin>
+        <HomeLayout />
+      </CheckingLogin>
+    ),
   },
   {
-    path: "profile",
-    element: <ProfileLayout />,
+    path: "/profile",
+    element: (
+      <CheckingLogin>
+        <ProfileLayout />
+      </CheckingLogin>
+    ),
   },
   {
-    path: "profile/information",
-    element: <AccountInformation />,
+    path: "/profile/information",
+    element: (
+      <CheckingLogin>
+        <AccountInformation />
+      </CheckingLogin>
+    ),
   },
   {
-    path: "reward",
-    element: <RewardLayout />,
+    path: "/reward",
+    element: (
+      <CheckingLogin>
+        <RewardLayout />
+      </CheckingLogin>
+    ),
   },
   {
-    path: "mission",
-    element: <MissionLayout />,
+    path: "/mission",
+    element: (
+      <CheckingLogin>
+        <MissionLayout />
+      </CheckingLogin>
+    ),
   },
   {
     path: "/auth",
-    element: <AuthLayout />,
+    element: (
+      <ChckingIsLogin>
+        <AuthLayout />
+      </ChckingIsLogin>
+    ),
   },
   {
     path: "/auth/login",
     element: <Login />,
   },
   {
-    path: "/auth/signup",
+    path: "auth/signup",
     element: <SignUp />,
   },
 ];

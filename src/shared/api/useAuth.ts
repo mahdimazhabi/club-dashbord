@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { AddCustomersType, LoginType } from "../interface/AuthType";
 
 export const useAuth = () => {
-  const { baseUrl, headers } = useDataFetching();
+  const { baseUrl } = useDataFetching();
   const navigate = useNavigate();
   const register = async (data: AddCustomersType) => {
     const response = await axios.post(`${baseUrl}/register`, data, {
-      headers: headers,
+      headers: { "Content-Type": "application/json" },
     });
     if (response) {
       localStorage.setItem("token", response.data.token);
