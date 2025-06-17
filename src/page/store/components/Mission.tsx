@@ -11,6 +11,8 @@ import {
 } from "@/components/EmblaCarouselSelectedSnapDisplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { MoveLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 export const Mission = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
 
@@ -27,7 +29,15 @@ export const Mission = () => {
 
   return (
     <div className="mt-5">
-      <h1 className="mb-5 text-lg font-bold">اخرین ماموریت ها</h1>
+      <div className="flex items-center mb-5 justify-between ">
+        <div>
+          <h1 className=" text-lg font-bold"> ماموریت ها</h1>
+        </div>
+        <Link to={"/mission"} className="flex items-center gap-2">
+          <span className="text-xs">مشاهده همه</span>
+          <MoveLeft size={18} />
+        </Link>
+      </div>
       <div className="embla">
         <div className="embla__controls">
           <div className="embla__buttons flex gap-2">
@@ -57,7 +67,7 @@ export const Mission = () => {
                   </div>
                 ))
               : data?.map((items, index) => (
-                  <div className="embla__slide min-w-[10000px]" key={index}>
+                  <div className="embla__slide min-w-[300px]" key={index}>
                     <div className="bg-gradient-to-br from-indigo-50 via-white to-purple-50 rounded-xl shadow-md border border-indigo-100 p-4 text-right h-[180px] flex flex-col hover:shadow-lg transition-shadow duration-300">
                       <div className="flex items-center justify-between mb-3">
                         <span className="text-xs font-semibold bg-gradient-to-r from-amber-400 to-amber-300 text-white px-3 py-1.5 rounded-full shadow-sm">
@@ -67,14 +77,30 @@ export const Mission = () => {
                           {items.coins} سکه
                         </span>
                       </div>
-                      <h2 className="text-sm font-bold mb-2 text-gray-800">{items.title}</h2>
-                      <p className="text-xs text-gray-600 mb-3 line-clamp-2 flex-grow leading-relaxed">{items.description}</p>
+                      <h2 className="text-sm font-bold mb-2 text-gray-800">
+                        {items.title}
+                      </h2>
+                      <p className="text-xs text-gray-600 mb-3 line-clamp-2 flex-grow leading-relaxed">
+                        {items.description}
+                      </p>
                       <div className="flex items-center justify-between text-xs mt-auto pt-2 border-t border-indigo-100">
-                        <span className={`px-2 py-1 rounded-full ${items.is_repeatable ? 'bg-gradient-to-r from-green-400 to-green-300 text-white' : 'bg-gray-100 text-gray-600'}`}>
-                          {items.is_repeatable ? 'قابل تکرار' : 'یکبار مصرف'}
+                        <span
+                          className={`px-2 py-1 rounded-full ${
+                            items.is_repeatable
+                              ? "bg-gradient-to-r from-green-400 to-green-300 text-white"
+                              : "bg-gray-100 text-gray-600"
+                          }`}
+                        >
+                          {items.is_repeatable ? "قابل تکرار" : "یکبار مصرف"}
                         </span>
-                        <span className={`px-2 py-1 rounded-full ${items.is_active ? 'bg-gradient-to-r from-emerald-400 to-emerald-300 text-white' : 'bg-red-100 text-red-600'}`}>
-                          {items.is_active ? 'فعال' : 'غیرفعال'}
+                        <span
+                          className={`px-2 py-1 rounded-full ${
+                            items.is_active
+                              ? "bg-gradient-to-r from-emerald-400 to-emerald-300 text-white"
+                              : "bg-red-100 text-red-600"
+                          }`}
+                        >
+                          {items.is_active ? "فعال" : "غیرفعال"}
                         </span>
                       </div>
                     </div>

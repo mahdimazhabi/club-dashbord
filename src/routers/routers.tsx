@@ -1,7 +1,7 @@
 import { RouteObject } from "react-router-dom";
 import AuthLayout from "@/shared/layout/AuthLayout/AuthLayout";
 import { Navigate } from "react-router-dom";
-import HomeLayout from "@/shared/layout/HomeLayout/HomeLayout.tsx";
+import StoreLayout from "@/shared/layout/StoreLayout/StoreLayout.tsx";
 import WelcomeLayout from "@/shared/components/Welcome";
 import ProfileLayout from "@/shared/layout/ProfileLayout/ProfileLayout";
 import AccountInformation from "@/page/profile/components/AccountInformation";
@@ -10,7 +10,7 @@ import MissionLayout from "@/shared/layout/MissionLayout/MissionLayout";
 import SignUp from "@/page/auth/SignUp";
 import Login from "@/page/auth/Login";
 import ChckingIsLogin from "@/shared/common/ChckingIsLogin";
-import CheckingLogin from "@/shared/common/checkingLogin";
+import CheckingLogin from "@/shared/common/CheckingLogin";
 export const AllRouters: RouteObject[] = [
   {
     index: true,
@@ -24,7 +24,7 @@ export const AllRouters: RouteObject[] = [
     path: "/home",
     element: (
       <CheckingLogin>
-        <HomeLayout />
+        <StoreLayout />
       </CheckingLogin>
     ),
   },

@@ -1,12 +1,12 @@
-import { ProfileIcon, HomeIcon, RewardIcon, ChallengeIcon } from "@/assets";
+import { Store, Gift, CircleUser, Crosshair } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const DataList = [
-    { icon: <HomeIcon />, path: "/home" },
-    { icon: <RewardIcon />, path: "/reward" },
-    { icon: <ChallengeIcon />, path: "/mission" },
-    { icon: <ProfileIcon />, path: "/profile" },
+    { icon: <Gift size={24} />, path: "/reward" },
+    { icon: <Store />, path: "/home" },
+    { icon: <Crosshair />, path: "/mission" },
+    { icon: <CircleUser />, path: "/profile" },
   ];
 
   return (
