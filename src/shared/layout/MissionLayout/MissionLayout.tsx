@@ -5,10 +5,10 @@ import JoinMissions from "@/page/mission/components/JoinMissions";
 
 const MissionLayout = () => {
   return (
-    <div className="flex flex-col w-xl min-h-screen">
+    <div className="flex flex-col h-screen bg-white max-w-[26rem] mx-auto">
       <HeaderMission />
-      <main className="flex-1 bg-white rounded-t-xl px-4 py-6 pb-16">
-        <div className="container mx-auto">
+      <main className="flex-1  bg-white rounded-t-xl px-4 py-6 pb-16">
+        <div>
           <CurrentMission />
           <JoinMissions />
         </div>

@@ -1,90 +1,62 @@
-import { ArrowLeftIcon } from "@/assets";
-import Profile from "@/assets/img/avatar.png";
 import { ChevronLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import { InfoIcon, CopyIcon } from "@/assets";
-
+import { useGetDataUserCustommers } from "@/shared/api/useGetDataUserCustommers";
+import Navbar from "@/shared/components/Navbar";
+import HeaderProfile from "@/shared/components/HeaderProfile";
 const AccountInformation = () => {
-  const navigate = useNavigate();
+  const { data: userData } = useGetDataUserCustommers();
+
   return (
-    <div className="  container mx-auto p-5 space-y-10 ">
-      <div className="space-y-10 ">
-        <div className="flex justify-between ">
-          <h1 className="font-bold">اطلاعات اکانت کاربری</h1>
-          <ArrowLeftIcon onClick={() => navigate(-1)} />
-        </div>
-        <div>
-          <span className="text-sm text-neutral-50 font-semibold">پروفایل</span>
-          <div className="flex items-center gap-5  mt-5">
-            <img
-              src={Profile}
-              alt="Profile"
-              className="border-2 rounded-full border-primary-50"
-            />
-            <span className="text-sm text-primary-50 font-medium">
-              تغییر عکس پروفایل
-            </span>
-          </div>
-        </div>
-        <ul className="text-sm space-y-8">
-          <li className="flex items-center justify-between">
-            <span className="font-semibold">نام و نام خانوادگی</span>
-            <div className="flex items-center text-neutral-50">
-              <span>مهسا رحیمی</span>
-              <ChevronLeft size={20} />
-            </div>
+    <div className="max-w-[26rem] mx-auto bg-white min-h-screen">
+      {/* Header */}
+      <HeaderProfile />
+      {/* List Items */}
+      <div className="px-4 mt-8">
+        <h2 className="text-neutral-700 font-bold mb-3">عمومی</h2>
+        <ul className="text-sm divide-y divide-neutral-200">
+          {[
+            { label: "نام و نام خانوادگی", value: userData?.name },
+            {
+              label: "کدملی",
+              value: userData?.national_code
+                ? userData?.national_code
+                : "ندارد",
+            },
+            {
+              label: "شماره موبایل",
+              value: userData?.phone ? userData?.phone : "ندارد",
+            },
+            {
+              label: "ایمیل",
+              value: userData?.email ? userData?.email : "ندارد",
+            },
+            {
+              label: "جنسیت",
+              value: userData?.gender ? userData?.gender : "ندارد",
+            },
+          ].map((item, index) => (
+            <li key={index} className="flex items-center justify-between py-4">
+              <span className="text-neutral-800">{item.label}</span>
+              <div className="flex items-center gap-2 text-neutral-500 text-xs">
+                <span>{item.value}</span>
+                <ChevronLeft size={18} className="text-black" />
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="text-neutral-700 font-bold mt-8 mb-3">پشتیبانی</h2>
+        <ul className="text-sm divide-y divide-neutral-200">
+          <li className="flex items-center justify-between py-4">
+            <span className="text-neutral-800">درباره ما</span>
+            <ChevronLeft size={18} className="text-black" />
           </li>
-          <li className="flex items-center justify-between">
-            <span className="font-semibold">نام کاربری</span>
-            <div className="flex items-center text-neutral-50">
-              <span className="">مهسارحمیمی</span>
-              <ChevronLeft size={20} />
-            </div>
+          <li className="flex items-center justify-between py-4">
+            <span className="text-neutral-800">سوالات متداول</span>
+            <ChevronLeft size={18} className="text-black" />
           </li>
         </ul>
       </div>
-      <div>
-        <span className="text-sm text-neutral-50 font-semibold">
-          اطلاعات شخصی
-        </span>
-        <ul className="mt-5">
-          <li className="flex items-center justify-between py-4 border-b border-neutral-20">
-            <span className="text-sm">شناسه کاربری</span>
-            <div className="flex items-center text-neutral-50 text-xs gap-2">
-              <span>67776</span>
-              <CopyIcon />
-            </div>
-          </li>
-          <li className="flex items-center justify-between py-4 border-b border-neutral-20">
-            <span className="text-sm">تاریخ تولد</span>
-            <div className="flex items-center text-neutral-50 text-xs gap-2">
-              <span>29مهر 1382 </span>
-              <InfoIcon />
-            </div>
-          </li>
-          <li className="flex items-center justify-between py-4 border-b border-neutral-20">
-            <span className="text-sm">شماره موبایل</span>
-            <div className="flex items-center text-neutral-50 text-xs gap-2">
-              <span>8703 289 0915 </span>
-              <ChevronLeft size={20} />
-            </div>
-          </li>
-          <li className="flex items-center justify-between py-4 border-b border-neutral-20">
-            <span className="text-sm">ایمیل</span>
-            <div className="flex items-center text-neutral-50 text-xs gap-2">
-              <span>mahdiamzhabi@gmail.com</span>
-              <ChevronLeft size={20} />
-            </div>
-          </li>
-          <li className="flex items-center justify-between py-4 border-b border-neutral-20">
-            <span className="text-sm">جنسیت</span>
-            <div className="flex items-center text-neutral-50 text-xs gap-2">
-              <span>مرد</span>
-              <ChevronLeft size={20} />
-            </div>
-          </li>
-        </ul>
-      </div>
+      <Navbar />
     </div>
   );
 };
