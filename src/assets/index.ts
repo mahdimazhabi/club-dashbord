@@ -15,3 +15,5 @@ export { default as SearchIcon } from "@/assets/svg/search.svg?react";
 export { default as FilterIcon } from "@/assets/svg/filter.svg?react";
 export { default as MissionIcon } from "@/assets/svg/mission.svg?react";
 export { default as ProfileIcon } from "@/assets/svg/profile-user.svg?react";
+export { default as CrownIcon } from "@/assets/svg/crown.svg?react";
+export { default as NotificationIcon } from "@/assets/svg/notification.svg?react";
