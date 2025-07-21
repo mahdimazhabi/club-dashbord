@@ -23,7 +23,7 @@ const BanerCarousel = () => {
           ))}
         </div>
       </div>
-      <div className="embla__dots ">
+      <div className="embla__dots">
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}

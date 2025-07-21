@@ -86,13 +86,11 @@
 .embla__dot {
   appearance: none;
   cursor: pointer;
-
   width: 19px;
   height: 6px;
   background-color: #e7e7e7;
   border: none;
   border-radius: 9999px;
-  margin: 0 6px;
   transition: all 0.3s ease;
 }
 

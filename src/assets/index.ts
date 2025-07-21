@@ -18,3 +18,4 @@ export { default as CrownIcon } from "@/assets/svg/crown.svg?react";
 export { default as NotificationIcon } from "@/assets/svg/notification.svg?react";
 export { default as MissionIcon } from "@/assets/svg/icons8-goal-20 1.svg?react";
 export { default as CoinIcon } from "@/assets/svg/icons8-coin-40 1.svg?react";
+export { default as GameIcon } from "@/assets/svg/icons8-goal-20 2 (1).svg?react";
