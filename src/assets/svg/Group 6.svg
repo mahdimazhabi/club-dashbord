@@ -1,0 +1,23 @@
+<svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g filter="url(#filter0_d_768_496)">
+<circle cx="42" cy="36" r="26" fill="#0AC974"/>
+<circle cx="42" cy="36" r="29" stroke="white" stroke-width="6"/>
+</g>
+<rect x="56" y="22" width="28" height="28" transform="rotate(90 56 22)" fill="url(#pattern0_768_496)"/>
+<defs>
+<filter id="filter0_d_768_496" x="0.3" y="0.3" width="83.4" height="83.4" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="6"/>
+<feGaussianBlur stdDeviation="4.85"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.0392157 0 0 0 0 0.788235 0 0 0 0 0.454902 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_768_496"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_768_496" result="shape"/>
+</filter>
+<pattern id="pattern0_768_496" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_768_496" transform="matrix(0.014881 0 0 0.0143849 -0.0357143 0)"/>
+</pattern>
+<image id="image0_768_496" width="72" height="72" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABjUlEQVR4nO3bPy5EURiG8VcQLYlGyyZEZw8ahVqJRmEZGo0WS5DpbEE0dkChEzoeOZHpxp3zZ2Q47/erp5g8uTP33nO+I4UQQgghhPDfAcfANbA47+/yV+N88u0mIv0cZywiJcDRhDjJK7AhZ0y+csZO5IzhOPfAklwxHOcD2JYrhuMk53LF9DhPwKocMT1OsidH5MW5lSPy4rwBm3JDXpzkVG7Ij/MALMsJ+XHSM8+OnJAfJ7mQE8riPANrckFZnGRfLiiPM5ILyuO8A1tyQHmc5EwOqIvzCKyod9TFSZ/fVe+oi5NcqnfUx3kB1tUz6uMkB+oZbXHugAX1DDiMQL8bqe+f2Awi9f8nPYNI/d/mGyN5PCg2RvJ41WiM5PGy2hDJZ7mjIZLPgllDJJ8l18pIXov2lZG8tn0qIvltHFZE8tt6rojkN7xQGMlz/KUwkucAVWEkzxG8gki+Q5wFkXzHgDMjeQ+SZ0byPoqQGcn7MMtYHIeqv5LiQN1ApIgzEOkqzquGEEIIIQTN2xcZNEN9QSSKbwAAAABJRU5ErkJggg=="/>
+</defs>
+</svg>

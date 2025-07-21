@@ -4,7 +4,7 @@ export { default as ChevronRightIcon } from "@/assets/svg/chevron-right.svg?reac
 export { default as TierIcon } from "@/assets/svg/tier.svg?react";
 export { default as PointsIcon } from "@/assets/svg/points.svg?react";
 export { default as VoucherIcon } from "@/assets/svg/voucher.svg?react";
-export { default as HomeIcon } from "@/assets/svg/home.svg?react";
+
 export { default as RewardIcon } from "@/assets/svg/reward.svg?react";
 export { default as ChallengeIcon } from "@/assets/svg/challenge.svg?react";
 // export { default as ProfileIcon } from "@/assets/svg/profile.svg?react";
@@ -13,9 +13,15 @@ export { default as CopyIcon } from "@/assets/svg/copy.svg?react";
 export { default as InfoIcon } from "@/assets/svg/info.svg?react";
 export { default as SearchIcon } from "@/assets/svg/search.svg?react";
 export { default as FilterIcon } from "@/assets/svg/filter.svg?react";
-export { default as ProfileIcon } from "@/assets/svg/profile-user.svg?react";
+
 export { default as CrownIcon } from "@/assets/svg/crown.svg?react";
 export { default as NotificationIcon } from "@/assets/svg/notification.svg?react";
 export { default as MissionIcon } from "@/assets/svg/icons8-goal-20 1.svg?react";
 export { default as CoinIcon } from "@/assets/svg/icons8-coin-40 1.svg?react";
 export { default as GameIcon } from "@/assets/svg/icons8-goal-20 2 (1).svg?react";
+export { default as HomeIcon } from "@/assets/svg/icons_home_2.svg?react";
+export { default as ProfileIcon } from "@/assets/svg/icons_frame.svg?react";
+export { default as ReceiptSearchIcon } from "@/assets/svg/icons_receipt_search.svg?react";
+export { default as TicketIcon } from "@/assets/svg/icons_ticket.svg?react";
+export { default as UnionIcon } from "@/assets/svg/Union.svg?react";
+export { default as DrawerIcon } from "@/assets/svg/Group 6.svg?react";
