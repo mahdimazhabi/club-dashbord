@@ -1,4 +1,4 @@
-import profile from "@/assets/img/profile.png";
+import ProfileProgress from "./ProfileProgress";
 import Logo from "@/assets/logo/logo-wide-sepidar-Holding (1).png";
 import { CrownIcon, NotificationIcon } from "@/assets";
 const Header = () => {
@@ -15,11 +15,7 @@ const Header = () => {
         <div className="p-2  bg-[rgba(255,255,255,0.5)] shadow-[0px_4px_15px_0px_rgba(46,46,46,0.15)] rounded-full">
           <CrownIcon className="w-5 h-5" />
         </div>
-        <div className=" bg-gradient-to-b from-orange-300 to-yellow-600 p-0.75 rounded-full">
-          <div className="w-full p-1 h-full rounded-full bg-white flex items-center justify-center shadow-[0px_4px_15px_0px_rgba(46,46,46,0.15)] ">
-            <img src={profile} alt="Profile" className="rounded-full w-6 h-6" />
-          </div>
-        </div>
+        <ProfileProgress />
       </div>
     </div>
   );

@@ -8,7 +8,6 @@ export { default as VoucherIcon } from "@/assets/svg/voucher.svg?react";
 export { default as RewardIcon } from "@/assets/svg/reward.svg?react";
 export { default as ChallengeIcon } from "@/assets/svg/challenge.svg?react";
 // export { default as ProfileIcon } from "@/assets/svg/profile.svg?react";
-export { default as ArrowLeftIcon } from "@/assets/svg/arrow-left.svg?react";
 export { default as CopyIcon } from "@/assets/svg/copy.svg?react";
 export { default as InfoIcon } from "@/assets/svg/info.svg?react";
 export { default as SearchIcon } from "@/assets/svg/search.svg?react";
@@ -25,3 +24,5 @@ export { default as ReceiptSearchIcon } from "@/assets/svg/icons_receipt_search.
 export { default as TicketIcon } from "@/assets/svg/icons_ticket.svg?react";
 export { default as UnionIcon } from "@/assets/svg/Union.svg?react";
 export { default as DrawerIcon } from "@/assets/svg/Group 6.svg?react";
+export { default as ArrowLeftIcon } from "@/assets/svg/arrow-left.svg?react";
+export { default as EditPenIcon } from "@/assets/svg/edit-2.svg?react";

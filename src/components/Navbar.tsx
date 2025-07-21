@@ -7,7 +7,7 @@ import {
   DrawerIcon,
 } from "@/assets";
 import Back from "@/assets/img/Rectangle 17 (1).png";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import * as React from "react";
 import TransactionImg from "@/assets/img/transaction.png";
 import MissionsImg from "@/assets/img/Mission.png";
@@ -45,30 +45,32 @@ const Navbar = () => {
   ];
 
   const renderNavItem = (item: NavItem, index: number) => (
-    <li
-      key={index}
-      className={`flex flex-col items-center z-10 ${
-        location.pathname === item.url
-          ? "rounded-[9px] bg-[#F7F7F7] border border-[#F7F7F7] p-3"
-          : ""
-      }`}
-    >
-      <item.icon
-        className={`w-6 h-6   transition-colors duration-300 ${
-          location.pathname === item.url ? "text-spidar1" : "text-gray-500"
-        }`}
-      />
-      <span
-        className={`text-center text-neutral-500 text-xs font-semibold capitalize mt-[5px] ${
-          location.pathname === item.url ? "text-spidar1" : ""
+    <Link to={item.url} className="z-10">
+      <li
+        key={index}
+        className={`flex flex-col items-center  ${
+          location.pathname === item.url
+            ? "rounded-[9px] bg-[#F7F7F7] border border-[#F7F7F7] p-3"
+            : ""
         }`}
       >
-        {item.label}
-      </span>
-      {location.pathname === item.url && (
-        <UnionIcon className="absolute bottom-0 " />
-      )}
-    </li>
+        <item.icon
+          className={`w-6 h-6   transition-colors duration-300 ${
+            location.pathname === item.url ? "text-spidar1" : "text-gray-500"
+          }`}
+        />
+        <span
+          className={`text-center text-neutral-500 text-xs font-semibold capitalize mt-[5px] ${
+            location.pathname === item.url ? "text-spidar1" : ""
+          }`}
+        >
+          {item.label}
+        </span>
+        {location.pathname === item.url && (
+          <UnionIcon className="absolute bottom-0 " />
+        )}
+      </li>
+    </Link>
   );
 
   return (
@@ -107,21 +109,21 @@ const Navbar = () => {
         <img
           src={Back}
           alt="background"
-          className="absolute inset-0 w-full h-full opacity-80 -z-10"
+          className="absolute inset-0 w-full h-full opacity-80 "
         />
 
-        <div className="flex flex-1 justify-evenly items-center z-10">
+        <div className="flex flex-1 justify-evenly items-center">
           {leftItems.map(renderNavItem)}
         </div>
 
         <div
-          className="absolute inset-0 flex  cursor-pointer items-center justify-center z-20"
+          className="absolute inset-0 flex  cursor-pointer items-center justify-center"
           onClick={() => setIsOpen(!isOpen)}
         >
           <DrawerIcon width={52} height={52} className="relative bottom-9" />
         </div>
 
-        <div className="flex flex-1 justify-evenly items-center z-10">
+        <div className="flex flex-1 justify-evenly items-center ">
           {rightItems.map(renderNavItem)}
         </div>
       </ul>
