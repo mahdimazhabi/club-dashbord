@@ -1,10 +1,9 @@
 .embla {
-  max-width: 100rem;
-  margin: auto;
-  --slide-height: 10rem;
+  max-width: 48rem;
+  margin: 0 auto;
+  --slide-height: 19rem;
   --slide-spacing: 1rem;
-  --slide-size: 50%;
-  direction: ltr;
+  --slide-size: 100%;
 }
 .embla__viewport {
   overflow: hidden;
@@ -13,13 +12,13 @@
   display: flex;
   touch-action: pan-y pinch-zoom;
   margin-left: calc(var(--slide-spacing) * -1);
-  margin-bottom: 10px;
 }
 .embla__slide {
   transform: translate3d(0, 0, 0);
   flex: 0 0 var(--slide-size);
-  /* min-width: 300px; */
+  min-width: 0;
   padding-left: var(--slide-spacing);
+  direction: rtl;
 }
 .embla__slide__number {
   box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
@@ -31,6 +30,7 @@
   justify-content: center;
   height: var(--slide-height);
   user-select: none;
+  border: solid;
 }
 .embla__controls {
   display: grid;
@@ -38,12 +38,11 @@
   justify-content: space-between;
   gap: 1.2rem;
   margin-top: 1.8rem;
-  margin-bottom: 0.8rem;
-  padding: 0 2px;
 }
 .embla__buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
   align-items: center;
 }
 .embla__button {
@@ -55,12 +54,14 @@
   display: inline-flex;
   text-decoration: none;
   cursor: pointer;
-  /* border: 0; */
-  padding: 0 2px;
+  border: 0;
+  padding: 0;
   margin: 0;
   box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
-  /* border: burlywood 0rem solid; */
-  /* border-radius: 50%; */
+  width: 3.6rem;
+  height: 3.6rem;
+  z-index: 1;
+  border-radius: 50%;
   color: var(--text-body);
   display: flex;
   align-items: center;
@@ -73,9 +74,31 @@
   width: 35%;
   height: 35%;
 }
-.embla__selected-snap-display {
-  justify-self: flex-end;
-  align-self: center;
-  color: var(--text-low-contrast);
-  font-weight: 600;
+.embla__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: calc((2.6rem - 1.4rem) / 2 * -1); */
+  margin-top: 16px;
+  gap: 3px;
+}
+.embla__dot {
+  appearance: none;
+  cursor: pointer;
+
+  width: 19px;
+  height: 6px;
+  background-color: #e7e7e7;
+  border: none;
+  border-radius: 9999px;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.embla__dot--selected {
+  background-color: #00d084; /* رنگ سبز مطابق Figma */
+  width: 19px;
+  height: 6px;
+  border-radius: 9999px;
 }

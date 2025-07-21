@@ -1,11 +1,16 @@
 import Header from "@/components/Header";
+import ListsMissions from "@/page/home/components/ListsMissions";
+import BanerCarousel from "@/page/home/components/BanerCarousel";
 const HomeLayout = () => {
   return (
-    <section className="max-w-[1280px] mx-auto">
+    <section className="max-w-[1280px] mx-auto px-4 py-[18px] space-y-4">
       <header>
         <Header />
       </header>
-      <main></main>
+      <main>
+        <BanerCarousel />
+        <ListsMissions />
+      </main>
       <footer></footer>
     </section>
   );
