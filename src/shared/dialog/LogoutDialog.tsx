@@ -1,7 +1,6 @@
 import {
   DialogHeader,
   DialogDescription,
-  DialogTitle,
   DialogContent,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -16,9 +15,7 @@ const LogoutDialog = ({ setOpen }: LogoutDialogProps) => {
         <InfoEmptyIcons className="w-10 h-10" />
       </div>
       <DialogHeader className="text-center">
-        <DialogTitle>
-          <span className="text-[#04864C] font-bold ">خروج از حساب کاربری</span>
-        </DialogTitle>
+        <span className="text-[#04864C] font-bold  ">خروج از حساب کاربری</span>
         <DialogDescription>
           <span className="text-[#737373] text-[13px] font-semibold ">
             آیا مایلید از حساب خود خارج شوید؟

@@ -22,9 +22,15 @@ const Menu = () => {
       key: "support",
       titel: "درخواست پشتیبانی",
       icons: <MessageQuestionIcon />,
+      url: "/profile/support",
     },
-    { key: "tracking", titel: "پیگیری خرید", icons: <Ticket2Icon /> },
-    { key: "rules", titel: "قوانین مقررات", icons: <ArchiveBookIcon /> },
+    { key: "tracking", titel: "پیگیری خرید", icons: <Ticket2Icon />, url: "" },
+    {
+      key: "rules",
+      titel: "قوانین مقررات",
+      icons: <ArchiveBookIcon />,
+      url: "",
+    },
   ];
 
   const Section2Items = [
@@ -75,6 +81,8 @@ const Menu = () => {
                 onClick={() => {
                   if (items.key === "tracking") {
                     setOpenOrderTracking(true);
+                  } else if (items.key === "support") {
+                    navigate("/profile/support");
                   }
                 }}
               >
