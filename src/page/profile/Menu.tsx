@@ -11,6 +11,7 @@ import {
 import { useState } from "react";
 import { Dialog } from "@/components/ui/dialog";
 import LogoutDialog from "@/shared/dialog/LogoutDialog";
+import IdentificationCodeDialog from "@/shared/dialog/IdentificationCodeDialog";
 
 const Menu = () => {
   const Section1Items = [
@@ -22,12 +23,20 @@ const Menu = () => {
     { titel: "صندوق پیام ها", icons: <MessageIcon /> },
     { titel: "تاریخچه خرید", icons: <ReceiptDiscountIcon /> },
   ];
-  const [isOpen, setOpen] = useState<boolean>(false);
+  const [isOpenLogout, setOpenLogout] = useState<boolean>(false);
+  const [isOpenIdentificationCode, setOpenIdentificationCode] =
+    useState<boolean>(false);
 
   return (
     <section className="mt-4  space-y-4">
-      <Dialog open={isOpen} onOpenChange={setOpen}>
-        <LogoutDialog setOpen={setOpen} />
+      <Dialog open={isOpenLogout} onOpenChange={setOpenLogout}>
+        <LogoutDialog setOpen={setOpenLogout} />
+      </Dialog>
+      <Dialog
+        open={isOpenIdentificationCode}
+        onOpenChange={setOpenIdentificationCode}
+      >
+        <IdentificationCodeDialog />
       </Dialog>
       <div>
         <ul>
@@ -80,7 +89,10 @@ const Menu = () => {
       </div>
       <div>
         <ul>
-          <li className="flex justify-between items-center py-6 border bg-[#FFF] px-4 rounded-[5px] ">
+          <li
+            className="flex justify-between items-center py-6 border bg-[#FFF] px-4 rounded-[5px] "
+            onClick={() => setOpenIdentificationCode(!isOpenIdentificationCode)}
+          >
             <span className="flex items-center gap-6 text-[#787878] text-sm font-s">
               <Profile2UserIcon />
               کد معرف شما
@@ -93,7 +105,7 @@ const Menu = () => {
         <ul>
           <li
             className="flex justify-between items-center py-6 border bg-[#FFF] px-4 rounded-[5px] "
-            onClick={() => setOpen(!isOpen)}
+            onClick={() => setOpenLogout(!isOpenLogout)}
           >
             <span className="flex items-center gap-6 text-[#787878] text-sm font-s">
               <LogoutIcon />
