@@ -11,7 +11,7 @@ export { default as InfoIcon } from "@/assets/svg/info.svg?react";
 export { default as SearchIcon } from "@/assets/svg/search.svg?react";
 export { default as FilterIcon } from "@/assets/svg/filter.svg?react";
 export { default as CrownIcon } from "@/assets/svg/crown.svg?react";
-export { default as NotificationIcon } from "@/assets/svg/notification.svg?react";
+export { default as NotificationIcon } from "@/assets/svg/icons_notification.svg?react";
 export { default as MissionIcon } from "@/assets/svg/icons8-goal-20 1.svg?react";
 export { default as CoinIcon } from "@/assets/svg/icons8-coin-40 1.svg?react";
 export { default as GameIcon } from "@/assets/svg/icons8-goal-20 2 (1).svg?react";
@@ -32,3 +32,4 @@ export { default as Profile2UserIcon } from "@/assets/svg/profile-2user.svg?reac
 export { default as Ticket2Icon } from "@/assets/svg/ticket-2.svg?react";
 export { default as ArrowDownIcon } from "@/assets/svg/arrow-down.svg?react";
 export { default as InfoEmptyIcons } from "@/assets/svg/info-empty.svg?react";
+export { default as CalenderIcon } from "@/assets/svg/calendaricons_calendar.svg?react";

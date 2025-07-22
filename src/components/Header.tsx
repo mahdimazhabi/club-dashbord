@@ -9,7 +9,7 @@ const Header = () => {
         <div className="relative p-2 bg-[rgba(255,255,255,0.5)] shadow-[0px_4px_15px_0px_rgba(46,46,46,0.15)] rounded-full w-fit">
           <div className="absolute top-[8.5px] right-[11px] w-[5px] h-[5px] bg-red-600 rounded-full"></div>
 
-          <NotificationIcon className="w-5 h-5" />
+          <NotificationIcon className="w-5 h-5 text-spidar1" />
         </div>
 
         <div className="p-2  bg-[rgba(255,255,255,0.5)] shadow-[0px_4px_15px_0px_rgba(46,46,46,0.15)] rounded-full">

@@ -12,20 +12,34 @@ import { useState } from "react";
 import { Dialog } from "@/components/ui/dialog";
 import LogoutDialog from "@/shared/dialog/LogoutDialog";
 import IdentificationCodeDialog from "@/shared/dialog/IdentificationCodeDialog";
+import OrderTrackingDialog from "@/shared/dialog/OrderTrackingDialog";
+import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
+  const navigate = useNavigate();
   const Section1Items = [
-    { titel: "درخواست پشتیبانی", icons: <MessageQuestionIcon /> },
-    { titel: "پیگیری خرید", icons: <Ticket2Icon /> },
-    { titel: "قوانین مقررات", icons: <ArchiveBookIcon /> },
+    {
+      key: "support",
+      titel: "درخواست پشتیبانی",
+      icons: <MessageQuestionIcon />,
+    },
+    { key: "tracking", titel: "پیگیری خرید", icons: <Ticket2Icon /> },
+    { key: "rules", titel: "قوانین مقررات", icons: <ArchiveBookIcon /> },
   ];
+
   const Section2Items = [
-    { titel: "صندوق پیام ها", icons: <MessageIcon /> },
-    { titel: "تاریخچه خرید", icons: <ReceiptDiscountIcon /> },
+    { key: "inbox", titel: "صندوق پیام ها", icons: <MessageIcon />, url: "" },
+    {
+      key: "",
+      titel: "تاریخچه خرید",
+      icons: <ReceiptDiscountIcon />,
+      url: null,
+    },
   ];
   const [isOpenLogout, setOpenLogout] = useState<boolean>(false);
   const [isOpenIdentificationCode, setOpenIdentificationCode] =
     useState<boolean>(false);
+  const [isOpenOrderTracking, setOpenOrderTracking] = useState<boolean>(false);
 
   return (
     <section className="mt-4  space-y-4">
@@ -37,6 +51,9 @@ const Menu = () => {
         onOpenChange={setOpenIdentificationCode}
       >
         <IdentificationCodeDialog />
+      </Dialog>
+      <Dialog open={isOpenOrderTracking} onOpenChange={setOpenOrderTracking}>
+        <OrderTrackingDialog />
       </Dialog>
       <div>
         <ul>
@@ -50,10 +67,17 @@ const Menu = () => {
         </ul>
       </div>
       <div>
-        <ul className="rounded-[5px] border border-black/10  bg-white">
+        <ul className="rounded-[5px] border border-black/10 bg-white">
           {Section1Items.map((items, index) => (
-            <div key={index}>
-              <li className="flex justify-between items-center py-6 px-4">
+            <div key={items.key}>
+              <li
+                className="flex justify-between items-center py-6 px-4 cursor-pointer"
+                onClick={() => {
+                  if (items.key === "tracking") {
+                    setOpenOrderTracking(true);
+                  }
+                }}
+              >
                 <span className="flex items-center gap-6 text-[#787878] text-sm font-s">
                   {items.icons}
                   {items.titel}
@@ -68,11 +92,19 @@ const Menu = () => {
           ))}
         </ul>
       </div>
+
       <div>
         <ul className="rounded-[5px] border border-black/10  bg-white">
           {Section2Items.map((items, index) => (
             <div key={index}>
-              <li className="flex justify-between items-center py-6 px-4">
+              <li
+                className="flex justify-between items-center py-6 px-4"
+                onClick={() => {
+                  if (items.key === "inbox") {
+                    navigate("/profile/inbox");
+                  }
+                }}
+              >
                 <span className="flex items-center gap-6 text-[#787878] text-sm font-s">
                   {items.icons}
                   {items.titel}
@@ -90,7 +122,7 @@ const Menu = () => {
       <div>
         <ul>
           <li
-            className="flex justify-between items-center py-6 border bg-[#FFF] px-4 rounded-[5px] "
+            className="flex justify-between items-center cursor-pointer py-6 border bg-[#FFF] px-4 rounded-[5px] "
             onClick={() => setOpenIdentificationCode(!isOpenIdentificationCode)}
           >
             <span className="flex items-center gap-6 text-[#787878] text-sm font-s">
@@ -104,7 +136,7 @@ const Menu = () => {
       <div>
         <ul>
           <li
-            className="flex justify-between items-center py-6 border bg-[#FFF] px-4 rounded-[5px] "
+            className="flex justify-between items-center py-6 cursor-pointer border bg-[#FFF] px-4 rounded-[5px] "
             onClick={() => setOpenLogout(!isOpenLogout)}
           >
             <span className="flex items-center gap-6 text-[#787878] text-sm font-s">

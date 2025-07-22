@@ -165,7 +165,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               />
             </div>
             {type !== "search" && (
-              <div className="min-h-[20px] mt-1">
+              <div className=" mt-1">
                 {error && <ErrorMessage message={error.message} />}
               </div>
             )}
