@@ -1,6 +1,7 @@
 import { ArrowLeftIcon } from "@/assets";
 import { useNavigate } from "react-router-dom";
 import InformationUser from "@/page/profile/InformationUser";
+import Menu from "@/page/profile/Menu";
 const ProfileLayout = () => {
   const navigate = useNavigate();
 
@@ -17,6 +18,7 @@ const ProfileLayout = () => {
       </header>
       <main className="p-4">
         <InformationUser />
+        <Menu />
       </main>
     </section>
   );
