@@ -16,7 +16,6 @@ const IdentificationCodeDialog = () => {
           <div className="flex justify-center  border-l-2 pl-2">
             <img src={QrCodeImg} alt="QrCode" width={104} height={104} />
           </div>
-
           <div className="space-y-2.5 flex flex-col items-center">
             <div className="w-32 h-9 bg-emerald-500/10 rounded-[5px] border border-emerald-500 flex items-center justify-center text-center">
               <span className="text-emerald-700 text-xs font-semibold">
@@ -30,7 +29,7 @@ const IdentificationCodeDialog = () => {
             >
               کد معرف شما
             </Button>
-          </div>
+          </div>{" "}
         </div>
       </DialogHeader>
     </DialogContent>
