@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-// import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import DiscountsLists from "@/page/discounts/components/DiscountsLists";
 
 const DiscountsLayout = () => {
@@ -11,9 +11,9 @@ const DiscountsLayout = () => {
       <main>
         <DiscountsLists />
       </main>
-      {/* <footer>
+      <footer>
         <Navbar />
-      </footer> */}
+      </footer>
     </section>
   );
 };

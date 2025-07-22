@@ -50,7 +50,7 @@ const Navbar = () => {
         key={index}
         className={`flex flex-col items-center  ${
           location.pathname === item.url
-            ? "rounded-[9px] bg-[#F7F7F7] border border-[#F7F7F7] p-3"
+            ? "rounded-[9px]  border border-[#F7F7F7] p-3"
             : ""
         }`}
       >
