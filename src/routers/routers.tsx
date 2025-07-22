@@ -4,6 +4,7 @@ import ProfileLayout from "@/shared/layout/profile/ProfileLayout";
 import Inbox from "@/page/profile/components/Inbox";
 import Support from "@/page/profile/components/Support";
 import DiscountsLayout from "@/shared/layout/discounts/DiscountsLayout";
+import PlanLayout from "@/shared/layout/plan/PlanLayout";
 
 export const AllRouters: RouteObject[] = [
   {
@@ -25,5 +26,9 @@ export const AllRouters: RouteObject[] = [
   {
     path: "/discounts",
     element: <DiscountsLayout />,
+  },
+  {
+    path: "/plans",
+    element: <PlanLayout />,
   },
 ];
