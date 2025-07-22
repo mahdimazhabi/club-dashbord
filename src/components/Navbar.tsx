@@ -81,7 +81,7 @@ const Navbar = () => {
             {ItemsDrawer.map((items, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center rounded-2xl bg-[#FFF]  shadow-[0px_6px_11.399999618530273px_0px_rgba(91,91,91,0.08)]"
+                className="flex flex-col items-center rounded-2xl bg-[#FFF]  shadow-[0px_6px_11.399999618530273px_0px_rgba(91,91,91,0.08)]   cursor-pointer "
               >
                 <img
                   src={items.imag}
