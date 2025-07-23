@@ -19,6 +19,52 @@ const ListsPlans = () => {
         </p>
       </div>
       <SliderSearch />
+      <div className="flex justify-center mt-5">
+        <div className="bg-[#FFF] rounded-r-lg">
+          <div className="p-2 relative z-20">
+            <div className="flex items-center gap-2">
+              <div>
+                <img
+                  src={BanerPlansImg}
+                  alt="plans"
+                  width={132}
+                  height={84}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="space-y-2">
+                <h1 className="text-[#04864C] font-bold text-sm capitalize">
+                  تخفیف ۲۰ درصدی بیمه سرقت
+                </h1>
+                <p className="text-[#A7A7A7] text-xs font-semibold capitalize">
+                  ویژه اولین درخواست شما!
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between mt-2.5">
+              <div className="flex items-center text-white bg-[#0338A1] rounded-2xl w-16 h-6 text-center justify-center gap-1.5">
+                <CoinIcon />
+                <span className="text-xs font-bold">100</span>
+              </div>
+              <Button
+                variant={"link"}
+                className="text-spidar2 underline cursor-pointer"
+              >
+                مشاهده جزییات
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative w-[45px] h-[134px]">
+          <VectorIcon className="text-[#C47F18]" width={45} height={134} />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90">
+            <span className="text-white font-bold text-sm whitespace-nowrap px-1">
+              سطح طلایی
+            </span>
+          </div>
+        </div>
+      </div>
       <div className="flex  justify-center mt-5">
         <div className="bg-[#FFF]  rounded-r-lg ">
           <div className="p-2  relative z-20 ">
@@ -56,6 +102,98 @@ const ListsPlans = () => {
           </div>
         </div>
         <VectorIcon className="text-[#C47F18]" width={45} height={134} />
+      </div>
+      <div className="flex justify-center mt-5">
+        <div className="bg-[#FFF] rounded-r-lg">
+          <div className="p-2 relative z-20">
+            <div className="flex items-center gap-2">
+              <div>
+                <img
+                  src={BanerPlansImg}
+                  alt="plans"
+                  width={132}
+                  height={84}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="space-y-2">
+                <h1 className="text-[#04864C] font-bold text-sm capitalize">
+                  تخفیف ۲۰ درصدی بیمه سرقت
+                </h1>
+                <p className="text-[#A7A7A7] text-xs font-semibold capitalize">
+                  ویژه اولین درخواست شما!
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between mt-2.5">
+              <div className="flex items-center text-white bg-[#0338A1] rounded-2xl w-16 h-6 text-center justify-center gap-1.5">
+                <CoinIcon />
+                <span className="text-xs font-bold">100</span>
+              </div>
+              <Button
+                variant={"link"}
+                className="text-spidar2 underline cursor-pointer"
+              >
+                مشاهده جزییات
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative w-[45px] h-[134px]">
+          <VectorIcon className="text-[#C47F18]" width={45} height={134} />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90">
+            <span className="text-white font-bold text-sm whitespace-nowrap px-1">
+              سطح طلایی
+            </span>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center mt-5">
+        <div className="bg-[#FFF] rounded-r-lg">
+          <div className="p-2 relative z-20">
+            <div className="flex items-center gap-2">
+              <div>
+                <img
+                  src={BanerPlansImg}
+                  alt="plans"
+                  width={132}
+                  height={84}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="space-y-2">
+                <h1 className="text-[#04864C] font-bold text-sm capitalize">
+                  تخفیف ۲۰ درصدی بیمه سرقت
+                </h1>
+                <p className="text-[#A7A7A7] text-xs font-semibold capitalize">
+                  ویژه اولین درخواست شما!
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between mt-2.5">
+              <div className="flex items-center text-white bg-[#0338A1] rounded-2xl w-16 h-6 text-center justify-center gap-1.5">
+                <CoinIcon />
+                <span className="text-xs font-bold">100</span>
+              </div>
+              <Button
+                variant={"link"}
+                className="text-spidar2 underline cursor-pointer"
+              >
+                مشاهده جزییات
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative w-[45px] h-[134px]">
+          <VectorIcon className="text-[#C47F18]" width={45} height={134} />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90">
+            <span className="text-white font-bold text-sm whitespace-nowrap px-1">
+              سطح طلایی
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );
