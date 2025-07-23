@@ -2,7 +2,6 @@ import {
   HomeIcon,
   ProfileIcon,
   TicketIcon,
-  UnionIcon,
   DrawerIcon,
   TicketIcon2,
 } from "@/assets";
@@ -60,9 +59,6 @@ const Navbar = () => {
         >
           {item.label}
         </span>
-        {location.pathname === item.url && (
-          <UnionIcon className="absolute bottom-0 " />
-        )}
       </li>
     </Link>
   );

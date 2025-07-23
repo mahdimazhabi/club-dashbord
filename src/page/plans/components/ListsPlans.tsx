@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const ListsPlans = () => {
   return (
     <section>
-      <div className="px-4">
+      <div>
         <div className="flex gap-2 ">
           <img src={DisImg} alt="dis" width={20} height={20} />
           <h1 className="text-spidar2 text-[20px] font-bold capitalize">
@@ -19,210 +19,230 @@ const ListsPlans = () => {
         </p>
       </div>
       <SliderSearch />
-
-      <div
-        className="mx-auto h-[150px] w-[380px]  relative shadow-lg mt-6 bg-white"
-        style={{
-          clipPath: `path("M8 14C8 8.47715 12.4772 4 18 4H40L40.1431 4.33731C42.594 10.1145 50.8553 9.89779 53 4H100.5H123.625H146.75H193H368C373.523 4 378 8.47715 378 14V71V87.75V95.5301V103.376V110.175V121.25V128C378 133.523 373.523 138 368 138H193H146.75H100.5H53C50.8757 132.07 42.5684 131.854 40.1395 137.666L40 138H18C12.4772 138 8 133.523 8 128V121.25V110.175V103.376V95.5301V71V14Z")`,
-          WebkitClipPath: `path("M8 14C8 8.47715 12.4772 4 18 4H40L40.1431 4.33731C42.594 10.1145 50.8553 9.89779 53 4H100.5H123.625H146.75H193H368C373.523 4 378 8.47715 378 14V71V87.75V95.5301V103.376V110.175V121.25V128C378 133.523 373.523 138 368 138H193H146.75H100.5H53C50.8757 132.07 42.5684 131.854 40.1395 137.666L40 138H18C12.4772 138 8 133.523 8 128V121.25V110.175V103.376V95.5301V71V14Z")`,
-          boxShadow:
-            "0px 1px 2px rgba(0,0,0,0.25), 0px 4px 8px rgba(0,0,0,0.05)",
-          overflow: "visible",
-        }}
-      >
-        <div
-          className="absolute top-0 left-0 h-full w-[15%] pointer-events-none flex items-center justify-center"
-          style={{
-            background:
-              "linear-gradient(90deg, #FFBA53 0%, rgba(255, 255, 255, 0) 100%)",
-            clipPath: "inherit",
-            WebkitClipPath: "inherit",
-            zIndex: 10,
-          }}
+      <div className="flex justify-center mt-5">
+        <div className="bg-[#FFF]  rounded-r-lg ">
+          <div className="p-2  relative z-20">
+            <div className="flex items-center gap-2">
+              <div>
+                <img
+                  src={BanerPlansImg}
+                  alt="plans"
+                  width={132}
+                  height={84}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="space-y-2">
+                <h1 className="text-[#04864C] font-bold text-sm capitalize">
+                  تخفیف ۲۰ درصدی بیمه سرقت
+                </h1>
+                <p className="text-[#A7A7A7] text-xs font-semibold capitalize">
+                  ویژه اولین درخواست شما!
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between mt-2.5">
+              <div className="flex items-center text-white bg-[#0338A1] rounded-2xl w-16 h-6 text-center justify-center gap-1.5">
+                <CoinIcon />
+                <span className="text-xs font-bold">100</span>
+              </div>
+              <Button
+                variant={"link"}
+                className="text-spidar2 underline cursor-pointer"
+              >
+                مشاهده جزییات
+              </Button>
+            </div>
+          </div>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="45"
+          height="134"
+          viewBox="0 0 45 134"
+          fill="none"
         >
-          <span
-            style={{
-              writingMode: "vertical-rl",
-              transform: "rotate(180deg)",
-              color: "#C47F18",
-              fontWeight: "bold",
-              fontSize: "14px",
-              userSelect: "none",
-            }}
+          <defs>
+            <linearGradient
+              id="gold-gradient"
+              x1="0"
+              y1="0"
+              x2="45"
+              y2="0"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0%" stopColor="#FFBA53" />
+              <stop offset="100%" stopColor="white" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+
+          <path
+            d="M41.6981 130.46L45 133V1L41.8731 3.34514C40.1562 4.63283 37.809 4.68121 36.0405 3.46535L31 0H11.3628C10.1281 0 8.90051 0.187342 7.72199 0.555629C3.92088 1.74348 1.14131 5.01084 0.578113 8.95321L0.130657 12.0854C0.0436619 12.6944 0 13.3087 0 13.9239V85V124.61C0 125.851 0.307848 127.072 0.89594 128.164C2.52202 131.184 5.58425 133.189 9 133.5H32L35.4199 130.606C37.2172 129.085 39.832 129.025 41.6981 130.46Z"
+            fill="url(#gold-gradient)"
+          />
+
+          <text
+            x="40"
+            y="70"
+            fontSize="15px"
+            fontWeight="700"
+            letterSpacing="-0.45px"
+            fill="#A86D2E"
+            transform="rotate(-90, 12, 60)"
           >
             سطح طلایی
-          </span>
-        </div>
-
-        <div className="p-2 pl-[15%] relative z-20">
-          <div className="flex items-center gap-2">
-            <div>
-              <img
-                src={BanerPlansImg}
-                alt="plans"
-                width={132}
-                height={84}
-                className="rounded-lg"
-              />
-            </div>
-            <div className="space-y-2">
-              <h1 className="text-[#04864C] font-bold text-sm capitalize">
-                تخفیف ۲۰ درصدی بیمه سرقت
-              </h1>
-              <p className="text-[#A7A7A7] text-xs font-semibold capitalize">
-                ویژه اولین درخواست شما!
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-between mt-2.5">
-            <div className="flex items-center text-white bg-[#0338A1] rounded-2xl w-16 h-6 text-center justify-center gap-1.5">
-              <CoinIcon />
-              <span className="text-xs font-bold">100</span>
-            </div>
-            <Button
-              variant={"link"}
-              className="text-spidar2 underline cursor-pointer"
-            >
-              مشاهده جزییات
-            </Button>
-          </div>
-        </div>
+          </text>
+        </svg>
       </div>
-      <div
-        className="mx-auto h-[150px] w-[380px]  relative shadow-lg mt-6 bg-white"
-        style={{
-          clipPath: `path("M8 14C8 8.47715 12.4772 4 18 4H40L40.1431 4.33731C42.594 10.1145 50.8553 9.89779 53 4H100.5H123.625H146.75H193H368C373.523 4 378 8.47715 378 14V71V87.75V95.5301V103.376V110.175V121.25V128C378 133.523 373.523 138 368 138H193H146.75H100.5H53C50.8757 132.07 42.5684 131.854 40.1395 137.666L40 138H18C12.4772 138 8 133.523 8 128V121.25V110.175V103.376V95.5301V71V14Z")`,
-          WebkitClipPath: `path("M8 14C8 8.47715 12.4772 4 18 4H40L40.1431 4.33731C42.594 10.1145 50.8553 9.89779 53 4H100.5H123.625H146.75H193H368C373.523 4 378 8.47715 378 14V71V87.75V95.5301V103.376V110.175V121.25V128C378 133.523 373.523 138 368 138H193H146.75H100.5H53C50.8757 132.07 42.5684 131.854 40.1395 137.666L40 138H18C12.4772 138 8 133.523 8 128V121.25V110.175V103.376V95.5301V71V14Z")`,
-          boxShadow:
-            "0px 1px 2px rgba(0,0,0,0.25), 0px 4px 8px rgba(0,0,0,0.05)",
-          overflow: "visible",
-        }}
-      >
-        <div
-          className="absolute top-0 left-0 h-full w-[15%] pointer-events-none flex items-center justify-center"
-          style={{
-            background:
-              "linear-gradient(90deg, #FFBA53 0%, rgba(255, 255, 255, 0) 100%)",
-            clipPath: "inherit",
-            WebkitClipPath: "inherit",
-            zIndex: 10,
-          }}
+      <div className="flex justify-center mt-5">
+        <div className="bg-[#FFF]  rounded-r-lg ">
+          <div className="p-2  relative z-20">
+            <div className="flex items-center gap-2">
+              <div>
+                <img
+                  src={BanerPlansImg}
+                  alt="plans"
+                  width={132}
+                  height={84}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="space-y-2">
+                <h1 className="text-[#04864C] font-bold text-sm capitalize">
+                  تخفیف ۲۰ درصدی بیمه سرقت
+                </h1>
+                <p className="text-[#A7A7A7] text-xs font-semibold capitalize">
+                  ویژه اولین درخواست شما!
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between mt-2.5">
+              <div className="flex items-center text-white bg-[#0338A1] rounded-2xl w-16 h-6 text-center justify-center gap-1.5">
+                <CoinIcon />
+                <span className="text-xs font-bold">100</span>
+              </div>
+              <Button
+                variant={"link"}
+                className="text-spidar2 underline cursor-pointer"
+              >
+                مشاهده جزییات
+              </Button>
+            </div>
+          </div>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="45"
+          height="134"
+          viewBox="0 0 45 134"
+          fill="none"
         >
-          <span
-            style={{
-              writingMode: "vertical-rl",
-              transform: "rotate(180deg)",
-              color: "#C47F18",
-              fontWeight: "bold",
-              fontSize: "14px",
-              userSelect: "none",
-            }}
+          <defs>
+            <linearGradient
+              id="gold-gradient"
+              x1="0"
+              y1="0"
+              x2="45"
+              y2="0"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0%" stopColor="#FFBA53" />
+              <stop offset="100%" stopColor="white" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+
+          <path
+            d="M41.6981 130.46L45 133V1L41.8731 3.34514C40.1562 4.63283 37.809 4.68121 36.0405 3.46535L31 0H11.3628C10.1281 0 8.90051 0.187342 7.72199 0.555629C3.92088 1.74348 1.14131 5.01084 0.578113 8.95321L0.130657 12.0854C0.0436619 12.6944 0 13.3087 0 13.9239V85V124.61C0 125.851 0.307848 127.072 0.89594 128.164C2.52202 131.184 5.58425 133.189 9 133.5H32L35.4199 130.606C37.2172 129.085 39.832 129.025 41.6981 130.46Z"
+            fill="url(#gold-gradient)"
+          />
+
+          <text
+            x="40"
+            y="70"
+            fontSize="15px"
+            fontWeight="700"
+            letterSpacing="-0.45px"
+            fill="#A86D2E"
+            transform="rotate(-90, 12, 60)"
           >
             سطح طلایی
-          </span>
-        </div>
-
-        <div className="p-2 pl-[15%] relative z-20">
-          <div className="flex items-center gap-2">
-            <div>
-              <img
-                src={BanerPlansImg}
-                alt="plans"
-                width={132}
-                height={84}
-                className="rounded-lg"
-              />
-            </div>
-            <div className="space-y-2">
-              <h1 className="text-[#04864C] font-bold text-sm capitalize">
-                تخفیف ۲۰ درصدی بیمه سرقت
-              </h1>
-              <p className="text-[#A7A7A7] text-xs font-semibold capitalize">
-                ویژه اولین درخواست شما!
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-between mt-2.5">
-            <div className="flex items-center text-white bg-[#0338A1] rounded-2xl w-16 h-6 text-center justify-center gap-1.5">
-              <CoinIcon />
-              <span className="text-xs font-bold">100</span>
-            </div>
-            <Button
-              variant={"link"}
-              className="text-spidar2 underline cursor-pointer"
-            >
-              مشاهده جزییات
-            </Button>
-          </div>
-        </div>
+          </text>
+        </svg>
       </div>
-      <div
-        className="mx-auto h-[150px] w-[380px]  relative shadow-lg mt-6 bg-white"
-        style={{
-          clipPath: `path("M8 14C8 8.47715 12.4772 4 18 4H40L40.1431 4.33731C42.594 10.1145 50.8553 9.89779 53 4H100.5H123.625H146.75H193H368C373.523 4 378 8.47715 378 14V71V87.75V95.5301V103.376V110.175V121.25V128C378 133.523 373.523 138 368 138H193H146.75H100.5H53C50.8757 132.07 42.5684 131.854 40.1395 137.666L40 138H18C12.4772 138 8 133.523 8 128V121.25V110.175V103.376V95.5301V71V14Z")`,
-          WebkitClipPath: `path("M8 14C8 8.47715 12.4772 4 18 4H40L40.1431 4.33731C42.594 10.1145 50.8553 9.89779 53 4H100.5H123.625H146.75H193H368C373.523 4 378 8.47715 378 14V71V87.75V95.5301V103.376V110.175V121.25V128C378 133.523 373.523 138 368 138H193H146.75H100.5H53C50.8757 132.07 42.5684 131.854 40.1395 137.666L40 138H18C12.4772 138 8 133.523 8 128V121.25V110.175V103.376V95.5301V71V14Z")`,
-          boxShadow:
-            "0px 1px 2px rgba(0,0,0,0.25), 0px 4px 8px rgba(0,0,0,0.05)",
-          overflow: "visible",
-        }}
-      >
-        <div
-          className="absolute top-0 left-0 h-full w-[15%] pointer-events-none flex items-center justify-center"
-          style={{
-            background:
-              "linear-gradient(90deg, #FFBA53 0%, rgba(255, 255, 255, 0) 100%)",
-            clipPath: "inherit",
-            WebkitClipPath: "inherit",
-            zIndex: 10,
-          }}
+      <div className="flex justify-center mt-5">
+        <div className="bg-[#FFF]  rounded-r-lg ">
+          <div className="p-2  relative z-20">
+            <div className="flex items-center gap-2">
+              <div>
+                <img
+                  src={BanerPlansImg}
+                  alt="plans"
+                  width={132}
+                  height={84}
+                  className="rounded-lg"
+                />
+              </div>
+              <div className="space-y-2">
+                <h1 className="text-[#04864C] font-bold text-sm capitalize">
+                  تخفیف ۲۰ درصدی بیمه سرقت
+                </h1>
+                <p className="text-[#A7A7A7] text-xs font-semibold capitalize">
+                  ویژه اولین درخواست شما!
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center justify-between mt-2.5">
+              <div className="flex items-center text-white bg-[#0338A1] rounded-2xl w-16 h-6 text-center justify-center gap-1.5">
+                <CoinIcon />
+                <span className="text-xs font-bold">100</span>
+              </div>
+              <Button
+                variant={"link"}
+                className="text-spidar2 underline cursor-pointer"
+              >
+                مشاهده جزییات
+              </Button>
+            </div>
+          </div>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="45"
+          height="134"
+          viewBox="0 0 45 134"
+          fill="none"
         >
-          <span
-            style={{
-              writingMode: "vertical-rl",
-              transform: "rotate(180deg)",
-              color: "#C47F18",
-              fontWeight: "bold",
-              fontSize: "14px",
-              userSelect: "none",
-            }}
+          <defs>
+            <linearGradient
+              id="gold-gradient"
+              x1="0"
+              y1="0"
+              x2="45"
+              y2="0"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0%" stopColor="#FFBA53" />
+              <stop offset="100%" stopColor="white" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+
+          <path
+            d="M41.6981 130.46L45 133V1L41.8731 3.34514C40.1562 4.63283 37.809 4.68121 36.0405 3.46535L31 0H11.3628C10.1281 0 8.90051 0.187342 7.72199 0.555629C3.92088 1.74348 1.14131 5.01084 0.578113 8.95321L0.130657 12.0854C0.0436619 12.6944 0 13.3087 0 13.9239V85V124.61C0 125.851 0.307848 127.072 0.89594 128.164C2.52202 131.184 5.58425 133.189 9 133.5H32L35.4199 130.606C37.2172 129.085 39.832 129.025 41.6981 130.46Z"
+            fill="url(#gold-gradient)"
+          />
+
+          <text
+            x="40"
+            y="70"
+            fontSize="15px"
+            fontWeight="700"
+            letterSpacing="-0.45px"
+            fill="#A86D2E"
+            transform="rotate(-90, 12, 60)"
           >
             سطح طلایی
-          </span>
-        </div>
-
-        <div className="p-2 pl-[15%] relative z-20">
-          <div className="flex items-center gap-2">
-            <div>
-              <img
-                src={BanerPlansImg}
-                alt="plans"
-                width={132}
-                height={84}
-                className="rounded-lg"
-              />
-            </div>
-            <div className="space-y-2">
-              <h1 className="text-[#04864C] font-bold text-sm capitalize">
-                تخفیف ۲۰ درصدی بیمه سرقت
-              </h1>
-              <p className="text-[#A7A7A7] text-xs font-semibold capitalize">
-                ویژه اولین درخواست شما!
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-between mt-2.5">
-            <div className="flex items-center text-white bg-[#0338A1] rounded-2xl w-16 h-6 text-center justify-center gap-1.5">
-              <CoinIcon />
-              <span className="text-xs font-bold">100</span>
-            </div>
-            <Button
-              variant={"link"}
-              className="text-spidar2 underline cursor-pointer"
-            >
-              مشاهده جزییات
-            </Button>
-          </div>
-        </div>
+          </text>
+        </svg>
       </div>
     </section>
   );

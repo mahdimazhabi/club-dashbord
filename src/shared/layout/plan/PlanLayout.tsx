@@ -4,14 +4,14 @@ import Navbar from "@/components/Navbar";
 
 const PlanLayout = () => {
   return (
-    <section className=" py-[18px] space-y-4">
-      <header className="px-4">
+    <section className="px-4 py-[18px] space-y-4">
+      <header>
         <Header />
       </header>
       <main>
         <ListsPlans />
       </main>
-      <footer className="px-4">
+      <footer>
         <Navbar />
       </footer>
     </section>

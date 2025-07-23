@@ -34,3 +34,4 @@ export { default as InfoEmptyIcons } from "@/assets/svg/info-empty.svg?react";
 export { default as CalenderIcon } from "@/assets/svg/calendaricons_calendar.svg?react";
 export { default as SearchIcon } from "@/assets/svg/search-normal.svg?react";
 export { default as TicketIcon2 } from "@/assets/svg//icons_ticket_2.svg?react";
+export { default as VectorIcon } from "@/assets/svg/icons_Vector_273.svg?react";
