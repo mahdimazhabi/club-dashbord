@@ -38,7 +38,7 @@ const ListsMissions = () => {
   ];
   return (
     <section>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mt-10">
         <div className="flex items-center gap-3">
           <MissionIcon className="w-6 h-6" />
           <span className="text-center justify-start text-spidar2 text-xl font-bold  capitalize">

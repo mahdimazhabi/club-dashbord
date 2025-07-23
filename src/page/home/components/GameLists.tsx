@@ -68,11 +68,11 @@ const GameLists = () => {
           <div className="embla__container gap-2.5">
             {DataBaner.map((item) => (
               <div
-                className=" flex flex-col  rounded-[10px] shrink-0 border-2.5 border py-[10px] px-[13px]"
+                className=" flex flex-col  rounded-[10px] shrink-0 border-2.5 border py-[10px] px-[13px] "
                 key={item.id}
               >
                 <img src={item.image} alt={item.alt} />
-                <h3 className=" text-center font-bold  text-sm text-spidar1">
+                <h3 className=" text-center font-bold  text-sm text-spidar1 mt-2.5">
                   {item.title}
                 </h3>
                 <p className="self-stretch text-center text-neutral-400 text-xs font-semibold ">

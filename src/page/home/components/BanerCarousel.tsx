@@ -13,7 +13,7 @@ const BanerCarousel = () => {
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
   return (
-    <section className="embla">
+    <section className="embla ">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {DataBaner.map((item) => (
