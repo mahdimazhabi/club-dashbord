@@ -23,12 +23,12 @@ const SliderSearch = () => {
 
   return (
     <div className="mt-4">
-      <div className="flex items-center gap-2 px-2 overflow-hidden">
+      <div className="flex items-center gap-2 px-2">
         <div className="min-w-[26px] h-[28px] flex items-center justify-center bg-white rounded-[15px] border border-spidar2">
           <SearchIcon className="w-4 h-4 text-[#818181]" />
         </div>
 
-        <div className="embla select-none flex-1">
+        <div className="embla select-none w-full">
           <div className="embla__viewport" ref={emblaRef}>
             <div className="embla__container gap-3">
               {ListsItemsSlider.map((item, index) => {
