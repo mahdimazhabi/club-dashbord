@@ -4,9 +4,11 @@ import GameBannerJackbot from "@/assets/img/Rectangle 184.png";
 import GanmeBanerWheel from "@/assets/img/Rectangle 184 (1).png";
 import { GameIcon } from "@/assets";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const GameLists = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ direction: "rtl" });
+  const navigate = useNavigate();
   const DataBaner = [
     {
       id: 1,
@@ -70,6 +72,7 @@ const GameLists = () => {
               <div
                 className=" flex flex-col  rounded-[10px] shrink-0 border-2.5 border py-[10px] px-[13px] "
                 key={item.id}
+                onClick={() => navigate("/Gamification")}
               >
                 <img src={item.image} alt={item.alt} />
                 <h3 className=" text-center font-bold  text-sm text-spidar1 mt-2.5">

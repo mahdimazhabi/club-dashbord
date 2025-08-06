@@ -5,6 +5,7 @@ import Inbox from "@/page/profile/components/Inbox";
 import Support from "@/page/profile/components/Support";
 import DiscountsLayout from "@/shared/layout/discounts/DiscountsLayout";
 import PlanLayout from "@/shared/layout/plan/PlanLayout";
+import GamificationLayout from "@/shared/layout/gamification/GamificationLayout";
 
 export const AllRouters: RouteObject[] = [
   {
@@ -30,5 +31,9 @@ export const AllRouters: RouteObject[] = [
   {
     path: "/plans",
     element: <PlanLayout />,
+  },
+  {
+    path: "/Gamification",
+    element: <GamificationLayout />,
   },
 ];
