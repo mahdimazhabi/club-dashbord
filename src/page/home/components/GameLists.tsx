@@ -16,6 +16,7 @@ const GameLists = () => {
       alt: "Game Banner Jackbot",
       descreption: "بازی امروزتو از دست نده!",
       title: "جک پات",
+      status: false,
     },
     {
       id: 2,
@@ -23,6 +24,7 @@ const GameLists = () => {
       alt: "Game Banner Wheel",
       title: "گردونه شانس",
       descreption: "هر چرخش، یه شانس!",
+      status: true,
     },
     {
       id: 1,
@@ -30,6 +32,7 @@ const GameLists = () => {
       alt: "Game Banner Jackbot",
       title: "جک پات",
       descreption: "بازی امروزتو از دست نده!",
+      status: false,
     },
     {
       id: 2,
@@ -37,6 +40,7 @@ const GameLists = () => {
       alt: "Game Banner Wheel",
       title: "گردونه شانس",
       descreption: "هر چرخش، یه شانس!",
+      status: true,
     },
   ];
 
@@ -48,7 +52,7 @@ const GameLists = () => {
         <div className="flex items-center gap-3">
           <GameIcon className="w-6 h-6" />
           <span className="text-center justify-start text-spidar2 text-xl font-bold  capitalize">
-            بای سرگرمی
+            بازی سرگرمی
           </span>
         </div>
         <div>
@@ -70,17 +74,26 @@ const GameLists = () => {
           <div className="embla__container gap-2.5">
             {DataBaner.map((item) => (
               <div
-                className=" flex flex-col  rounded-[10px] shrink-0 border-2.5 border py-[10px] px-[13px] "
                 key={item.id}
-                onClick={() => navigate("/Gamification")}
+                className={`relative flex flex-col rounded-[10px] shrink-0 border-2.5 py-[10px] px-[13px] transition-all duration-300 ${
+                  item.status
+                    ? "cursor-pointer border-spidar1"
+                    : "pointer-events-none opacity-50 blur-[1px] border-zinc-300"
+                }`}
+                onClick={() => item.status && navigate("/Gamification")}
               >
-                <img src={item.image} alt={item.alt} />
-                <h3 className=" text-center font-bold  text-sm text-spidar1 mt-2.5">
+                <img src={item.image} alt={item.alt} className="rounded-md" />
+                <h3 className="text-center font-bold text-sm text-spidar1 mt-2.5">
                   {item.title}
                 </h3>
-                <p className="self-stretch text-center text-neutral-400 text-xs font-semibold ">
+                <p className="self-stretch text-center text-neutral-400 text-xs font-semibold">
                   {item.descreption}
                 </p>
+
+                {/* لایه‌ی غیرفعال‌کننده بصری (اختیاری) */}
+                {!item.status && (
+                  <div className="absolute inset-0  bg-opacity-60 backdrop-blur-sm rounded-[10px]" />
+                )}
               </div>
             ))}
           </div>

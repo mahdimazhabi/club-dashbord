@@ -15,6 +15,8 @@ import SupportImg from "@/assets/img/Support.png";
 import GuideImg from "@/assets/img/guide.png";
 import RulesImg from "@/assets/img/Rules.png";
 import ImgNavBar from "@/assets/img/Group 8.png";
+// import MaintenanceImg from "@/assets/img/maintenance.png";
+// import Banner from "@/assets/img/baner.png";
 interface NavItem {
   icon: React.ComponentType<{ className?: string }>;
   label: string;
@@ -42,6 +44,8 @@ const Navbar = () => {
     { titel: "راهنما", imag: SupportImg },
     { titel: "پشتیبانی", imag: GuideImg },
     { titel: "قوانین و مقررات", imag: RulesImg },
+    // { title: "تعمیرهای مجاز", img: MaintenanceImg },
+    // { title: "رویداد ها", img: Banner },
   ];
 
   const renderNavItem = (item: NavItem, index: number) => (
