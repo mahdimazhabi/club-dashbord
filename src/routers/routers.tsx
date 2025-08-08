@@ -6,6 +6,8 @@ import Support from "@/page/profile/components/Support";
 import DiscountsLayout from "@/shared/layout/discounts/DiscountsLayout";
 import PlanLayout from "@/shared/layout/plan/PlanLayout";
 import GamificationLayout from "@/shared/layout/gamification/GamificationLayout";
+import AuthLayout from "@/shared/layout/auth/AuthLayout";
+import Login from "@/page/auth/Login";
 
 export const AllRouters: RouteObject[] = [
   {
@@ -35,5 +37,15 @@ export const AllRouters: RouteObject[] = [
   {
     path: "/Gamification",
     element: <GamificationLayout />,
+  },
+  {
+    path: "/auth",
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "login",
+        element: <Login />,
+      },
+    ],
   },
 ];

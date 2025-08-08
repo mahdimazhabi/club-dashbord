@@ -4,14 +4,12 @@ import { Button } from "@/components/ui/button";
 
 const GamificationWhell = () => {
   return (
-    <section className="px-4">
-      {/* Header */}
+    <section>
       <div className="flex items-center gap-3">
         <img src={SupportImg} alt="goal icon" />
         <span className="font-bold text-spidar2">معرفی بازی گردونه شانس</span>
       </div>
 
-      {/* Content */}
       <div className="flex justify-center mt-2.5">
         <img src={GameImg} alt="گردونه شانس" />
       </div>
