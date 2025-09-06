@@ -2,7 +2,12 @@ import ProfileProgress from "@/components/ProfileProgress";
 import { EditPenIcon } from "@/assets";
 import silverImg from "@/assets/img/silver.png";
 import CionImg from "@/assets/img/cionimg.png";
+import { useCustomersData } from "@/shared/api/useCustomersData";
+import { Skeleton } from "@/components/ui/skeleton";
 const InformationUser = () => {
+  const { DataCustomers, LoadingCustomers } = useCustomersData();
+  console.log(DataCustomers);
+
   return (
     <div
       className="p-6  rounded-[10px] backdrop-blur-[40px] border border-[#C5C5C5]"
@@ -17,16 +22,26 @@ const InformationUser = () => {
       <div className="flex items-center justify-between">
         <div className="flex gap-3 items-center">
           <ProfileProgress />
-          <div className="flex flex-col gap-2 ">
-            <div className="text-base font-bold">
-              <span className="text-spidar2 font- capitalize ml-3">
-                زهرا نادری.
-              </span>
+          <div className="flex flex-col gap-2">
+            <div className="text-base font-bold flex items-center">
+              {LoadingCustomers ? (
+                <Skeleton className="h-3 w-[100px] inline-block " />
+              ) : (
+                <span className="text-spidar2 font-capitalize ml-3">
+                  {DataCustomers?.name}
+                </span>
+              )}
               <span className="text-[#737373] mr-1">75</span>
               <span className="text-spidar1">Xp</span>
             </div>
-            <div className="text-xs font-semibold text-[#737373]">
-              <span>شماره تماس : 09123456789</span>
+
+            <div className="text-xs font-semibold text-[#737373] flex items-center">
+              <span>شماره تماس :</span>
+              {LoadingCustomers ? (
+                <Skeleton className="h-3 w-[80px] ml-4 inline-block" />
+              ) : (
+                <span className="ml-2">{DataCustomers?.phone}</span>
+              )}
             </div>
           </div>
         </div>

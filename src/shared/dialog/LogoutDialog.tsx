@@ -5,10 +5,25 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { InfoEmptyIcons } from "@/assets";
+import { useLogout } from "../api/useLogout";
+import { useState } from "react";
 interface LogoutDialogProps {
   setOpen: (value: boolean) => void;
 }
 const LogoutDialog = ({ setOpen }: LogoutDialogProps) => {
+  const { logout } = useLogout();
+  const [isLoading, setLoading] = useState(false);
+  const handleLogout = async () => {
+    try {
+      setLoading(true);
+      await logout();
+    } catch {
+      setLoading(false);
+    } finally {
+      setLoading(false);
+      setOpen(false);
+    }
+  };
   return (
     <DialogContent>
       <div className="flex justify-center">
@@ -21,7 +36,12 @@ const LogoutDialog = ({ setOpen }: LogoutDialogProps) => {
             آیا مایلید از حساب خود خارج شوید؟
           </span>
           <div className="mt-4 flex justify-center gap-2">
-            <Button className="w-32 h-12 bg-emerald-700 rounded-xl hover:bg-emerald-700/75 ">
+            <Button
+              className="w-32 h-12 cursor-pointer"
+              variant={"secondary"}
+              onClick={handleLogout}
+              loading={isLoading}
+            >
               تایید
             </Button>
             <Button

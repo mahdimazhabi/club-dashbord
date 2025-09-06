@@ -1,6 +1,7 @@
 import ProfileProgress from "./ProfileProgress";
 import Logo from "@/assets/logo/logo-ker 1.png";
 import { CrownIcon, NotificationIcon } from "@/assets";
+
 const Header = () => {
   return (
     <div className="flex shrink-0 justify-between items-center p-2.5 backdrop-blur-2xl bg-white rounded-xl border border-emerald-500/20 shadow-[0px_5px_14.300000190734863px_0px_rgba(10,201,116,0.10)]  stroke-[1px] stroke-[rgba(10,201,116,0.2)]">
