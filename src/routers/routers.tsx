@@ -7,36 +7,66 @@ import DiscountsLayout from "@/shared/layout/discounts/DiscountsLayout";
 import PlanLayout from "@/shared/layout/plan/PlanLayout";
 import GamificationLayout from "@/shared/layout/gamification/GamificationLayout";
 import AuthLayout from "@/shared/layout/auth/AuthLayout";
-import Login from "@/page/auth/Login";
+import OtpForm from "@/page/auth/form/OtpForm";
+import LoginForm from "@/page/auth/form/LoginForm";
+import ProtectedRoute from "@/shared/common/ProtectedRoute";
 
 export const AllRouters: RouteObject[] = [
   {
     path: "/",
-    element: <HomeLayout />,
+    element: (
+      <ProtectedRoute>
+        <HomeLayout />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/profile",
-    element: <ProfileLayout />,
+    element: (
+      <ProtectedRoute>
+        <ProfileLayout />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/profile/inbox",
-    element: <Inbox />,
+    element: (
+      <ProtectedRoute>
+        <Inbox />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/profile/support",
-    element: <Support />,
+    element: (
+      <ProtectedRoute>
+        <Support />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/discounts",
-    element: <DiscountsLayout />,
+    element: (
+      <ProtectedRoute>
+        <DiscountsLayout />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/plans",
-    element: <PlanLayout />,
+    element: (
+      <ProtectedRoute>
+        <PlanLayout />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/Gamification",
-    element: <GamificationLayout />,
+    element: (
+      <ProtectedRoute>
+        <GamificationLayout />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/auth",
@@ -44,7 +74,11 @@ export const AllRouters: RouteObject[] = [
     children: [
       {
         path: "login",
-        element: <Login />,
+        element: <LoginForm />,
+      },
+      {
+        path: "otp",
+        element: <OtpForm />,
       },
     ],
   },

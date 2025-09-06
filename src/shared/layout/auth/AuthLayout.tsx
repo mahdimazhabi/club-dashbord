@@ -12,17 +12,16 @@ const AuthLayout = () => {
       <main>
         <div className="mt-48 px-7">
           <div className="flex flex-1 items-center justify-center">
-            <div className="w-full max-w-sm relative">
-              <img
-                src={MenAuthImg}
-                alt="Men Auth"
-                className="absolute bottom-15 -left-10 w-[180px] z-10 pointer-events-none"
-              />
-              <div className="w-full max-w-[422px] h-full relative rounded-2xl border-2 border border-transparent animate-border overflow-hidden [background:linear-gradient(45deg,#172035,theme(colors.slate.800)_50%,#172033)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_#0ac974_86%,_#0ac974_90%,_#0ac974_94%,_theme(colors.slate.600/.48))_border-box]">
-                {/* تصویر مرد در گوشه پایین-چپ */}
-
-                {/* محتوای فرم */}
-                <div className="relative  bg-muted bg-opacity-90 p-6">
+            <div className="w-full max-w-sm ">
+              <div className=" relative">
+                <img
+                  src={MenAuthImg}
+                  alt="Men Auth"
+                  className="absolute -bottom-10 -left-10 w-[180px] z-10 pointer-events-none"
+                />
+              </div>
+              <div className="w-full max-w-[422px] h-full relative  rounded-2xl border-2 border border-transparent animate-border overflow-hidden [background:linear-gradient(45deg,#172035,theme(colors.slate.800)_50%,#172033)_padding-box,conic-gradient(from_var(--border-angle),theme(colors.slate.600/.48)_80%,_#0ac974_86%,_#0ac974_90%,_#0ac974_94%,_theme(colors.slate.600/.48))_border-box]">
+                <div className="relative  bg-neutral-200 bg-opacity-90 px-6    grid grid-cols-1 items-center">
                   <Outlet />
                 </div>
               </div>

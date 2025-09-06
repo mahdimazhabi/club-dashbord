@@ -137,6 +137,7 @@ body {
   --color-spidar1: var(--color-spidar1);
   --color-spidar2: var(--color-spidar2);
   --color-gray-coustom: var(--color-gray-coustom);
+  --color-btn:var(--color-btn);
 }
 
 :root {
@@ -189,6 +190,7 @@ body {
   --chart-5: 340 75% 55%;
   --color-spidar1: #0ac974;
   --color-spidar2: #0b2c6e;
+  --color-btn:#04864C;
   --color-gray-coustom: oklch(27.8% 0.033 256.848);
 
   /* New  colors - light mode */

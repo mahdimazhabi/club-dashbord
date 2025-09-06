@@ -10,7 +10,7 @@ const ErrorMessage = ({ message, className }: ErrorMessageProps) => {
   return (
     <span
       className={cn(
-        "text-satisfaction-50 text-[10px] text-red-500 ",
+        "text-satisfaction-50 text-[10px] text-red-500 font-bold ",
         className
       )}
     >
