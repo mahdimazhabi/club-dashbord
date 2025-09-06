@@ -12,7 +12,7 @@ import { useLocation } from "react-router-dom";
 import { useAuth } from "../api/useAuth";
 import { useState } from "react";
 const OtpForm = () => {
-  const { verifytoken } = useAuth();
+  const { verifyToken } = useAuth();
   const location = useLocation();
   const [isLoading, setLoading] = useState(false);
   const DataLocation = location.state;
@@ -30,7 +30,7 @@ const OtpForm = () => {
     formData.append("tokenCode", form_data.tokenCode);
     try {
       setLoading(true);
-      await verifytoken(formData);
+      await verifyToken(formData);
     } catch {
       setLoading(false);
     } finally {
