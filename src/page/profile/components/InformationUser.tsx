@@ -6,7 +6,6 @@ import { useCustomersData } from "@/shared/api/useCustomersData";
 import { Skeleton } from "@/components/ui/skeleton";
 const InformationUser = () => {
   const { DataCustomers, LoadingCustomers } = useCustomersData();
-  console.log(DataCustomers);
 
   return (
     <div
@@ -59,14 +58,16 @@ const InformationUser = () => {
             </span>
           </div>
         </div>
-        <div className="flex justify-between items-center gap-3 py-4 px-2.5 rounded-[10px] box-shadow: 0px 6px 12.199999809265137px rgba(0, 0, 0, 0.05) bg-[#FFF]">
-          <img
-            src={CionImg}
-            alt="Coin"
-            width={38}
-            height={38}
-            className="shrink-0"
-          />
+        <div className=" grid grid-cols-2 items-center  py-4 px-3 rounded-[10px] box-shadow: 0px 6px 12.199999809265137px rgba(0, 0, 0, 0.05) bg-[#FFF]">
+          <div>
+            <img
+              src={CionImg}
+              alt="Coin"
+              width={38}
+              height={38}
+              className="shrink-0"
+            />
+          </div>
           <div className="space-y-3">
             <span className="bg-gradient-to-r block text-xs font-bold  capitalize from-[#FFBA53] to-[#C47F18] bg-clip-text text-transparent">
               تعداد سکه ها

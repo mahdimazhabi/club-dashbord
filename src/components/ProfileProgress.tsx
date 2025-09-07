@@ -1,8 +1,11 @@
 import Profile from "@/assets/img/profile.png";
 import { useCustomersData } from "@/shared/api/useCustomersData";
 import { Skeleton } from "./ui/skeleton";
+import { useFetch } from "@/shared/hooks/useFetch";
 const ProfileProgress = () => {
-  const { LoadingCustomers } = useCustomersData();
+  const { DataCustomers, LoadingCustomers } = useCustomersData();
+  const { baseUrl } = useFetch();
+  console.log(DataCustomers);
 
   return (
     <div className=" max-h-10 bg-gradient-to-b from-orange-300 to-yellow-600 p-0.75 rounded-full">
@@ -10,7 +13,15 @@ const ProfileProgress = () => {
         {LoadingCustomers ? (
           <Skeleton className="w-6 h-6 rounded-full" />
         ) : (
-          <img src={Profile} alt="Profile" className="rounded-full w-6 h-6" />
+          <img
+            src={
+              DataCustomers?.profile?.avatar
+                ? `${baseUrl}/${DataCustomers.profile.avatar}`
+                : Profile
+            }
+            alt="Profile"
+            className="rounded-full w-6 h-6"
+          />
         )}
       </div>
     </div>
