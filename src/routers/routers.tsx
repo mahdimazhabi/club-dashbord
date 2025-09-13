@@ -10,6 +10,7 @@ import AuthLayout from "@/shared/layout/auth/AuthLayout";
 import OtpForm from "@/page/auth/form/OtpForm";
 import LoginForm from "@/page/auth/form/LoginForm";
 import ProtectedRoute from "@/shared/common/ProtectedRoute";
+import GamificationWheel from "@/page/gamification/GamificationWhell";
 
 export const AllRouters: RouteObject[] = [
   {
@@ -65,6 +66,14 @@ export const AllRouters: RouteObject[] = [
     element: (
       <ProtectedRoute>
         <GamificationLayout />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/Gamification/spin-whell",
+    element: (
+      <ProtectedRoute>
+        <GamificationWheel />
       </ProtectedRoute>
     ),
   },
