@@ -1,14 +1,14 @@
-import axios from "axios";
-import { useFetch } from "../hooks/useFetch";
+import { ApiConfig } from "@/config/ApiConfig";
+import api from "@/config/htpp/axios";
 import { useNavigate } from "react-router-dom";
 
 export const useLogout = () => {
-  const { headers, baseUrl } = useFetch();
+  const { headers } = ApiConfig();
   const navigate = useNavigate();
   const logout = async () => {
     try {
-      const response = await axios.post(
-        `${baseUrl}/logout`,
+      const response = await api.post(
+        `/logout`,
         {},
         {
           headers: headers,

@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
-import DiscountsLists from "@/page/discounts/components/DiscountsLists";
+import DiscountsLists from "@/feature/discounts/components/DiscountsLists";
 
 const DiscountsLayout = () => {
   return (

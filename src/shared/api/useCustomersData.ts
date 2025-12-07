@@ -1,19 +1,13 @@
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
-import { useFetch } from "../hooks/useFetch";
 import { CustomerResponse } from "../interface/interface";
+import { useFetch } from "@/hooks/useFetch";
 
 export const useCustomersData = () => {
-  const { baseUrl, headers } = useFetch();
+  const { useGet } = useFetch();
   const { data: DataCustomers, isLoading: LoadingCustomers } =
-    useQuery<CustomerResponse>({
-      queryKey: ["customers"],
-      queryFn: async () => {
-        const response = await axios.get(`${baseUrl}/info`, {
-          headers,
-        });
-        return response.data;
-      },
+    useGet<CustomerResponse>({
+      url: "/info",
+      queryKey: "customers",
+      retry: 1,
     });
 
   return { DataCustomers, LoadingCustomers };

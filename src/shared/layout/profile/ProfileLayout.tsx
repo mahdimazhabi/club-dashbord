@@ -1,7 +1,7 @@
 import { ArrowLeftIcon } from "@/assets";
 import { useNavigate } from "react-router-dom";
-import InformationUser from "@/page/profile/components/InformationUser";
-import Menu from "@/page/profile/components/Menu";
+import InformationUser from "@/feature/profile/components/InformationUser";
+import Menu from "@/feature/profile/components/Menu";
 const ProfileLayout = () => {
   const navigate = useNavigate();
 

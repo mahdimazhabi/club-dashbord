@@ -1,17 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import axios from "axios";
+import api from "@/config/htpp/axios";
 import { TypeFormInputLogin } from "../schema/schema";
-import { useFetch } from "@/shared/hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 
 export const useAuth = () => {
-  const { baseUrl } = useFetch();
   const navigate = useNavigate();
 
   // ===== Login Function =====
   const login = async (data: TypeFormInputLogin) => {
     try {
-      await axios.post(`${baseUrl}/auth`, data, {
+      await api.post(`/auth`, data, {
         headers: { "Content-Type": "application/json" },
       });
     } catch (error: any) {
@@ -22,7 +20,7 @@ export const useAuth = () => {
   // ===== Handle Login Error =====
   const handleLoginError = async (error: any, data: TypeFormInputLogin) => {
     const status = error?.response?.status;
-    if (status === 403) {
+    if (status === 406) {
       const authFlowToken = error.response.data.authFlowToken;
       const formData = new FormData();
       formData.append("identifier", data.identifier);
@@ -47,7 +45,7 @@ export const useAuth = () => {
   // ===== Request OTP =====
   const requestOtp = async (data: FormData) => {
     try {
-      const response = await axios.post(`${baseUrl}/auth/request-token`, data);
+      const response = await api.post(`/auth/request-token`, data);
       localStorage.setItem("authFlowToken", response.data.authFlowToken);
     } catch (error) {
       console.error("OTP request failed:", error);
@@ -57,7 +55,7 @@ export const useAuth = () => {
   // ===== Verify Token =====
   const verifyToken = async (data: FormData) => {
     try {
-      const response = await axios.post(`${baseUrl}/auth/verify-token`, data);
+      const response = await api.post(`/auth/verify-token`, data);
       if (response.status === 200) {
         localStorage.removeItem("otp-expiry");
         localStorage.setItem("token", response.data.token);

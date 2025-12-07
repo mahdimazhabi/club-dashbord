@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import ListsPlans from "@/page/plans/components/ListsPlans";
+import ListsPlans from "@/feature/plans/components/ListsPlans";
 import Navbar from "@/components/Navbar";
 
 const PlanLayout = () => {

@@ -1,6 +1,6 @@
 import { ArrowLeftIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import SpinWhellDes from "@/page/gamification/SpinWhellDes";
+import SpinWhellDes from "@/feature/gamification/SpinWhellDes";
 const GamificationLayout = () => {
   const navigate = useNavigate();
   return (

@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
-import ListsMissions from "@/page/home/components/ListsMissions";
-import BanerCarousel from "@/page/home/components/BanerCarousel";
-import GameLists from "@/page/home/components/GameLists";
+import ListsMissions from "@/feature/home/components/ListsMissions";
+import BanerCarousel from "@/feature/home/components/BanerCarousel";
+import GameLists from "@/feature/home/components/GameLists";
 import Navbar from "@/components/Navbar";
 const HomeLayout = () => {
   return (
