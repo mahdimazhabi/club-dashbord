@@ -7,7 +7,6 @@ export { default as VoucherIcon } from "@/assets/svg/voucher.svg?react";
 export { default as RewardIcon } from "@/assets/svg/reward.svg?react";
 export { default as ChallengeIcon } from "@/assets/svg/challenge.svg?react";
 export { default as CopyIcon } from "@/assets/svg/copy.svg?react";
-export { default as InfoIcon } from "@/assets/svg/info.svg?react";
 export { default as FilterIcon } from "@/assets/svg/filter.svg?react";
 export { default as CrownIcon } from "@/assets/svg/crown.svg?react";
 export { default as NotificationIcon } from "@/assets/svg/icons_notification.svg?react";
@@ -35,3 +34,6 @@ export { default as CalenderIcon } from "@/assets/svg/calendaricons_calendar.svg
 export { default as SearchIcon } from "@/assets/svg/search-normal.svg?react";
 export { default as TicketIcon2 } from "@/assets/svg//icons_ticket_2.svg?react";
 export { default as VectorIcon } from "@/assets/svg/icons_Vector_273.svg?react";
+export { default as CoinIcon2 } from "@/assets/svg/coin.svg?react";
+export { default as MedalIcon } from "@/assets/svg/medal.svg?react";
+export { default as XpIcon } from "@/assets/svg/xp.svg?react";

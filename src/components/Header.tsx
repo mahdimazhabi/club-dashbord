@@ -16,7 +16,7 @@ const Header = () => {
         <div className="p-2  bg-[rgba(255,255,255,0.5)] shadow-[0px_4px_15px_0px_rgba(46,46,46,0.15)] rounded-full">
           <CrownIcon className="w-5 h-5" />
         </div>
-        <ProfileProgress />
+        <ProfileProgress className="w-6 h-6" />
       </div>
     </div>
   );

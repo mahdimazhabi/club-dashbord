@@ -1,9 +1,9 @@
 import ProfileProgress from "@/components/ProfileProgress";
 import { EditPenIcon } from "@/assets";
-import silverImg from "@/assets/img/silver.png";
-import CionImg from "@/assets/img/cionimg.png";
+
 import { useCustomersData } from "@/shared/api/useCustomersData";
 import { Skeleton } from "@/components/ui/skeleton";
+import { XpIcon, MedalIcon, CoinIcon2 } from "@/assets";
 const InformationUser = () => {
   const { DataCustomers, LoadingCustomers } = useCustomersData();
 
@@ -31,6 +31,7 @@ const InformationUser = () => {
                 </span>
               )}
               <span className="text-[#737373] mr-1">75</span>
+
               <span className="text-spidar1">Xp</span>
             </div>
 
@@ -46,37 +47,26 @@ const InformationUser = () => {
         </div>
         <EditPenIcon className=" cursor-pointer" />
       </div>
-      <div className="grid  grid-cols-2 gap-7 mt-5">
-        <div className="flex items-center py-4 gap-1.5 justify-between rounded-[10px] box-shadow: 0px 6px 12.199999809265137px rgba(0, 0, 0, 0.05) bg-[#FFF]">
-          <img src={silverImg} alt="Silver Medal" width={36.242} height={46} />
+      <div className="grid  grid-cols-3 gap-4 mt-5">
+        <div className=" flex flex-col items-center justify-center  py-4 gap-1.5  rounded-[10px] box-shadow: 0px 6px 12.199999809265137px rgba(0, 0, 0, 0.05) bg-[#FFF]">
+          <CoinIcon2 />
+          <span className="bg-gradient-to-r from-orange-300 to-yellow-600 bg-clip-text text-transparent text-center font-bold capitalize text-sm">
+            1200
+          </span>
+        </div>
+        <div className="flex flex-col items-center py-4 gap-1.5 justify-between rounded-[10px] box-shadow: 0px 6px 12.199999809265137px rgba(0, 0, 0, 0.05) bg-[#FFF]">
+          <MedalIcon />
           <div>
-            <span className="text-center font-bold text-xs capitalize text-gray-600">
+            <span className="text-center font-bold  capitalize text-sm text-gray-600">
               سطح نقره ای
-            </span>
-            <span className="text-[10px] font-semibold text-[#818181] block">
-              شما کاربر خوش حساب هستید
             </span>
           </div>
         </div>
-        <div className=" grid grid-cols-2 items-center  py-4 px-3 rounded-[10px] box-shadow: 0px 6px 12.199999809265137px rgba(0, 0, 0, 0.05) bg-[#FFF]">
-          <div>
-            <img
-              src={CionImg}
-              alt="Coin"
-              width={38}
-              height={38}
-              className="shrink-0"
-            />
-          </div>
-          <div className="space-y-3">
-            <span className="bg-gradient-to-r block text-xs font-bold  capitalize from-[#FFBA53] to-[#C47F18] bg-clip-text text-transparent">
-              تعداد سکه ها
-            </span>
-
-            <span className="text-spidar2 text-base font-bold capitalize">
-              1200
-            </span>
-          </div>
+        <div className=" flex flex-col items-center justify-center  py-4 gap-1.5  rounded-[10px] box-shadow: 0px 6px 12.199999809265137px rgba(0, 0, 0, 0.05) bg-[#FFF]">
+          <XpIcon />
+          <span className="text-spidar1 text-center font-bold capitalize text-sm">
+            75 Xp
+          </span>
         </div>
       </div>
     </div>

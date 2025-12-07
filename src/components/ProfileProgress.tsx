@@ -2,11 +2,17 @@ import Profile from "@/assets/img/profile.png";
 import { useCustomersData } from "@/shared/api/useCustomersData";
 import { Skeleton } from "./ui/skeleton";
 import { ApiConfig } from "@/config/ApiConfig";
-const ProfileProgress = () => {
+import { cn } from "@/lib/utils";
+
+type ProfileProgressProps = {
+  className?: string;
+};
+
+const ProfileProgress = ({ className }: ProfileProgressProps) => {
   const { DataCustomers, LoadingCustomers } = useCustomersData();
   const { File_url } = ApiConfig();
   return (
-    <div className="relative max-h-20 bg-gradient-to-b from-orange-300 to-yellow-600 p-0.75 rounded-full">
+    <div className="relative ">
       <div className="absolute -inset-2 rounded-full border-4 border-transparent">
         <svg className="w-full h-full" viewBox="0 0 100 100">
           <circle
@@ -23,10 +29,10 @@ const ProfileProgress = () => {
             r="45"
             fill="none"
             stroke="url(#progress-gradient)"
-            strokeWidth="4"
+            strokeWidth="7"
             strokeLinecap="round"
             strokeDasharray="283"
-            strokeDashoffset="60"
+            strokeDashoffset="70"
             transform="rotate(-90 50 50)"
           />
           <defs>
@@ -46,7 +52,7 @@ const ProfileProgress = () => {
 
       <div className="w-full p-1 h-full rounded-full bg-white flex items-center justify-center shadow-[0px_4px_15px_0px_rgba(46,46,46,0.15)] relative z-10">
         {LoadingCustomers ? (
-          <Skeleton className="w-16 h-16 rounded-full" />
+          <Skeleton className={cn("rounded-full w-16 h-16", className)} />
         ) : (
           <img
             src={
@@ -55,7 +61,7 @@ const ProfileProgress = () => {
                 : Profile
             }
             alt="Profile"
-            className="rounded-full w-16 h-16"
+            className={cn("rounded-full w-16 h-16", className)}
           />
         )}
       </div>
