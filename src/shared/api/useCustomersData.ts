@@ -1,14 +1,15 @@
+import { useQuery } from "@tanstack/react-query";
 import { CustomerResponse } from "../interface/interface";
-import { useFetch } from "@/hooks/useFetch";
-
+import { fetcher } from "@/action/fetcher";
 export const useCustomersData = () => {
-  const { useGet } = useFetch();
-  const { data: DataCustomers, isLoading: LoadingCustomers } =
-    useGet<CustomerResponse>({
-      url: "/info",
-      queryKey: "customers",
-      retry: 1,
-    });
-
+  const { data: DataCustomers, isLoading: LoadingCustomers } = useQuery({
+    queryKey: ["CustomersData"],
+    queryFn: () =>
+      fetcher<CustomerResponse>({
+        method: "get",
+        endpoint: "/info",
+        contentType: "json",
+      }),
+  });
   return { DataCustomers, LoadingCustomers };
 };

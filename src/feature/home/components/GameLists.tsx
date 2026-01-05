@@ -16,7 +16,6 @@ const GameLists = () => {
       alt: "Game Banner Jackbot",
       descreption: "بازی امروزتو از دست نده!",
       title: "جک پات",
-      status: false,
     },
     {
       id: 2,
@@ -24,7 +23,6 @@ const GameLists = () => {
       alt: "Game Banner Wheel",
       title: "گردونه شانس",
       descreption: "هر چرخش، یه شانس!",
-      status: true,
     },
     {
       id: 1,
@@ -32,7 +30,6 @@ const GameLists = () => {
       alt: "Game Banner Jackbot",
       title: "جک پات",
       descreption: "بازی امروزتو از دست نده!",
-      status: false,
     },
     {
       id: 2,
@@ -40,7 +37,6 @@ const GameLists = () => {
       alt: "Game Banner Wheel",
       title: "گردونه شانس",
       descreption: "هر چرخش، یه شانس!",
-      status: true,
     },
   ];
 
@@ -65,7 +61,7 @@ const GameLists = () => {
         </div>
       </div>
       <div className="mb-4">
-        <p className="text-zinc-500 text-base font-normal capitalize">
+        <p className="text-zinc-500  font-normal text-xs capitalize">
           با بازی و چالش‌ها، سریع‌تر امتیاز بگیر!
         </p>
       </div>
@@ -75,12 +71,8 @@ const GameLists = () => {
             {DataBaner.map((item) => (
               <div
                 key={item.id}
-                className={`relative flex flex-col rounded-[10px] shrink-0 border-2.5 py-[10px] px-[13px] transition-all duration-300 ${
-                  item.status
-                    ? "cursor-pointer border-spidar1"
-                    : "pointer-events-none opacity-50 blur-[1px] border-zinc-300"
-                }`}
-                onClick={() => item.status && navigate("/Gamification")}
+                onClick={() => navigate("/Gamification")}
+                className={`relative flex flex-col rounded-[10px] bg-background border border-cart shrink-0 border-2.5 py-[10px] px-[13px] transition-all duration-300 ‍`}
               >
                 <img src={item.image} alt={item.alt} className="rounded-md" />
                 <h3 className="text-center font-bold text-sm text-spidar1 mt-2.5">
@@ -89,11 +81,6 @@ const GameLists = () => {
                 <p className="self-stretch text-center text-neutral-400 text-xs font-semibold">
                   {item.descreption}
                 </p>
-
-                {/* لایه‌ی غیرفعال‌کننده بصری (اختیاری) */}
-                {!item.status && (
-                  <div className="absolute inset-0  bg-opacity-60 backdrop-blur-sm rounded-[10px]" />
-                )}
               </div>
             ))}
           </div>

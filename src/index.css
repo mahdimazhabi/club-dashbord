@@ -1,3 +1,76 @@
+/* Pelak Font Family */
+@font-face {
+  font-family: "Pelak";
+  src: url("./assets/fonts/Pelak Font (@tarah_show)/Pelak-Thin.ttf")
+    format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pelak";
+  src: url("./assets/fonts/Pelak Font (@tarah_show)/Pelak-light.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pelak";
+  src: url("./assets/fonts/Pelak Font (@tarah_show)/Pelak-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pelak";
+  src: url("./assets/fonts/Pelak Font (@tarah_show)/Pelak-Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pelak";
+  src: url("./assets/fonts/Pelak Font (@tarah_show)/Pelak-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pelak";
+  src: url("./assets/fonts/Pelak Font (@tarah_show)/Pelak-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pelak";
+  src: url("./assets/fonts/Pelak Font (@tarah_show)/Pelak-ExtraBold.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pelak";
+  src: url("./assets/fonts/Pelak Font (@tarah_show)/Pelak-Black.ttf")
+    format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @layer utilities {
@@ -15,87 +88,12 @@
   }
 }
 
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("/src/assets/fonts/webfonts/Vazirmatn-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("/src/assets/fonts/webfonts/Vazirmatn-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("/src/assets/fonts/webfonts/Vazirmatn-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("/src/assets/fonts/webfonts/Vazirmatn-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("/src/assets/fonts/webfonts/Vazirmatn-ExtraLight.woff2")
-    format("woff2");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("/src/assets/fonts/webfonts/Vazirmatn-Thin.woff2") format("woff2");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("/src/assets/fonts/webfonts/Vazirmatn-SemiBold.woff2")
-    format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("/src/assets/fonts/webfonts/Vazirmatn-ExtraBold.woff2")
-    format("woff2");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Vazirmatn";
-  src: url("/src/assets/fonts/webfonts/Vazirmatn-Black.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 @custom-variant dark (&:is(.dark *));
 @theme {
-  --font-vazir: "Vazirmatn", system-ui, sans-serif;
+  --font-pelak: "Pelak", system-ui, sans-serif;
 }
 body {
-  font-family: var(--font-vazir);
+  font-family: var(--font-pelak);
 }
 
 @theme inline {
@@ -103,6 +101,8 @@ body {
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -120,12 +120,9 @@ body {
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
-  --color-ring: var(--color-spidar1);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
+  --color-ring: var(--ring);
+
+  /* Sidebar */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -134,10 +131,34 @@ body {
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Custom colors */
   --color-spidar1: var(--color-spidar1);
   --color-spidar2: var(--color-spidar2);
   --color-gray-coustom: var(--color-gray-coustom);
-  --color-btn:var(--color-btn);
+  --color-btn: var(--color-btn);
+
+  /* Additional colors from root */
+  --color-background-alt: var(--color-background-alt);
+  --color-primary-text: var(--color-primary-text);
+  --color-secondary-text: var(--color-secondary-text);
+  --color-text: var(--color-text);
+  --color-description-text: var(--color-description-text);
+  --color-error: var(--color-error);
+  --color-warning: var(--color-warning);
+  --color-cart: var(--color-cart);
+  --color-success: var(--color-success);
+  --color-dark-gold: var(--color-dark-gold);
+  --color-golden-brown: var(--color-golden-brown);
+  --color-medium-gray: var(--color-medium-gray);
+  --color-dark-blue: var(--color-dark-blue);
+  --color-main: var(--color-main);
+  --color-main-alt: var(--color-main-alt);
+  --color-button: var(--color-button);
+
+  /* RGB versions */
+  --color-border-light-rgb: var(--color-border-light-rgb);
+  --color-hover-light-rgb: var(--color-hover-light-rgb);
 }
 
 :root {
@@ -190,7 +211,7 @@ body {
   --chart-5: 340 75% 55%;
   --color-spidar1: #0ac974;
   --color-spidar2: #0b2c6e;
-  --color-btn:#04864C;
+  --color-btn: #04864c;
   --color-gray-coustom: oklch(27.8% 0.033 256.848);
 
   /* New  colors - light mode */
@@ -201,63 +222,25 @@ body {
   /* RGB versions */
   --color-border-light-rgb: 209, 213, 219;
   --color-hover-light-rgb: 107, 114, 128;
-}
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: white;
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-  --chart-1: 220 70% 50%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
-  --chart-1: 220 70% 50%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
-  --color-gray-coustom: white;
-
-  /* New colors - dark mode */
-  --color-border-dark: color-mix(
-    in oklch,
-    var(--primary),
-    transparent 20%
-  ); /* primary/80 */
-  --color-hover-dark: oklch(0.15 0 0); /* dark-gray */
-
-  /* RGB versions */
-  --color-border-dark-rgb: 235, 235, 235; /* adjust based on your primary */
-  --color-hover-dark-rgb: 31, 41, 55;
+  /* Design System Colors */
+  --color-main: #0ac974;
+  --color-main-alt: #0b2c6e;
+  --color-button: #04864c;
+  --color-background: #ffffff;
+  --color-background-alt: #fafafa;
+  --color-primary-text: #000000;
+  --color-secondary-text: #737373;
+  --color-text: #818181;
+  --color-description-text: #a7a7a7;
+  --color-error: #f20b0b;
+  --color-warning: #ff8a04;
+  --color-cart: #ff8a04;
+  --color-success: #04864c;
+  --color-dark-gold: #c47f18;
+  --color-golden-brown: #aa5f33;
+  --color-medium-gray: #878787;
+  --color-dark-blue: #0338a1;
 }
 
 @layer base {

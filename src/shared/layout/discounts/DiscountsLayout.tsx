@@ -8,7 +8,7 @@ const DiscountsLayout = () => {
       <header>
         <Header />
       </header>
-      <main>
+      <main className="pb-32">
         <DiscountsLists />
       </main>
       <footer>

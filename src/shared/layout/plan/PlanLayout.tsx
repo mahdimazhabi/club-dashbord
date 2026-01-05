@@ -8,7 +8,7 @@ const PlanLayout = () => {
       <header>
         <Header />
       </header>
-      <main>
+      <main className="pb-32">
         <ListsPlans />
       </main>
       <footer>

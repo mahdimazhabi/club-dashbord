@@ -55,22 +55,22 @@ const ListsMissions = () => {
         </div>
       </div>
       <div className="">
-        <p className="text-zinc-500 text-base font-normal capitalize">
+        <p className="text-zinc-500 text-xs font-normal capitalize">
           ماموریت انجام بده،امتیاز و جایزه بگیر!
         </p>
       </div>
       <div className="embla  select-none">
         <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container gap-3">
+          <div className="embla__container gap-3 w-4xl">
             {ListsMissions.map((_, index) => (
               <div
-                className="min-w-[178px] border border-[#EDEDED] bg-[#FFF]  rounded-[10px] mt-4 "
+                className=" border border-cart bg-background  rounded-[10px] mt-4 "
                 key={index}
               >
                 <div className="flex   items-center justify-between p-2">
                   <img src={imageMissions} />
                   <div>
-                    <p className=" w-28  text-right justify-start text-neutral-500 text-xs font-semibold capitalize">
+                    <p className="   text-right justify-start text-neutral-500 text-xs font-semibold capitalize">
                       با سفارش از فروشگاه ۱۰۰ سکه دریافت کنید .
                     </p>
                     <span className=" text-right justify-start text-neutral-400 text-[10px] font-normal  capitalize">

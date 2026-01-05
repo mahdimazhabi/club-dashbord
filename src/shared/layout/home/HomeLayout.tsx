@@ -9,7 +9,7 @@ const HomeLayout = () => {
       <header>
         <Header />
       </header>
-      <main className="space-y-10">
+      <main className="space-y-10 pb-32">
         <BanerCarousel />
         <ListsMissions />
         <GameLists />

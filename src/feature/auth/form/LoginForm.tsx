@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { TypeFormInputLogin } from "../schema/schema";
 import { LoginPhoneSchema } from "../schema/schema";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -26,43 +25,81 @@ const LoginForm = () => {
     }
   };
   return (
-    <form className=" space-y-7 mt-5" onSubmit={handleSubmit(onsubmit)}>
-      <div className="space-y-2.5">
-        <h1 className=" text-center font-bold text-green-800 underline">
-          خوش آمدید
-        </h1>
-        <p className="text-center text-xs font-semibold text-[#737373]">
+    <form className="space-y-6 " onSubmit={handleSubmit(onsubmit)}>
+      <div className="space-y-2 text-center">
+        <h1 className="text-2xl font-bold  text-button">خوش آمدید!</h1>
+        <p className="text-sm font-semibold text-secondary-text">
           با شماره تلفن خود وارد شوید !
         </p>
       </div>
-      <div className="z-10 my-12  ">
+
+      {/* Input Field */}
+      <div className="space-y-2 ">
         <div className="relative">
           <input
             type="text"
-            id="floating_outlined"
-            className="peer block w-full rounded-lg border border-[#818181] bg-transparent  placeholder:text-xs pt-4  p-2 text-sm text-gray-900 placeholder:text-[#818181] 
-              appearance-none focus:border-[#818181] focus:outline-none focus:ring-0 dark:text-white"
+            id="identifier"
+            className="peer block w-full rounded-lg border border-[var(--color-text)] bg-white placeholder:text-xs pt-4 pb-2 px-3 text-sm text-[var(--color-primary-text)] placeholder:text-[var(--color-text)] appearance-none focus:border-[var(--color-text)] focus:outline-none focus:ring-0"
             placeholder=" "
             {...register("identifier")}
           />
-
           <label
-            className="absolute start-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform bg-neutral-200 px-2 text-sm text-[#818181] duration-300 
-              peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 
-              peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:bg-neutral-200 peer-focus:px-2 peer-focus:text-[#818181] 
-              rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4 dark:text-gray-400"
+            htmlFor="identifier"
+            className="absolute start-3 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform bg-white px-2 text-sm text-[var(--color-text)] duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:bg-white peer-focus:px-2 peer-focus:text-[var(--color-text)] rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
           >
-            شماره تلفن
+            ایمیل یا شماره تلفن
           </label>
         </div>
-        <div className="min-h-[20px]">
-          {errors && <ErrorMessage message={errors.identifier?.message} />}
+
+        {/* Error Message */}
+        <div className="min-h-[20px] flex items-start gap-1">
+          {errors?.identifier && (
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-error)]"></span>
+              <ErrorMessage message={errors.identifier?.message} />
+            </div>
+          )}
         </div>
-        <div className="flex justify-center mt-7">
-          <Button variant={"secondary"} className="w-full" loading={isLoading}>
-            ورود به حساب کاربری
-          </Button>
-        </div>
+      </div>
+
+      {/* Submit Button */}
+      <div className="pt-4">
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="w-full rounded-lg py-3 px-4 text-white font-medium text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
+          style={{
+            background:
+              "linear-gradient(to right, var(--color-main-alt), var(--color-main))",
+          }}
+        >
+          {isLoading ? (
+            <div className="flex items-center justify-center">
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+            </div>
+          ) : (
+            "ورود به حساب کاربری"
+          )}
+        </button>
       </div>
     </form>
   );

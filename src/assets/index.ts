@@ -37,3 +37,8 @@ export { default as VectorIcon } from "@/assets/svg/icons_Vector_273.svg?react";
 export { default as CoinIcon2 } from "@/assets/svg/coin.svg?react";
 export { default as MedalIcon } from "@/assets/svg/medal.svg?react";
 export { default as XpIcon } from "@/assets/svg/xp.svg?react";
+export { default as Profile2Icon } from "@/assets/svg/Profile.svg?react";
+export { default as SuggestionsIcon } from "@/assets/svg/Suggestions.svg?react";
+export { default as ClubIcon } from "@/assets/svg/club.svg?react";
+export { default as StoreIcon } from "@/assets/svg/store.svg?react";
+export { default as CouponIcon } from "@/assets/svg/Coupon.svg?react";

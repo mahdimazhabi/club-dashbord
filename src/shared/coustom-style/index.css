@@ -3,7 +3,7 @@
   initial-value: 0deg;
   syntax: "<angle>";
 }
-.border {
+.animate-border {
   animation: border 4s linear infinite;
 }
 
