@@ -27,6 +27,7 @@ const LoginForm = () => {
       <div className="space-y-2 mt-10">
         <Input
           id="identifier"
+          inputMode="numeric"
           label="شماره تلفن"
           {...register("identifier")}
           error={errors.identifier}

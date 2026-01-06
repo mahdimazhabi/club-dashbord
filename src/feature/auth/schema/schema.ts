@@ -17,6 +17,18 @@ export const PasswordSchema = yup.object().shape({
   authFlowToken: yup.string(),
 });
 
+export const RegisterSchema = yup.object().shape({
+  identifier: yup
+    .string()
+    .required("شماره تلفن الزامی است")
+    .matches(/^09\d{9}$/, "شماره تلفن نامعتبر است"),
+  first_name: yup.string().required("نام الزامی است"),
+  authFlowToken: yup.string(),
+  last_name: yup.string(),
+  gender: yup.string().oneOf(["male", "female"]),
+});
+
 export type TypeFormInputLogin = yup.InferType<typeof LoginPhoneSchema>;
 export type TypeFormInputOtp = yup.InferType<typeof OtpSchema>;
 export type TypeFormInputPassword = yup.InferType<typeof PasswordSchema>;
+export type TypeFormInputRegister = yup.InferType<typeof RegisterSchema>;

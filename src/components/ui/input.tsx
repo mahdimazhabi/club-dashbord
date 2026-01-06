@@ -27,21 +27,21 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             placeholder=" "
             aria-invalid={!!error}
             className={cn(
-              "peer block w-full rounded-lg border border-text bg-white placeholder:text-text pt-4 pb-2 px-3 text-sm text-[var(--color-primary-text)] appearance-none focus:border-[var(--color-text)] focus:outline-none focus:ring-0",
+              "peer block w-full rounded-lg border border-text text-text  bg-white placeholder:text-text pt-4 pb-2 px-3 text-sm  appearance-none focus:border-text focus:outline-none focus:ring-0",
               icon ? "pl-10" : "",
               className
             )}
             {...props}
           />
 
-          {/* label شناور */}
           {label && (
             <label
               htmlFor={props.id}
               className={cn(
-                "absolute right-3 top-2 z-10 transform -translate-y-4 scale-75 origin-top-left bg-white px-2 text-sm font-medium text-[var(--color-text)] duration-300",
+                "absolute right-2 top-2 z-10 origin-top-right bg-white px-2 text-sm font-medium text-text duration-300",
                 "peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100",
-                "peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:bg-white peer-focus:px-2 peer-focus:text-[var(--color-text)] peer-focus:translate-x-0"
+                "peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75",
+                "peer-not-placeholder-shown:top-2 peer-not-placeholder-shown:-translate-y-4 peer-not-placeholder-shown:scale-75"
               )}
             >
               {label}

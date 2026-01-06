@@ -2,9 +2,11 @@ import { useMutation } from "@tanstack/react-query";
 import api from "@/config/htpp/axios";
 import { TypeFormInputLogin } from "../schema/schema";
 import { useNavigate } from "react-router-dom";
+import { useRegisterStore } from "../store/RegisterStore";
 
 export const useAuth = () => {
   const navigate = useNavigate();
+  const { setRegisterData } = useRegisterStore();
 
   // ===== Request OTP =====
   const requestOtpMutation = useMutation({
@@ -60,12 +62,11 @@ export const useAuth = () => {
         requestOtpMutation.mutate(formData);
       }
       if (status === 404) {
-        navigate("/auth/register", {
-          state: {
-            identifier: variables,
-            authFlowToken: error.response.data.authFlowToken,
-          },
+        setRegisterData({
+          identifier: variables.identifier,
+          authFlowToken: error.response.data.authFlowToken,
         });
+        navigate("/auth/register");
       }
     },
   });
@@ -95,6 +96,20 @@ export const useAuth = () => {
     },
   });
 
+  const { mutate: Register, isPending: RegisterPending } = useMutation({
+    mutationKey: ["register"],
+    mutationFn: async (data: FormData) => {
+      const response = await api.post("/auth/register", data, {
+        headers: { "Content-Type": "application/json" },
+      });
+      return response.data;
+    },
+    onSuccess: (response) => {
+      localStorage.setItem("token", response.data.token);
+      navigate("/", { replace: true });
+    },
+  });
+
   return {
     login: loginMutation.mutate,
     loginLoading: loginMutation.isPending,
@@ -104,5 +119,7 @@ export const useAuth = () => {
     requestOtpLoading: requestOtpMutation.isPending,
     password,
     PasswordPending,
+    Register,
+    RegisterPending,
   };
 };

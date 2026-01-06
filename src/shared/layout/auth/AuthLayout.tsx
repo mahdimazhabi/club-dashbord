@@ -6,7 +6,7 @@ import Logo2 from "@/assets/img/logo-wide-sepidar-Holding 3.png";
 
 const AuthLayout = () => {
   return (
-    <section className="relative h-dvh flex flex-col pt-20 ">
+    <section className="relative h-dvh flex flex-col pt-10 ">
       <div className="fixed top-0 left-0 w-full h-screen overflow-hidden -z-10">
         <img
           src={BackImg}
@@ -17,8 +17,8 @@ const AuthLayout = () => {
 
       <main className="  relative  border-t-2 border-main  mt-auto h-[90vh] justify-center px-4 py-8 bg-background z-10 rounded-t-4xl ">
         <div className="flex flex-col justify-center ">
-          <img src={Logo1} alt="Logo 1" className="w-14 h-14 mx-auto" />
-          <img src={Logo2} alt="Logo 2" className="w-36 h-14 mx-auto" />
+          <img src={Logo1} alt="Logo 1" className=" mx-auto " />
+          <img src={Logo2} alt="Logo 2" className=" mx-auto " />
         </div>
         <div className="w-full max-w-md mt-11 ">
           <div
