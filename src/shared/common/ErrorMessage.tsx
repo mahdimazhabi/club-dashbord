@@ -8,15 +8,12 @@ const ErrorMessage = ({ message, className }: ErrorMessageProps) => {
   if (!message) return null;
 
   return (
-    <span
-      className={cn(
-        "text-[10px] font-bold",
-        className
-      )}
-      style={{ color: "var(--color-error)" }}
-    >
-      {message}
-    </span>
+    <div className="flex items-center gap-2">
+      <div className="size-1.5 bg-error rounded-full"></div>
+      <span className={cn("text-xs font-semibold text-error", className)}>
+        {message}
+      </span>
+    </div>
   );
 };
 

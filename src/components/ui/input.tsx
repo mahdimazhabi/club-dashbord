@@ -2,7 +2,6 @@ import * as React from "react";
 import { FieldError } from "react-hook-form";
 import { cn } from "@/lib/utils";
 import ErrorMessage from "@/shared/common/ErrorMessage";
-import { Label } from "@/components/ui/label";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -12,43 +11,49 @@ export interface InputProps
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, error, label, value, onChange, icon, ...props }, ref) => {
+  ({ className, type = "text", error, label, icon, ...props }, ref) => {
     return (
-      <div className="">
-        <div className="relative  z-10">
+      <div className="w-full">
+        <div className="relative w-full">
           {icon && (
             <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none">
               {icon}
             </div>
           )}
+
           <input
             ref={ref}
             type={type}
-            data-slot="input"
+            placeholder=" "
             aria-invalid={!!error}
             className={cn(
-              " peer file:text-foreground placeholder:text-muted-foreground placeholder:text-xs selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-sidebar-accent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-              "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
-              "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+              "peer block w-full rounded-lg border border-text bg-white placeholder:text-text pt-4 pb-2 px-3 text-sm text-[var(--color-primary-text)] appearance-none focus:border-[var(--color-text)] focus:outline-none focus:ring-0",
               icon ? "pl-10" : "",
               className
             )}
-            value={value}
-            onChange={onChange}
             {...props}
           />
+
+          {/* label شناور */}
           {label && (
-            <Label
+            <label
               htmlFor={props.id}
-              className="mb-2 block text-sm font-medium text-spidar1  absolute  duration-300 transform -translate-6  scale-75 top-3 -z-10 order-[0] peer-focus:start-0 peer-focus:text-spidar2  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-6  "
+              className={cn(
+                "absolute right-3 top-2 z-10 transform -translate-y-4 scale-75 origin-top-left bg-white px-2 text-sm font-medium text-[var(--color-text)] duration-300",
+                "peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-x-0",
+                "peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:translate-x-2 peer-focus:bg-white peer-focus:px-2 peer-focus:text-[var(--color-text)]"
+              )}
             >
               {label}
-            </Label>
+            </label>
           )}
         </div>
-        <div className=" mt-1">
-          {error && <ErrorMessage message={error.message} />}
-        </div>
+
+        {error && (
+          <div className="mt-3">
+            <ErrorMessage message={error.message} />
+          </div>
+        )}
       </div>
     );
   }

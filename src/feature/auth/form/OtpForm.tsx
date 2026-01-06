@@ -73,7 +73,12 @@ const OtpForm = () => {
       </div>
 
       <div className="flex justify-center my-4">
-        <Button variant={"secondary"} className="w-full" loading={isLoading}>
+        <Button
+          variant={"gradient"}
+          type="submit"
+          className="w-full"
+          loading={isLoading}
+        >
           تایید کد
         </Button>
       </div>

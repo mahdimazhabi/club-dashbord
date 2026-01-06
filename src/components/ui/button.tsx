@@ -16,6 +16,11 @@ const buttonVariants = cva(
         outline:
           "border bg-sidebar  shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         secondary: "bg-btn h-9 hover:bg-btn/80 text-white shadow-xs  ",
+        gradient:
+          "w-full h-auto rounded-lg py-3 px-4 h-12 text-white font-medium text-sm transition-all relative overflow-hidden \
+  disabled:opacity-50 disabled:cursor-not-allowed \
+  bg-[linear-gradient(to_right,var(--color-main-alt),var(--color-main))] hover:opacity-90",
+
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
@@ -65,13 +70,18 @@ const Button = React.forwardRef<
       <Comp
         ref={ref}
         data-slot="button"
-        className={cn(buttonVariants({ variant, size }), className)}
-        disabled={loading || disabled}
+        aria-busy={loading}
+        className={cn(
+          buttonVariants({ variant, size }),
+          loading && "pointer-events-none",
+          className
+        )}
+        disabled={disabled}
         {...props}
       >
         {loading ? (
           <div className="flex items-center justify-center w-full">
-            <Loader2 className="animate-spin size-4" />
+            <Loader2 className="animate-spin size-4 text-white" />
           </div>
         ) : (
           <>

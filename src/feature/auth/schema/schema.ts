@@ -3,8 +3,8 @@ import * as yup from "yup";
 export const LoginPhoneSchema = yup.object({
   identifier: yup
     .string()
-    .matches(/^09\d{9}$/, "شماره تلفن نامعتبر است")
-    .required("شماره تلفن الزامی است"),
+    .required("شماره تلفن الزامی است")
+    .matches(/^09\d{9}$/, "شماره تلفن نامعتبر است"),
 });
 
 export const OtpSchema = yup.object().shape({

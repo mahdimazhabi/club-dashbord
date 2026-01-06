@@ -2,47 +2,53 @@
 import api from "@/config/htpp/axios";
 import { TypeFormInputLogin } from "../schema/schema";
 import { useNavigate } from "react-router-dom";
+import { fetcher } from "@/action/fetcher";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
 
 export const useAuth = () => {
   const navigate = useNavigate();
-
   // ===== Login Function =====
-  const login = async (data: TypeFormInputLogin) => {
-    try {
-      await api.post(`/auth`, data, {
-        headers: { "Content-Type": "application/json" },
+  const { mutateAsync: login, isPending: LoginPending } = useMutation<
+    any, // نوع پاسخ
+    any, // نوع خطا
+    TypeFormInputLogin // type داده
+  >({
+    mutationKey: ["login"],
+    mutationFn: async (data: TypeFormInputLogin) => {
+      return await fetcher({
+        endpoint: `/auth`,
+        method: "post",
+        body: data,
       });
-    } catch (error: any) {
-      handleLoginError(error, data);
-    }
-  };
+    },
+    onSuccess: () => {
+      toast.success("ورود با موفقیت انجام شد");
+    },
+    onError: async (error: any, variables: TypeFormInputLogin) => {
+      const status = error?.response?.status;
+      if (status === 406) {
+        const authFlowToken = error.response.data.authFlowToken;
 
-  // ===== Handle Login Error =====
-  const handleLoginError = async (error: any, data: TypeFormInputLogin) => {
-    const status = error?.response?.status;
-    if (status === 406) {
-      const authFlowToken = error.response.data.authFlowToken;
-      const formData = new FormData();
-      formData.append("identifier", data.identifier);
-      formData.append("authFlowToken", authFlowToken);
-      formData.append("usedIn", "loginRegister");
+        const formData = new FormData();
+        formData.append("identifier", variables.identifier);
+        formData.append("authFlowToken", authFlowToken);
+        formData.append("usedIn", "loginRegister");
 
-      await requestOtp(formData);
+        await requestOtp(formData);
 
-      navigate("/auth/otp", {
-        replace: true,
-        state: {
-          identifier: data.identifier,
-          usedIn: "loginRegister",
-          authFlowToken,
-        },
-      });
-    } else {
-      console.error("Login failed:", error);
-    }
-  };
+        navigate("/auth/otp", {
+          replace: true,
+          state: {
+            identifier: variables.identifier,
+            usedIn: "loginRegister",
+            authFlowToken,
+          },
+        });
+      }
+    },
+  });
 
-  // ===== Request OTP =====
   const requestOtp = async (data: FormData) => {
     try {
       const response = await api.post(`/auth/request-token`, data);
@@ -66,5 +72,5 @@ export const useAuth = () => {
     }
   };
 
-  return { login, verifyToken };
+  return { login, verifyToken, LoginPending };
 };

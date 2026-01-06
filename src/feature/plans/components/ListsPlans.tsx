@@ -29,7 +29,7 @@ const ListsPlans = () => {
           <VectorIcon className="text-[#C47F18]" width={45} height={134} />
         </div>
         <div className="bg-[#FFF] rounded-r-lg">
-          <div className="p-2 relative z-20">
+          <div className="p-2 relative z-20 border-red-600 border rounded-lg">
             <div className="flex items-center gap-2">
               <div>
                 <img
