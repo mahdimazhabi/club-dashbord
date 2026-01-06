@@ -1,50 +1,59 @@
 import api from "@/config/htpp/axios";
+
 export type FetcherResponse<T> = {
   data: T;
   status: number;
 };
 
-export interface FetcherParams {
+export interface FetcherParams<BodyType = any, QueryType = any> {
   endpoint: string;
   method: "get" | "post" | "put" | "patch" | "delete";
   contentType?: "json" | "formdata";
-  body?: Record<string, any>;
-  query?: Record<string, any>;
-  path?: string;
+  body?: BodyType;
+  query?: QueryType;
+  path?: string | number;
   token?: string;
 }
 
-export async function fetcher<T>(
-  params: FetcherParams
-): Promise<FetcherResponse<T>> {
+/**
+ * یک fetcher عمومی و قابل استفاده در همه جای پروژه
+ */
+export async function fetcher<
+  T = any,
+  BodyType = any,
+  QueryType = Record<string, any>
+>(params: FetcherParams<BodyType, QueryType>): Promise<FetcherResponse<T>> {
   try {
     let url = params.endpoint;
-    if (params.path) url += `/${params.path}`;
 
-    // Query Params
+    // اضافه کردن path
+    if (params.path !== undefined) url += `/${params.path}`;
+
+    // اضافه کردن query params
     if (params.query) {
-      url += `?${new URLSearchParams(
+      const queryString = new URLSearchParams(
         Object.entries(params.query).reduce((acc, [k, v]) => {
           if (v !== undefined && v !== null) acc[k] = String(v);
           return acc;
         }, {} as Record<string, string>)
-      )}`;
+      ).toString();
+      url += queryString ? `?${queryString}` : "";
     }
 
-    // Body
+    // ساخت body
     let dataToSend: any = params.body;
-    if (params.contentType === "formdata") {
+    if (params.contentType === "formdata" && params.body) {
       const formData = new FormData();
-      Object.entries(params.body || {}).forEach(([key, value]) => {
-        if (value !== undefined && value !== null)
+      Object.entries(params.body).forEach(([key, value]) => {
+        if (value !== undefined && value !== null) {
           formData.append(key, value instanceof Blob ? value : String(value));
+        }
       });
       dataToSend = formData;
     }
 
-    // توکن
+    // headers
     const token = params.token ?? localStorage.getItem("token");
-
     const headers: Record<string, string> = {};
     if (params.contentType === "json")
       headers["Content-Type"] = "application/json";
@@ -58,13 +67,13 @@ export async function fetcher<T>(
     });
 
     return { data: res.data, status: res.status };
-  } catch (error: any) {
+  } catch (err: any) {
+    const status = err?.response?.status ?? 500;
+    const data = err?.response?.data ?? { message: "یک خطای ناشناخته رخ داد." };
+
     return {
-      data: {
-        message: "یک خطای ناشناخته رخ داد.",
-        error: error?.response?.data,
-      } as unknown as T,
-      status: error?.response?.status ?? 500,
+      status,
+      data,
     };
   }
 }

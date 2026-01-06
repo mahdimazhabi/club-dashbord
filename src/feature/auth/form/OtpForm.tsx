@@ -10,11 +10,10 @@ import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useLocation } from "react-router-dom";
 import { useAuth } from "../api/useAuth";
-import { useState } from "react";
 const OtpForm = () => {
-  const { verifyToken } = useAuth();
+  const { verifyToken, verifyLoading } = useAuth();
   const location = useLocation();
-  const [isLoading, setLoading] = useState(false);
+
   const DataLocation = location.state;
   const authflow = localStorage.getItem("authFlowToken");
 
@@ -22,20 +21,14 @@ const OtpForm = () => {
     resolver: yupResolver(OtpSchema),
   });
 
-  const onsubmit: SubmitHandler<TypeFormInputOtp> = async (form_data) => {
+  const onsubmit: SubmitHandler<TypeFormInputOtp> = (form_data) => {
     const formData = new FormData();
     formData.append("identifier", DataLocation.identifier);
     formData.append("authFlowToken", authflow ?? "");
     formData.append("usedIn ", "loginRegister");
     formData.append("tokenCode", form_data.tokenCode);
-    try {
-      setLoading(true);
-      await verifyToken(formData);
-    } catch {
-      setLoading(false);
-    } finally {
-      setLoading(false);
-    }
+
+    verifyToken(formData);
   };
   return (
     <form className=" space-y-7 my-5 " onSubmit={handleSubmit(onsubmit)}>
@@ -53,7 +46,7 @@ const OtpForm = () => {
           control={control}
           render={({ field }) => (
             <InputOTP
-              maxLength={6}
+              maxLength={4}
               pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
               {...field}
             >
@@ -77,7 +70,8 @@ const OtpForm = () => {
           variant={"gradient"}
           type="submit"
           className="w-full"
-          loading={isLoading}
+          loading={verifyLoading}
+          disabled={verifyLoading}
         >
           تایید کد
         </Button>

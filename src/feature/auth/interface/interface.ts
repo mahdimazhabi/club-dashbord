@@ -3,4 +3,5 @@ export interface LoginResponse {
   identifierType: string;
   message: string;
   usedIn: string;
+  nextStep: "passwordField" | "";
 }

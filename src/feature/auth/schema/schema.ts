@@ -8,8 +8,15 @@ export const LoginPhoneSchema = yup.object({
 });
 
 export const OtpSchema = yup.object().shape({
-  tokenCode: yup.string().typeError("").required(),
+  tokenCode: yup.string().required(),
+});
+
+export const PasswordSchema = yup.object().shape({
+  identifier: yup.string(),
+  password: yup.string().required("پسورد الزامی است"),
+  authFlowToken: yup.string(),
 });
 
 export type TypeFormInputLogin = yup.InferType<typeof LoginPhoneSchema>;
 export type TypeFormInputOtp = yup.InferType<typeof OtpSchema>;
+export type TypeFormInputPassword = yup.InferType<typeof PasswordSchema>;

@@ -6,15 +6,15 @@ import { useAuth } from "../api/useAuth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 const LoginForm = () => {
-  const { login, LoginPending } = useAuth();
+  const { login, loginLoading } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<TypeFormInputLogin>({ resolver: yupResolver(LoginPhoneSchema) });
 
-  const onsubmit: SubmitHandler<TypeFormInputLogin> = async (data) => {
-    await login(data);
+  const onsubmit: SubmitHandler<TypeFormInputLogin> = (data) => {
+    login(data);
   };
   return (
     <form className="space-y-6" onSubmit={handleSubmit(onsubmit)}>
@@ -37,7 +37,8 @@ const LoginForm = () => {
           type="submit"
           className="w-full"
           variant="gradient"
-          disabled={LoginPending}
+          loading={loginLoading}
+          disabled={loginLoading}
         >
           ورود به حساب کاربری
         </Button>

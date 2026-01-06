@@ -11,6 +11,8 @@ import OtpForm from "@/feature/auth/form/OtpForm";
 import LoginForm from "@/feature/auth/form/LoginForm";
 import ProtectedRoute from "@/shared/common/ProtectedRoute";
 import GamificationWheel from "@/feature/gamification/GamificationWhell";
+import PasswordForm from "@/feature/auth/form/PasswordForm";
+import RegisterForm from "@/feature/auth/form/RegisterForm";
 
 export const AllRouters: RouteObject[] = [
   {
@@ -88,6 +90,14 @@ export const AllRouters: RouteObject[] = [
       {
         path: "otp",
         element: <OtpForm />,
+      },
+      {
+        path: "password",
+        element: <PasswordForm />,
+      },
+      {
+        path: "register",
+        element: <RegisterForm />,
       },
     ],
   },

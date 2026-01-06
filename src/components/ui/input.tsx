@@ -40,8 +40,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               htmlFor={props.id}
               className={cn(
                 "absolute right-3 top-2 z-10 transform -translate-y-4 scale-75 origin-top-left bg-white px-2 text-sm font-medium text-[var(--color-text)] duration-300",
-                "peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-x-0",
-                "peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:translate-x-2 peer-focus:bg-white peer-focus:px-2 peer-focus:text-[var(--color-text)]"
+                "peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100",
+                "peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:bg-white peer-focus:px-2 peer-focus:text-[var(--color-text)] peer-focus:translate-x-0"
               )}
             >
               {label}
