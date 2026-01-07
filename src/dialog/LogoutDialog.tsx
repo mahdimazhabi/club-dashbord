@@ -5,7 +5,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { InfoEmptyIcons } from "@/assets";
-import { useLogout } from "../api/useLogout";
+import { useLogout } from "../services/useLogout";
 import { useState } from "react";
 interface LogoutDialogProps {
   setOpen: (value: boolean) => void;

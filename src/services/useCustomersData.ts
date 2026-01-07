@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { CustomerResponse } from "../interface/interface";
+import { CustomerResponse } from "../shared/interface/interface";
 import { fetcher } from "@/action/fetcher";
 export const useCustomersData = () => {
   const { data: DataCustomers, isLoading: LoadingCustomers } = useQuery({

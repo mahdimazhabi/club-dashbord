@@ -3,10 +3,13 @@ import api from "@/config/htpp/axios";
 import { TypeFormInputLogin } from "../schema/schema";
 import { useNavigate } from "react-router-dom";
 import { useRegisterStore } from "../store/RegisterStore";
+import { useLoginStore } from "../store/LoginStore";
+import { toFormData } from "@/lib/toFormData";
 
 export const useAuth = () => {
   const navigate = useNavigate();
   const { setRegisterData } = useRegisterStore();
+  const { identifier } = useLoginStore();
 
   // ===== Request OTP =====
   const requestOtpMutation = useMutation({
@@ -16,6 +19,7 @@ export const useAuth = () => {
     },
     onSuccess: (data, variables) => {
       localStorage.setItem("authFlowToken", data.authFlowToken);
+
       navigate("/auth/otp", {
         replace: true,
         state: {
@@ -30,43 +34,36 @@ export const useAuth = () => {
   // ===== Login =====
   const loginMutation = useMutation({
     mutationFn: async (data: TypeFormInputLogin) => {
-      return await api.post("/auth", data, {
-        headers: { "Content-Type": "application/json" },
-      });
+      const formData = toFormData(data);
+      return await api.post("/auth", formData);
     },
     onSuccess: (data, variables) => {
       if (data.data.identifierType === "email") {
-        navigate("/auth/password", {
-          state: { data: data.data },
-        });
+        navigate("/auth/password", { state: { data: data.data } });
       } else if (data.data.identifierType === "phone") {
         const authFlowToken = data.data.authFlowToken;
 
-        const formData = new FormData();
-        formData.append("identifier", variables.identifier);
-        formData.append("authFlowToken", authFlowToken);
-        formData.append("usedIn", "loginRegister");
+        const formData = toFormData({
+          identifier: variables.identifier,
+          authFlowToken,
+          usedIn: "loginRegister",
+        });
 
         requestOtpMutation.mutate(formData);
       }
     },
     onError: (error: any, variables) => {
       const status = error?.response?.status;
-      if (status === 406) {
+      if (status === 406 || status === 404) {
         const authFlowToken = error.response.data.authFlowToken;
-        const formData = new FormData();
-        formData.append("identifier", variables.identifier);
-        formData.append("authFlowToken", authFlowToken);
-        formData.append("usedIn", "loginRegister");
+
+        const formData = toFormData({
+          identifier: variables.identifier,
+          authFlowToken,
+          usedIn: "loginRegister",
+        });
 
         requestOtpMutation.mutate(formData);
-      }
-      if (status === 404) {
-        setRegisterData({
-          identifier: variables.identifier,
-          authFlowToken: error.response.data.authFlowToken,
-        });
-        navigate("/auth/register");
       }
     },
   });
@@ -77,36 +74,45 @@ export const useAuth = () => {
       return await api.post("/auth/verify-token", formData);
     },
     onSuccess: (response) => {
-      if (response.status === 200) {
+      if (
+        response.status === 200 &&
+        response.data.nextStep !== "register_form"
+      ) {
         localStorage.removeItem("otp-expiry");
         localStorage.setItem("token", response.data.token);
         navigate("/", { replace: true });
+      } else if (response.data.nextStep === "register_form") {
+        setRegisterData({
+          identifier: identifier,
+          authFlowToken: response.data.registerOtp,
+        });
+        navigate("/auth/register");
       }
     },
   });
 
-  // ===== password =====
+  // ===== Password =====
   const { mutate: password, isPending: PasswordPending } = useMutation({
     mutationKey: ["password"],
     mutationFn: async (data: FormData) => {
-      const response = await api.post("/auth/verify-password", data, {
-        headers: { "Content-Type": "application/json" },
-      });
+      const formData = toFormData(data);
+      const response = await api.post("/auth/verify-password", formData);
       return response.data;
     },
   });
 
+  // ===== Register =====
   const { mutate: Register, isPending: RegisterPending } = useMutation({
     mutationKey: ["register"],
     mutationFn: async (data: FormData) => {
-      const response = await api.post("/auth/register", data, {
-        headers: { "Content-Type": "application/json" },
-      });
-      return response.data;
+      const formData = toFormData(data);
+      return await api.post("/auth/register", formData);
     },
     onSuccess: (response) => {
-      localStorage.setItem("token", response.data.token);
-      navigate("/", { replace: true });
+      if (response.status === 200) {
+        localStorage.setItem("token", response.data.token);
+        navigate("/", { replace: true });
+      }
     },
   });
 

@@ -10,9 +10,9 @@ import {
 } from "@/assets";
 import { useState } from "react";
 import { Dialog } from "@/components/ui/dialog";
-import LogoutDialog from "@/shared/dialog/LogoutDialog";
-import IdentificationCodeDialog from "@/shared/dialog/IdentificationCodeDialog";
-import OrderTrackingDialog from "@/shared/dialog/OrderTrackingDialog";
+import LogoutDialog from "@/dialog/LogoutDialog";
+import IdentificationCodeDialog from "@/dialog/IdentificationCodeDialog";
+import OrderTrackingDialog from "@/dialog/OrderTrackingDialog";
 import { useNavigate } from "react-router-dom";
 
 const Menu = () => {

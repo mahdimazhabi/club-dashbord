@@ -1,5 +1,5 @@
 import Profile from "@/assets/img/profile.png";
-import { useCustomersData } from "@/shared/api/useCustomersData";
+import { useCustomersData } from "@/services/useCustomersData";
 import { Skeleton } from "./ui/skeleton";
 import { ApiConfig } from "@/config/ApiConfig";
 import { cn } from "@/lib/utils";
@@ -56,8 +56,8 @@ const ProfileProgress = ({ className }: ProfileProgressProps) => {
         ) : (
           <img
             src={
-              DataCustomers?.profile?.avatar
-                ? `${File_url}/${DataCustomers.profile.avatar}`
+              DataCustomers?.data.profile?.avatar
+                ? `${File_url}/${DataCustomers.data.profile.avatar}`
                 : Profile
             }
             alt="Profile"

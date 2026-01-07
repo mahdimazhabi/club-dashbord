@@ -42,3 +42,4 @@ export { default as SuggestionsIcon } from "@/assets/svg/Suggestions.svg?react";
 export { default as ClubIcon } from "@/assets/svg/club.svg?react";
 export { default as StoreIcon } from "@/assets/svg/store.svg?react";
 export { default as CouponIcon } from "@/assets/svg/Coupon.svg?react";
+export { default as CloseIcon } from "@/assets/svg/close-circle.svg?react";
