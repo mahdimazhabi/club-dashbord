@@ -41,16 +41,7 @@ export async function fetcher<
     }
 
     // ساخت body
-    let dataToSend: any = params.body;
-    if (params.contentType === "formdata" && params.body) {
-      const formData = new FormData();
-      Object.entries(params.body).forEach(([key, value]) => {
-        if (value !== undefined && value !== null) {
-          formData.append(key, value instanceof Blob ? value : String(value));
-        }
-      });
-      dataToSend = formData;
-    }
+    const dataToSend: BodyType | undefined = params.body;
 
     // headers
     const token = params.token ?? localStorage.getItem("token");

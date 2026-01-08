@@ -11,5 +11,6 @@ export const useCustomersData = () => {
         contentType: "json",
       }),
   });
+
   return { DataCustomers, LoadingCustomers };
 };

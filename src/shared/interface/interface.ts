@@ -274,3 +274,16 @@ export interface ProductOption {
   name: string;
   value: string;
 }
+
+//
+
+export type Attachments = AttachmentsData[];
+
+export interface AttachmentsData {
+  id: number;
+  url: string;
+  created_at: string;
+  updated_at: string;
+  thumbnail: string;
+  original: string;
+}

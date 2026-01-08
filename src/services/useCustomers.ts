@@ -1,17 +1,13 @@
 import { fetcher } from "@/action/fetcher";
+import { useInvalidateQuery } from "@/config/htpp/useInvalidateQuerie";
 import { useMutation } from "@tanstack/react-query";
-import { TypeEditDataUserForm } from "@/schema/EditDataUserSchema";
 const useCustomers = () => {
+  const { invalidate } = useInvalidateQuery();
+
   // edit data customers
   const { mutate: edit, isPending: EditPending } = useMutation({
     mutationKey: ["edit-customers"],
-    mutationFn: async ({
-      data,
-      id,
-    }: {
-      data: TypeEditDataUserForm;
-      id: number;
-    }) => {
+    mutationFn: async ({ data, id }: { data: FormData; id: number }) => {
       const response = await fetcher({
         method: "post",
         contentType: "formdata",
@@ -21,6 +17,9 @@ const useCustomers = () => {
       if (response) {
         return response.data;
       }
+    },
+    onSuccess: () => {
+      invalidate("CustomersData");
     },
   });
   return { edit, EditPending };

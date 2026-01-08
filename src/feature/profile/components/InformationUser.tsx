@@ -1,6 +1,5 @@
 import ProfileProgress from "@/components/ProfileProgress";
 import { EditPenIcon } from "@/assets";
-
 import { useCustomersData } from "@/services/useCustomersData";
 import { Skeleton } from "@/components/ui/skeleton";
 import { XpIcon, MedalIcon, CoinIcon2 } from "@/assets";
@@ -13,6 +12,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import EditDataUserForm from "@/dialog/EditDataUserForm";
+
 const InformationUser = () => {
   const { DataCustomers, LoadingCustomers } = useCustomersData();
   const [isOpenEdit, setOpenEdit] = useState(false);
@@ -49,7 +49,7 @@ const InformationUser = () => {
             <DialogHeader>
               <DialogTitle>ویرایش اطلاعات شخصی</DialogTitle>
             </DialogHeader>
-            <EditDataUserForm />
+            <EditDataUserForm setOpen={setOpenEdit} />
           </DialogContent>
         </Dialog>
         <Button

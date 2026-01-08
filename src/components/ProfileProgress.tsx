@@ -61,7 +61,7 @@ const ProfileProgress = ({ className }: ProfileProgressProps) => {
                 : Profile
             }
             alt="Profile"
-            className={cn("rounded-full w-16 h-16", className)}
+            className={cn("rounded-full w-14 h-14", className)}
           />
         )}
       </div>
