@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { useRegisterStore } from "../store/RegisterStore";
 import { useLoginStore } from "../store/LoginStore";
 import { toFormData } from "@/lib/toFormData";
+import { ApiConfig } from "@/config/ApiConfig";
 
 export const useAuth = () => {
   const navigate = useNavigate();
   const { setRegisterData } = useRegisterStore();
   const { identifier } = useLoginStore();
+  const { headersFormData } = ApiConfig();
 
   // ===== Request OTP =====
   const requestOtpMutation = useMutation({
@@ -95,8 +97,7 @@ export const useAuth = () => {
   const { mutate: password, isPending: PasswordPending } = useMutation({
     mutationKey: ["password"],
     mutationFn: async (data: FormData) => {
-      const formData = toFormData(data);
-      const response = await api.post("/auth/verify-password", formData);
+      const response = await api.post("/auth/verify-password", data);
       return response.data;
     },
   });
@@ -105,8 +106,9 @@ export const useAuth = () => {
   const { mutate: Register, isPending: RegisterPending } = useMutation({
     mutationKey: ["register"],
     mutationFn: async (data: FormData) => {
-      const formData = toFormData(data);
-      return await api.post("/auth/register", formData);
+      return await api.post("/auth/register", data, {
+        headers: headersFormData,
+      });
     },
     onSuccess: (response) => {
       if (response.status === 200) {

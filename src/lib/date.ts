@@ -1,7 +1,10 @@
-import { format, isToday, isYesterday } from "date-fns-jalali";
+import { format, isToday, isValid, isYesterday } from "date-fns-jalali";
 
-export function persianDate(date: string | Date) {
-  return format(new Date(date), "yyyy/MM/dd");
+export function persianDate(date?: string | Date | null) {
+  if (!date) return "";
+  const parsedDate = new Date(date);
+  if (!isValid(parsedDate)) return "";
+  return format(parsedDate, "yyyy/MM/dd");
 }
 
 export function formatDateWithTime(date: string | Date) {
@@ -35,4 +38,11 @@ export function timeDate(date: string | Date) {
 
 export function getPersianWeekday(date: string | Date): string {
   return format(new Date(date), "EEEE");
+}
+
+export function fullPersianDate(date?: string | Date | null) {
+  if (!date) return "تاریخ نامشخص";
+  const d = new Date(date);
+  if (isNaN(d.getTime())) return "تاریخ نامعتبر";
+  return format(d, "EEEE d MMMM yyyy");
 }

@@ -45,7 +45,7 @@ const LogoutDialog = ({ setOpen }: LogoutDialogProps) => {
               تایید
             </Button>
             <Button
-              className="w-32 h-12 bg-white text-emerald-700 border border-emerald-700 rounded-xl hover:bg-emerald-50"
+              className="w-32 h-12 bg-white text-emerald-700 border border-emerald-700  hover:bg-emerald-50"
               onClick={() => setOpen(false)}
             >
               انصراف

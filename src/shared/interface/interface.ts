@@ -58,8 +58,14 @@ export interface Wallet {
   blocked: number;
   blocked_reason: string | null;
   balances: Balance[];
+  all_balances: BalanceItem[];
 }
-
+export interface BalanceItem {
+  available: number;
+  locked: number;
+  currency: "credit" | "coin" | "point" | "chance";
+  currency_label: string;
+}
 export interface Balance {
   id: number;
   wallet_id: number;

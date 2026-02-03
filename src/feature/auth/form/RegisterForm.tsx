@@ -22,7 +22,6 @@ const RegisterForm = () => {
   const { identifier, authFlowToken } = useRegisterStore((state) => state);
   const { Register, RegisterPending } = useAuth();
   useEffect(() => {
-    console.log({ identifier, authFlowToken });
     if (identifier) {
       setValue("identifier", identifier);
     }
@@ -31,19 +30,20 @@ const RegisterForm = () => {
     }
   }, [identifier, authFlowToken, setValue]);
 
-  const onsubmit: SubmitHandler<TypeFormInputRegister> = (formData) => {
+  const onsubmit: SubmitHandler<TypeFormInputRegister> = (data) => {
     const formdata = new FormData();
-    formdata.append("identifier", formData.identifier);
-    if (formData.authFlowToken) {
-      formdata.append("authFlowToken", formData.authFlowToken);
+    formdata.append("identifier", data.identifier);
+    if (data.authFlowToken) {
+      formdata.append("authFlowToken", data.authFlowToken);
     }
-    formdata.append("first_name", formData.first_name);
-    if (formData.last_name) {
-      formdata.append("last_name", formData.last_name);
+    formdata.append("first_name", data.first_name);
+    if (data.last_name) {
+      formdata.append("last_name", data.last_name);
     }
-    if (formData.gender) {
-      formdata.append("gender", formData.gender);
+    if (data.gender) {
+      formdata.append("gender", data.gender);
     }
+    console.log(data);
 
     Register(formdata);
   };

@@ -1,4 +1,3 @@
-import { ArrowLeftIcon } from "@/assets";
 import { useNavigate } from "react-router-dom";
 import SupportImg from "@/assets/img/supportImg.png";
 import {
@@ -7,19 +6,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import PageHeader from "@/components/PageHeader";
 
 const Support = () => {
   const navigate = useNavigate();
   return (
     <div>
-      {" "}
-      <div className="flex justify-between px-4 py-5 bg-emerald-500/20  rounded-b-xl ">
-        <h1 className="text-[#04864C]">درخواست پشتیبانی</h1>
-        <ArrowLeftIcon
-          className="text-[#04864C]  cursor-pointer"
-          onClick={() => navigate(-1)}
-        />
-      </div>
+      <PageHeader onBack={() => navigate(-1)} title="درخواست پشتیبانی" />
       <div className="mt-6 px-4">
         <div className="flex items-center gap-3">
           <img src={SupportImg} alt="img" width={20} height={20} />

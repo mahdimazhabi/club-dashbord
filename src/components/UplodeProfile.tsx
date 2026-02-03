@@ -35,7 +35,7 @@ const UplodeProfile: React.FC<UplodeProfileProps> = ({
   const { mutate, isPending, removeAttachment, data } = useAttachments();
   const { File_url } = ApiConfig();
   const Find_url = data?.find(
-    (item) => item.original === uploadedImage?.original
+    (item) => item.original === uploadedImage?.original,
   );
 
   useEffect(() => {
@@ -178,6 +178,7 @@ const UplodeProfile: React.FC<UplodeProfileProps> = ({
               icon={<Edit2 />}
               size={"icon"}
               variant={"default"}
+              type="button"
             />
 
             <Button
@@ -186,6 +187,7 @@ const UplodeProfile: React.FC<UplodeProfileProps> = ({
               icon={<Trash2 />}
               size={"icon"}
               variant={"destructive"}
+              type="button"
             />
           </div>
         )}

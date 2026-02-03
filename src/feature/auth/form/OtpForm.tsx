@@ -31,7 +31,7 @@ const OtpForm = () => {
     verifyToken(formData);
   };
   return (
-    <form className=" space-y-7 my-5 " onSubmit={handleSubmit(onsubmit)}>
+    <form className="space-y-7 my-5" onSubmit={handleSubmit(onsubmit)}>
       <div>
         <h1 className=" text-center font-bold text-green-800 underline">
           کد تایید

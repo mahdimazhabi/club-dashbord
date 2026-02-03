@@ -22,12 +22,12 @@ const EditDataUserForm = ({ setOpen }: props) => {
   const { DataCustomers } = useCustomersData();
   const { edit, EditPending } = useCustomers();
   const [genderValue, setGenderValue] = useState<"male" | "female" | undefined>(
-    undefined
+    undefined,
   );
   const { register, handleSubmit, reset, setValue } =
     useForm<TypeEditDataUserForm>({
       resolver: yupResolver(
-        EditDataUserSchema
+        EditDataUserSchema,
       ) as Resolver<TypeEditDataUserForm>,
     });
   useEffect(() => {
@@ -42,7 +42,7 @@ const EditDataUserForm = ({ setOpen }: props) => {
         gender: (DataCustomers.data?.gender as "male" | "female") ?? undefined,
       });
       setGenderValue(
-        (DataCustomers.data?.gender as "male" | "female") ?? undefined
+        (DataCustomers.data?.gender as "male" | "female") ?? undefined,
       );
     }
   }, [DataCustomers, reset]);
@@ -65,7 +65,7 @@ const EditDataUserForm = ({ setOpen }: props) => {
         onSuccess: () => {
           setOpen(false);
         },
-      }
+      },
     );
   };
 

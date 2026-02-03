@@ -13,6 +13,9 @@ import ProtectedRoute from "@/shared/common/ProtectedRoute";
 import GamificationWheel from "@/feature/gamification/GamificationWhell";
 import PasswordForm from "@/feature/auth/form/PasswordForm";
 import RegisterForm from "@/feature/auth/form/RegisterForm";
+import Tracking from "@/feature/profile/components/Tracking";
+import TrackingDetail from "@/feature/profile/components/TrackingDetail";
+import InboxDetail from "@/feature/profile/components/InboxDetail";
 
 export const AllRouters: RouteObject[] = [
   {
@@ -40,10 +43,34 @@ export const AllRouters: RouteObject[] = [
     ),
   },
   {
+    path: "/profile/inbox/:id",
+    element: (
+      <ProtectedRoute>
+        <InboxDetail />
+      </ProtectedRoute>
+    ),
+  },
+  {
     path: "/profile/support",
     element: (
       <ProtectedRoute>
         <Support />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/profile/tracking",
+    element: (
+      <ProtectedRoute>
+        <Tracking />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/profile/tracking/detail",
+    element: (
+      <ProtectedRoute>
+        <TrackingDetail />
       </ProtectedRoute>
     ),
   },

@@ -43,3 +43,6 @@ export { default as ClubIcon } from "@/assets/svg/club.svg?react";
 export { default as StoreIcon } from "@/assets/svg/store.svg?react";
 export { default as CouponIcon } from "@/assets/svg/Coupon.svg?react";
 export { default as CloseIcon } from "@/assets/svg/close-circle.svg?react";
+export { default as TrackingIcon } from "@/assets/svg/tracking.svg?react";
+export { default as TiktokIcon } from "@/assets/svg/tiktok.svg?react";
+export { default as SearchStatusIcon } from "@/assets/svg/search-status.svg?react";
