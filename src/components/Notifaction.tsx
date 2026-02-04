@@ -1,4 +1,3 @@
-import { BellRing } from "lucide-react";
 import {
   Menubar,
   MenubarContent,
@@ -9,8 +8,8 @@ import {
 } from "./ui/menubar";
 import useInbox from "@/services/useInbox";
 import { useNavigate } from "react-router-dom";
+import { Button } from "./ui/button";
 import { NotificationIcon } from "@/assets";
-
 export const Notifaction = () => {
   const { ListInboxQuery } = useInbox();
   const navigate = useNavigate();
@@ -30,47 +29,46 @@ export const Notifaction = () => {
   const fiveNot = inboxItems.slice(0, 5);
 
   return (
-    <Menubar className="  border-none rounded-full ">
+    <Menubar className=" border-none rounded-full ">
       <MenubarMenu>
-        <MenubarTrigger className=" py-2 px-1">
+        <MenubarTrigger className="px-1">
           <NotificationIcon className="w-5 h-5 text-spidar1" />
 
-          <span className="absolute -top-2 -right-1.5 flex items-center justify-center w-4 h-4 text-xs rounded-full bg-red-500 text-white">
-            {total}
+          <span className="absolute -top-2 -right-1.5 flex items-center justify-center w-4 h-4 text-[10px] rounded-full bg-red-500 text-white">
+            {total.toLocaleString("fa-IR")}
           </span>
         </MenubarTrigger>
 
         <MenubarContent
-          sideOffset={25}
+          sideOffset={20}
           align="center"
-          className="
-  w-60
-  before:content-['']
-  before:absolute
-  before:-top-3.5
-  before:left-1/2
-  before:-translate-x-1/2
-  before:border-8
-  before:border-transparent
-  
-  before:border-b-sidebar
-"
+          className="relative border border-main w-60"
         >
+          <div className="absolute -top-2.5 left-1/2 -translate-x-1/2  border-main border-l border-t rounded-r-xs rounded-b-xs rounded-t-sm size-5 rotate-45 z-50 bg-background"></div>
+          <div className="flex justify-between items-center px-2.5">
+            <Button
+              className="text-[10px] px-0 text-red-400 font-bold"
+              variant={"link"}
+              onClick={() => navigate("/profile/inbox")}
+            >
+              مشاهده همه
+            </Button>
+            <span className="text-xs font-semibold text-main">اعلانات</span>
+          </div>
+
           {ListInboxQuery.isLoading ? (
             <div className="px-3 py-4 text-center text-sm text-gray-400">
               در حال دریافت اعلان‌ها...
             </div>
           ) : total > 0 ? (
             <>
-              {fiveNot.map((item) => (
+              {fiveNot.map((item, index) => (
                 <div key={item.id}>
                   <MenubarItem
-                    className="group flex items-start gap-2 px-3 py-2 cursor-pointer "
+                    className="group flex items-center gap-3 px-3 py-2 cursor-pointer"
                     onClick={() => navigate(`/profile/inbox/${item.id}`)}
                   >
-                    <BellRing className="mt-1 group-hover:text-red-500 transition-colors" />
-
-                    <div className="flex flex-col gap-1 text-right">
+                    <div className="flex flex-col gap-1 text-right flex-1">
                       <span className="text-xs font-semibold line-clamp-1">
                         {item.title}
                       </span>
@@ -78,27 +76,13 @@ export const Notifaction = () => {
                         {item.body}
                       </span>
                     </div>
+
+                    <NotificationIcon className="max-w-10 h-10! flex-1 rounded-[13px] text-white bg-[#FF8A04] p-2 shrink-0" />
                   </MenubarItem>
 
-                  <MenubarSeparator />
+                  {index !== fiveNot.length - 1 && <MenubarSeparator />}
                 </div>
               ))}
-
-              <MenubarItem
-                className="cursor-pointer px-3"
-                onClick={() => navigate("/profile/inbox")}
-              >
-                <div className="flex items-center justify-between w-full">
-                  <span className="flex items-center justify-center w-5 h-5 text-xs rounded-full bg-red-500 text-white">
-                    {total}
-                  </span>
-
-                  <div className="flex items-center gap-1 text-sm font-medium">
-                    مشاهده تمام اعلانات
-                    <BellRing />
-                  </div>
-                </div>
-              </MenubarItem>
             </>
           ) : (
             <div className="px-3 py-4 text-center text-sm text-spidar font-bold">

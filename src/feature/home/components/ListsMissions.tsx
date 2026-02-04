@@ -64,7 +64,7 @@ const ListsMissions = () => {
           <div className="embla__container gap-3 w-4xl">
             {ListsMissions.map((_, index) => (
               <div
-                className=" border border-cart bg-background  rounded-[10px] mt-4 "
+                className=" border border-main bg-background  rounded-[10px] mt-4 "
                 key={index}
               >
                 <div className="flex   items-center justify-between p-2">

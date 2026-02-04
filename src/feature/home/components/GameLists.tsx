@@ -72,7 +72,7 @@ const GameLists = () => {
               <div
                 key={item.id}
                 onClick={() => navigate("/Gamification")}
-                className={`relative flex flex-col rounded-[10px] bg-background border border-cart shrink-0 border-2.5 py-[10px] px-[13px] transition-all duration-300 ‍`}
+                className={`relative flex flex-col rounded-[10px] bg-background border border-main shrink-0 border-2.5 py-[10px] px-[13px] transition-all duration-300 ‍`}
               >
                 <img src={item.image} alt={item.alt} className="rounded-md" />
                 <h3 className="text-center font-bold text-sm text-spidar1 mt-2.5">
@@ -91,7 +91,7 @@ const GameLists = () => {
               key={index}
               onClick={() => onDotButtonClick(index)}
               className={"embla__dot".concat(
-                index === selectedIndex ? " embla__dot--selected" : ""
+                index === selectedIndex ? " embla__dot--selected" : "",
               )}
             />
           ))}

@@ -27,17 +27,17 @@ const LogoutDialog = ({ setOpen }: LogoutDialogProps) => {
   return (
     <DialogContent>
       <div className="flex justify-center">
-        <InfoEmptyIcons className="w-10 h-10" />
+        <InfoEmptyIcons className="w-10 h-10 text-main" />
       </div>
       <DialogHeader className="text-center">
-        <span className="text-[#04864C] font-bold  ">خروج از حساب کاربری</span>
+        <span className="text-main font-bold  ">خروج از حساب کاربری</span>
         <DialogDescription>
           <span className="text-[#737373] text-[13px] font-semibold ">
             آیا مایلید از حساب خود خارج شوید؟
           </span>
           <div className="mt-4 flex justify-center gap-2">
             <Button
-              className="w-32 h-12 cursor-pointer"
+              className="w-32 h-12 cursor-pointer "
               variant={"secondary"}
               onClick={handleLogout}
               loading={isLoading}
@@ -45,7 +45,7 @@ const LogoutDialog = ({ setOpen }: LogoutDialogProps) => {
               تایید
             </Button>
             <Button
-              className="w-32 h-12 bg-white text-emerald-700 border border-emerald-700  hover:bg-emerald-50"
+              className="w-32 h-12 bg-white text-main border border-main  hover:bg-white"
               onClick={() => setOpen(false)}
             >
               انصراف

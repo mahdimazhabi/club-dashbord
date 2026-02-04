@@ -46,14 +46,14 @@ const IdentificationCodeDialog = () => {
               onClick={handleCopy}
               className="w-32 h-9 bg-emerald-500/10 rounded-[5px] border border-emerald-500 flex items-center justify-center text-center cursor-pointer"
             >
-              <span className="text-emerald-700 text-xs font-semibold">
+              <span className="text-main text-xs font-semibold">
                 {invitationCode}
               </span>
             </div>
             <Button
               variant={"secondary"}
               icon={<CopyIcon />}
-              className="w-32 h-9"
+              className="w-32 h-9 bg-main hover:bg-main/80"
               onClick={handleCopy}
             >
               {copied ? "کپی شد!" : "کپی کد معرف"}

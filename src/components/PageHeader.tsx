@@ -1,5 +1,4 @@
-import { ArrowLeftIcon } from "@/assets";
-
+import { MoveLeft } from "lucide-react";
 interface PageHeaderProps {
   title: string;
   onBack?: () => void;
@@ -8,16 +7,11 @@ interface PageHeaderProps {
 
 const PageHeader = ({ title, onBack, className }: PageHeaderProps) => {
   return (
-    <div
-      className={`flex justify-between px-4 py-5 bg-emerald-500/20  ${className}`}
-    >
-      <h1 className="text-[#04864C]">{title}</h1>
+    <div className={`flex justify-between px-4 py-5 bg-main/20  ${className}`}>
+      <h1 className="text-main">{title}</h1>
 
       {onBack && (
-        <ArrowLeftIcon
-          className="text-[#04864C] cursor-pointer"
-          onClick={onBack}
-        />
+        <MoveLeft className="text-main cursor-pointer" onClick={onBack} />
       )}
     </div>
   );

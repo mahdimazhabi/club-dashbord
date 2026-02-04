@@ -95,7 +95,7 @@
 }
 
 .embla__dot--selected {
-  background-color: #00d084; /* رنگ سبز مطابق Figma */
+  background-color: var(--color-main);
   width: 19px;
   height: 6px;
   border-radius: 9999px;

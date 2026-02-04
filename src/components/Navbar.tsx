@@ -45,13 +45,13 @@ const Navbar = () => {
     <Link to={item.url} key={index} className="z-10">
       <li className="flex flex-col items-center p-3">
         <item.icon
-          className={`w-6 h-6 transition-colors duration-300 ${
-            location.pathname === item.url ? "text-spidar1" : "text-gray-500"
+          className={`w-6 h-6 transition-colors duration-300 fill- ${
+            location.pathname === item.url ? "text-main" : "text-secondary-text"
           }`}
         />
         <span
-          className={`text-center text-neutral-500 text-xs font-semibold capitalize mt-[5px] ${
-            location.pathname === item.url ? "text-spidar1" : ""
+          className={`text-center  text-xs font-semibold capitalize mt-1.25 ${
+            location.pathname === item.url ? "text-main" : "text-secondary-text"
           }`}
         >
           {item.label}
@@ -68,10 +68,14 @@ const Navbar = () => {
             {ItemsDrawer.map((items, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center rounded-2xl bg-white shadow-md cursor-pointer"
+                className="flex flex-col items-center rounded-2xl bg-background shadow border cursor-pointer"
               >
-                <img src={items.imag} alt={items.titel} className="w-14 h-14" />
-                <span className="text-center text-xs font-bold leading-6 text-spidar1">
+                <img
+                  src={items.imag}
+                  alt={items.titel}
+                  className="w-14 h-14 -translate-y-7"
+                />
+                <span className="text-center text-xs font-bold leading-6 text-main relative -top-4">
                   {items.titel}
                 </span>
               </div>
@@ -88,7 +92,7 @@ const Navbar = () => {
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <DrawerIcon
             onClick={() => setIsOpen(!isOpen)}
-            className="relative bottom-9 cursor-pointer pointer-events-auto"
+            className="relative bottom-9 cursor-pointer pointer-events-auto text-main  "
           />
         </div>
 

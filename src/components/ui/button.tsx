@@ -15,7 +15,7 @@ const buttonVariants = cva(
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
           "border bg-sidebar  shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-        secondary: "bg-btn h-9 hover:bg-btn/80 text-white shadow-xs  ",
+        secondary: "bg-main h-9 hover:bg-main/80 text-white shadow-xs  ",
         gradient:
           "w-full h-auto rounded-lg py-3 px-4 h-12 text-white font-medium text-sm transition-all relative overflow-hidden \
   disabled:opacity-50 disabled:cursor-not-allowed \
@@ -38,7 +38,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 const Button = React.forwardRef<
@@ -62,7 +62,7 @@ const Button = React.forwardRef<
       icon,
       ...props
     },
-    ref
+    ref,
   ) => {
     const Comp = asChild ? Slot : "button";
 
@@ -74,7 +74,7 @@ const Button = React.forwardRef<
         className={cn(
           buttonVariants({ variant, size }),
           loading && "pointer-events-none",
-          className
+          className,
         )}
         disabled={disabled}
         {...props}
@@ -91,7 +91,7 @@ const Button = React.forwardRef<
         )}
       </Comp>
     );
-  }
+  },
 );
 
 Button.displayName = "Button";
