@@ -9,6 +9,7 @@ import useTrackingStore from "@/store/useTrackingStore";
 import PageHeader from "@/components/PageHeader";
 import { Input } from "@/components/ui/input";
 import TrackingSkeleton from "@/skeleton/TrackingSkeleton";
+import { toPersianNumber } from "@/util/toPersianNumber";
 
 const Tracking = () => {
   const navigate = useNavigate();
@@ -64,7 +65,7 @@ const Tracking = () => {
             return (
               <div
                 key={item.id}
-                className="border border-black/10 rounded-[5px] py-2.5 px-2.75 bg-background shadow"
+                className="border border-black/10 rounded-[5px] py-2.5 px-2.75  shadow "
               >
                 <div className="flex justify-between">
                   <div className="space-y-2">
@@ -81,51 +82,51 @@ const Tracking = () => {
                   </div>
 
                   <Button
-                    className="text-white rounded-full font-bold text-xs bg-button"
+                    className="text-white rounded-full font-bold text-xs cursor-pointer "
                     size="sm"
                     onClick={() => {
                       setTracking(item);
                       navigate("/profile/tracking/detail");
                     }}
+                    variant={"secondary"}
                   >
                     مشاهده فاکتور
                   </Button>
                 </div>
-
-                <ul className="space-y-2.5 mt-4">
-                  <li className="flex gap-2.5">
+                <ul className="space-y-2.5 mt-4 w-full flex flex-col ">
+                  <li className="flex justify-between w-full">
                     <span className="text-secondary-text text-xs font-semibold">
                       کد پیگیری:
                     </span>
-                    <span className="text-xs font-medium text-description-text">
-                      {item.tracking_number}
+                    <span className="text-xs font-medium ">
+                      {toPersianNumber(item.tracking_number)}
                     </span>
                   </li>
 
-                  <li className="flex gap-2.5">
+                  <li className="flex justify-between w-full">
                     <span className="text-secondary-text text-xs font-semibold">
-                      کدپستی:
+                      مبلغ:
                     </span>
-                    <span className="text-xs font-medium text-description-text">
-                      {item.shipping_address.zip}
+                    <span className="text-xs font-medium ">
+                      {toPersianNumber(item.total.toLocaleString())} تومان
                     </span>
                   </li>
 
-                  <li className="flex gap-2.5">
+                  <li className="flex justify-between w-full">
                     <span className="text-secondary-text text-xs font-semibold">
                       تاریخ ثبت:
                     </span>
-                    <span className="text-xs font-medium text-description-text">
+                    <span className="text-xs font-medium ">
                       {fullPersianDate(item.created_at)}
                     </span>
                   </li>
 
-                  <li className="flex gap-2.5">
+                  <li className="flex justify-between w-full">
                     <span className="text-secondary-text text-xs font-semibold">
-                      مبلغ:
+                      کدپستی:
                     </span>
-                    <span className="text-xs font-medium text-description-text">
-                      {item.total.toLocaleString()} تومان
+                    <span className="text-xs font-medium ">
+                      {toPersianNumber(item.shipping_address.zip)}
                     </span>
                   </li>
                 </ul>

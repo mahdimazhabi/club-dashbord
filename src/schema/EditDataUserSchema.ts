@@ -6,6 +6,7 @@ export const EditDataUserSchema = yup.object().shape({
   email: yup.string().email("ایمیل معتبر نیست"),
   profile: yup.object().shape({
     national_code: yup.string(),
+    birthdate: yup.date(),
   }),
   gender: yup
     .string()

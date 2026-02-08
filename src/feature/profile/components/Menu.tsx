@@ -131,7 +131,7 @@ const Menu = () => {
       <div>
         <ul>
           <li
-            className="flex justify-between items-center cursor-pointer py-6 border border-black/10 bg-[#FFF] px-4 rounded-[5px] "
+            className="flex justify-between items-center cursor-pointer py-6 border border-black/10 bg-background px-4 rounded-[5px] "
             onClick={() => setOpenIdentificationCode(!isOpenIdentificationCode)}
           >
             <span className="flex items-center gap-6 text-[#787878] text-sm font-s">
@@ -145,7 +145,7 @@ const Menu = () => {
       <div>
         <ul>
           <li
-            className="flex justify-between items-center py-6 cursor-pointer border border-black/10 bg-[#FFF] px-4 rounded-[5px] "
+            className="flex justify-between items-center py-6 cursor-pointer border border-black/10 bg-background px-4 rounded-[5px] "
             onClick={() => setOpenLogout(!isOpenLogout)}
           >
             <span className="flex items-center gap-6 text-[#787878] text-sm font-s">

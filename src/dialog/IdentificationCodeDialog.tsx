@@ -44,7 +44,7 @@ const IdentificationCodeDialog = () => {
           <div className="space-y-2.5 flex flex-col items-center">
             <div
               onClick={handleCopy}
-              className="w-32 h-9 bg-emerald-500/10 rounded-[5px] border border-emerald-500 flex items-center justify-center text-center cursor-pointer"
+              className="w-32 h-9 bg-main/10 rounded-[5px] border border-main flex items-center justify-center text-center cursor-pointer"
             >
               <span className="text-main text-xs font-semibold">
                 {invitationCode}

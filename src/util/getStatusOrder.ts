@@ -34,7 +34,7 @@ const getStatusOrder = (status: OrderStatus): OrderStatusResult => {
     case "order-cancelled":
       return {
         label: "لغو شده",
-        color: "text-gray-600 bg-gray-100",
+        color: "text-red-600 bg-red-200",
       };
 
     case "order-refunded":

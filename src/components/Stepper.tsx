@@ -22,21 +22,22 @@ const Stepper = ({ steps, currentStep }: StepperProps) => {
             <div className="flex flex-col items-center">
               {/* circle */}
               <div
-                className={`w-8 h-8  rounded-full flex items-center justify-center
-                ${
-                  isCompleted
-                    ? "bg-main"
-                    : isActive
-                      ? "border-2 border-emerald-500 bg-white"
-                      : "border border-gray-300 bg-white"
-                }`}
+                className={`w-8 h-8 rounded-full flex items-center justify-center
+                  ${
+                    isCompleted
+                      ? "bg-main"
+                      : isActive
+                        ? "border-2 border-emerald-500 bg-white"
+                        : "border border-gray-300 bg-white"
+                  }`}
               >
                 {isCompleted ? (
                   <TiktokIcon className="w-6 h-6 text-white" />
                 ) : (
                   <span
-                    className={`text-xs font-semibold
-    ${isActive ? "text-emerald-500" : "text-gray-400"}`}
+                    className={`text-xs font-semibold ${
+                      isActive ? "text-emerald-500" : "text-gray-400"
+                    }`}
                   >
                     {step.id}
                   </span>
@@ -46,16 +47,16 @@ const Stepper = ({ steps, currentStep }: StepperProps) => {
               {/* dashed line */}
               {index !== steps.length - 1 && (
                 <div
-                  className={`w-px h-5 mt-1 border-l-2 border-dashed
-                  ${isCompleted ? "border-emerald-500" : "border-gray-300"}`}
+                  className={`w-px h-5 mt-1 border-l-2 border-dashed ${
+                    isCompleted ? "border-emerald-500" : "border-gray-300"
+                  }`}
                 />
               )}
             </div>
 
             {/* title */}
             <span
-              className={`pt-1 text-sm
-              ${
+              className={`pt-1 text-sm ${
                 isActive || isCompleted
                   ? "text-emerald-600 font-semibold"
                   : "text-gray-400"

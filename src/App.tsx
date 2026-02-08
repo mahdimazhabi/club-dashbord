@@ -7,7 +7,6 @@ import useSetting from "./services/useSetting";
 const App = () => {
   const router = createBrowserRouter(AllRouters);
   const { setting } = useSetting();
-  console.log(setting?.data?.options.maintenance);
 
   useEffect(() => {
     if (setting.data) {

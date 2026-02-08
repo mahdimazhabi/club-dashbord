@@ -22,7 +22,7 @@ const LoginForm = () => {
   return (
     <form className="space-y-6" onSubmit={handleSubmit(onsubmit)}>
       <div className="space-y-2 text-center">
-        <h1 className="text-2xl font-bold  text-button">خوش آمدید!</h1>
+        <h1 className="text-2xl font-bold  text-main">خوش آمدید!</h1>
         <p className="text-sm font-semibold text-secondary-text">
           با شماره تلفن خود وارد شوید !
         </p>

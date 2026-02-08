@@ -20,7 +20,7 @@ const ListsPlans = () => {
       </div>
       <SliderSearch />
       <div className="flex justify-center mt-5">
-        <div className="relative w-[45px] h-[134px] rotate-180">
+        <div className="relative w-11.25 h-33.5 rotate-180">
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90">
             <span className="text-white font-bold text-sm whitespace-nowrap px-1">
               سطح طلایی
@@ -65,7 +65,7 @@ const ListsPlans = () => {
         </div>
       </div>
       <div className="flex justify-center mt-5">
-        <div className="relative w-[45px] h-[134px] rotate-180">
+        <div className="relative w-11.25 h-33.5 rotate-180">
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90">
             <span className="text-white font-bold text-sm whitespace-nowrap px-1">
               سطح طلایی

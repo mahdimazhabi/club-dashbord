@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label";
 import UplodeProfile from "@/components/UplodeProfile";
 import { toast } from "sonner";
 import { serialize } from "object-to-formdata";
+import Datepicker from "@/components/datepicker";
 interface props {
   setOpen: (value: boolean) => void;
 }
@@ -24,12 +25,13 @@ const EditDataUserForm = ({ setOpen }: props) => {
   const [genderValue, setGenderValue] = useState<"male" | "female" | undefined>(
     undefined,
   );
-  const { register, handleSubmit, reset, setValue } =
+  const { register, handleSubmit, reset, setValue, watch } =
     useForm<TypeEditDataUserForm>({
       resolver: yupResolver(
         EditDataUserSchema,
       ) as Resolver<TypeEditDataUserForm>,
     });
+
   useEffect(() => {
     if (DataCustomers) {
       reset({
@@ -38,9 +40,14 @@ const EditDataUserForm = ({ setOpen }: props) => {
         email: DataCustomers.data?.email ?? "",
         profile: {
           national_code: DataCustomers.data?.national_code?.toString() ?? "",
+          // تبدیل string به Date
+          birthdate: DataCustomers.data.profile?.birthdate
+            ? new Date(DataCustomers.data.profile.birthdate)
+            : undefined,
         },
         gender: (DataCustomers.data?.gender as "male" | "female") ?? undefined,
       });
+
       setGenderValue(
         (DataCustomers.data?.gender as "male" | "female") ?? undefined,
       );
@@ -57,6 +64,9 @@ const EditDataUserForm = ({ setOpen }: props) => {
     fd.append("gender", data.gender);
     if (data.profile.national_code) {
       fd.append("profile[national_code]", data.profile.national_code);
+    }
+    if (data.profile.birthdate) {
+      fd.append("profile[birthdate]", data.profile.birthdate.toISOString());
     }
 
     edit(
@@ -107,13 +117,13 @@ const EditDataUserForm = ({ setOpen }: props) => {
             }}
             className="grid grid-cols-2"
           >
-            <div className="flex items-center justify-end gap-3 border border-description-text px-2.5 py-3 rounded-lg w-18.5">
+            <div className="flex items-center justify-end gap-3 border border-description-text px-2.5 py-3.5 rounded-lg ">
               <Label htmlFor="female" className="cursor-pointer">
                 خانم
                 <RadioGroupItem value="female" id="female" />
               </Label>
             </div>
-            <div className="flex items-center justify-end gap-3 border border-description-text px-2.5 py-3 rounded-lg w-18.5">
+            <div className="flex items-center justify-end gap-3 border border-description-text px-2.5 py-3 rounded-lg ">
               <Label htmlFor="male" className="cursor-pointer">
                 آقا
                 <RadioGroupItem value="male" id="male" />
@@ -121,6 +131,13 @@ const EditDataUserForm = ({ setOpen }: props) => {
             </div>
           </RadioGroup>
         </div>
+        <Datepicker
+          placeholder="تاریخ تولد"
+          value={watch("profile.birthdate") ?? undefined}
+          onChange={(value) => {
+            setValue("profile.birthdate", value ? value.toDate() : undefined);
+          }}
+        />
       </div>
       <Button
         type="submit"

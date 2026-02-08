@@ -33,9 +33,7 @@ const OtpForm = () => {
   return (
     <form className="space-y-7 my-5" onSubmit={handleSubmit(onsubmit)}>
       <div>
-        <h1 className=" text-center font-bold text-green-800 underline">
-          کد تایید
-        </h1>
+        <h1 className=" text-center font-bold text-main underline">کد تایید</h1>
         <p className="text-center text-xs font-semibold text-[#737373]">
           کد تایید خود را وارد کنید !
         </p>

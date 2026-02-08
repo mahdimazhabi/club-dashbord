@@ -19,7 +19,7 @@ const buttonVariants = cva(
         gradient:
           "w-full h-auto rounded-lg py-3 px-4 h-12 text-white font-medium text-sm transition-all relative overflow-hidden \
   disabled:opacity-50 disabled:cursor-not-allowed \
-  bg-[linear-gradient(to_right,var(--color-main-alt),var(--color-main))] hover:opacity-90",
+  bg-main hover:opacity-90",
 
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",

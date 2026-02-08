@@ -38,10 +38,10 @@ const SliderSearch = () => {
                   <div
                     key={index}
                     onClick={() => setSelectedIndex(index)}
-                    className={`min-w-[78px] h-[28px] px-[15px] py-[3px] gap-2.5 shrink-0 rounded-[15px] border text-xs font-semibold flex items-center justify-center cursor-pointer
+                    className={`min-w-19.5 h-7 px-3.75 py-0.75 gap-2.5 shrink-0 rounded-[15px] border text-xs font-semibold flex items-center justify-center cursor-pointer
                     ${
                       isSelected
-                        ? "border-spidar1 text-spidar1"
+                        ? "border-main text-main"
                         : "border-black/25 text-[#818181]"
                     }
                     bg-white
@@ -51,7 +51,7 @@ const SliderSearch = () => {
                       <img
                         src={item.img}
                         alt={item.title}
-                        className="w-[17px] h-[17px]"
+                        className="w-4.25 h-[17px]"
                       />
                     )}
                     <span className="text-center">{item.title}</span>
