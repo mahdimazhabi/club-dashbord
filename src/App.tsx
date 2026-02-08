@@ -3,7 +3,7 @@ import { AllRouters } from "./routers/routers";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { useEffect } from "react";
 import useSetting from "./services/useSetting";
-
+import { NuqsAdapter } from "nuqs/adapters/react-router/v7";
 const App = () => {
   const router = createBrowserRouter(AllRouters);
   const { setting } = useSetting();
@@ -18,7 +18,9 @@ const App = () => {
   }, [setting.data]);
   return (
     <TooltipProvider delayDuration={0}>
-      <RouterProvider router={router} />
+      <NuqsAdapter>
+        <RouterProvider router={router} />
+      </NuqsAdapter>
     </TooltipProvider>
   );
 };

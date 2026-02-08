@@ -10,11 +10,14 @@ import PageHeader from "@/components/PageHeader";
 import { Input } from "@/components/ui/input";
 import TrackingSkeleton from "@/skeleton/TrackingSkeleton";
 import { toPersianNumber } from "@/util/toPersianNumber";
-
+import { useQueryStates, parseAsString } from "nuqs";
 const Tracking = () => {
   const navigate = useNavigate();
   const { TrackingListsQuery } = useTracking();
   const { setTracking } = useTrackingStore();
+  const [query, setQuery] = useQueryStates({
+    search: parseAsString.withDefault(""),
+  });
 
   const trackingList = TrackingListsQuery.data?.data ?? [];
 
@@ -34,16 +37,18 @@ const Tracking = () => {
         </p>
       </div>
 
-      {/* Search */}
       <div className="px-4 mt-4">
         <Input
           placeholder="شماره سفارش خود را وارد کنید ."
           icon={<SearchStatusIcon />}
           className="text-secondary-text border-[1.5px] border-black/15 shadow-xs font-semibold placeholder:font-sans"
+          value={query.search}
+          onChange={(e) => {
+            setQuery({ search: e.target.value });
+          }}
         />
       </div>
 
-      {/* List */}
       <div className="px-4 mt-6 space-y-4">
         {TrackingListsQuery.isLoading ? (
           <TrackingSkeleton count_tracking={5} />
