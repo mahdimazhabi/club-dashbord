@@ -3,8 +3,13 @@ import { Button } from "@/components/ui/button";
 import imageMissions from "@/assets/img/Rectangle 177.png";
 import "@/shared/StyleEmbla/embla.css";
 import useEmblaCarousel from "embla-carousel-react";
+import useMission from "@/services/useMission";
+import { useNavigate } from "react-router-dom";
 const ListsMissions = () => {
   const [emblaRef] = useEmblaCarousel({ direction: "rtl" });
+  const { listMission } = useMission();
+  const navigate = useNavigate();
+  console.log(listMission.data);
 
   const ListsMissions = [
     {
@@ -48,7 +53,8 @@ const ListsMissions = () => {
         <div>
           <Button
             variant={"link"}
-            className="text-xs font-bold underline capitalize text-spidar2 px-0"
+            onClick={() => navigate("/mission")}
+            className="text-xs font-bold underline capitalize text-spidar2 px-0 cursor-pointer"
           >
             لیست ماموریت ها
           </Button>

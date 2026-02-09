@@ -16,7 +16,7 @@ import RegisterForm from "@/feature/auth/form/RegisterForm";
 import Tracking from "@/feature/profile/components/Tracking";
 import TrackingDetail from "@/feature/profile/components/TrackingDetail";
 import InboxDetail from "@/feature/profile/components/InboxDetail";
-
+import MissionLayout from "@/shared/layout/mission/MissionLayout";
 export const AllRouters: RouteObject[] = [
   {
     path: "/",
@@ -95,6 +95,14 @@ export const AllRouters: RouteObject[] = [
     element: (
       <ProtectedRoute>
         <GamificationLayout />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/mission",
+    element: (
+      <ProtectedRoute>
+        <MissionLayout />
       </ProtectedRoute>
     ),
   },
