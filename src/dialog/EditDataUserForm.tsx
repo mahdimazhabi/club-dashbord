@@ -40,7 +40,6 @@ const EditDataUserForm = ({ setOpen }: props) => {
         email: DataCustomers.data?.email ?? "",
         profile: {
           national_code: DataCustomers.data?.national_code?.toString() ?? "",
-          // تبدیل string به Date
           birthdate: DataCustomers.data.profile?.birthdate
             ? new Date(DataCustomers.data.profile.birthdate)
             : undefined,
@@ -117,13 +116,13 @@ const EditDataUserForm = ({ setOpen }: props) => {
             }}
             className="grid grid-cols-2"
           >
-            <div className="flex items-center justify-end gap-3 border border-description-text px-2.5 py-3.5 rounded-lg ">
+            <div className="flex items-center justify-end gap-3 border border-description-text px-1 py-3.5 rounded-lg ">
               <Label htmlFor="female" className="cursor-pointer">
                 خانم
                 <RadioGroupItem value="female" id="female" />
               </Label>
             </div>
-            <div className="flex items-center justify-end gap-3 border border-description-text px-2.5 py-3 rounded-lg ">
+            <div className="flex items-center justify-end gap-3 border border-description-text px-1 py-3 rounded-lg ">
               <Label htmlFor="male" className="cursor-pointer">
                 آقا
                 <RadioGroupItem value="male" id="male" />

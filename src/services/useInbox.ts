@@ -4,15 +4,11 @@ import { InboxListsResponse } from "@/interface/inbox";
 const useInbox = () => {
   const ListInboxQuery = useQuery({
     queryKey: ["listInbox"],
-    queryFn: async ({ queryKey }) => {
-      const search = queryKey[1];
+    queryFn: async () => {
       const response = await fetcher<InboxListsResponse>({
         method: "get",
         endpoint: "inbox",
         contentType: "json",
-        query: {
-          search,
-        },
       });
       if (response.status === 200) {
         return response.data;

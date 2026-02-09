@@ -11,12 +11,13 @@ const useTracking = () => {
   const TrackingListsQuery = useQuery({
     queryKey: ["TrackingLists", query.search],
     queryFn: async () => {
-      const endpoint = `order_history?search=${query.search}`;
-
       const response = await fetcher<TrackingResponse>({
         method: "get",
-        endpoint,
+        endpoint: `order_history`,
         contentType: "json",
+        query: {
+          search: query.search,
+        },
       });
 
       if (response.status === 200) {

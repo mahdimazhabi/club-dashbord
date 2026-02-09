@@ -104,7 +104,7 @@ const Tracking = () => {
                       کد پیگیری:
                     </span>
                     <span className="text-xs font-medium ">
-                      {toPersianNumber(item.tracking_number)}
+                      {item.tracking_number}
                     </span>
                   </li>
 
