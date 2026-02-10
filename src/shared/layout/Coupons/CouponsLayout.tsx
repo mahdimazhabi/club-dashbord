@@ -1,15 +1,15 @@
 import Header from "@/components/Header";
-import ListsPlans from "@/feature/plans/components/ListsPlans";
 import Navbar from "@/components/Navbar";
+import CouponsLists from "@/feature/Coupon/components/CouponsLists";
 
-const PlanLayout = () => {
+const CouponsLayout = () => {
   return (
-    <section className="px-4 py-[18px] space-y-4">
+    <section className="px-4 py-4.5 space-y-4">
       <header>
         <Header />
       </header>
       <main className="pb-32">
-        <ListsPlans />
+        <CouponsLists />
       </main>
       <footer>
         <Navbar />
@@ -18,4 +18,4 @@ const PlanLayout = () => {
   );
 };
 
-export default PlanLayout;
+export default CouponsLayout;

@@ -4,7 +4,7 @@ import ProfileLayout from "@/shared/layout/profile/ProfileLayout";
 import Inbox from "@/feature/profile/components/Inbox";
 import Support from "@/feature/profile/components/Support";
 import DiscountsLayout from "@/shared/layout/discounts/DiscountsLayout";
-import PlanLayout from "@/shared/layout/plan/PlanLayout";
+
 import GamificationLayout from "@/shared/layout/gamification/GamificationLayout";
 import AuthLayout from "@/shared/layout/auth/AuthLayout";
 import OtpForm from "@/feature/auth/form/OtpForm";
@@ -18,6 +18,7 @@ import TrackingDetail from "@/feature/profile/components/TrackingDetail";
 import InboxDetail from "@/feature/profile/components/InboxDetail";
 import MissionLayout from "@/shared/layout/mission/MissionLayout";
 import MissionDetail from "@/feature/mission/components/MissionDetail";
+import CouponsLayout from "@/shared/layout/Coupons/CouponsLayout";
 export const AllRouters: RouteObject[] = [
   {
     path: "/",
@@ -84,10 +85,10 @@ export const AllRouters: RouteObject[] = [
     ),
   },
   {
-    path: "/plans",
+    path: "/coupon",
     element: (
       <ProtectedRoute>
-        <PlanLayout />
+        <CouponsLayout />
       </ProtectedRoute>
     ),
   },

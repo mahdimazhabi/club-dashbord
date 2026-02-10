@@ -64,7 +64,7 @@ const Missions = () => {
       </div>
       <div className="embla  select-none">
         <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container gap-3">
+          <div className="embla__container">
             {ListsMissions.map((item) => (
               <div className="embla__slide flex-[0_0_auto]!" key={item.id}>
                 <div className="w-58 bg-background rounded-[10px] mt-4 border border-neutral-200 px-3 py-2 shadow-sm">

@@ -1,5 +1,5 @@
 import useMission from "@/services/useMission";
-import NoImage from "@/assets/img/no-image.jpeg";
+import NoMission from "@/assets/img/NoMission.png";
 import { parseAsInteger, useQueryStates } from "nuqs";
 
 import PaginationControl from "@/components/PaginationControl";
@@ -41,7 +41,7 @@ const ListMission = () => {
           >
             <div className="flex flex-1 gap-1.5  items-start border border-l-secondary-text border-dashed ">
               <img
-                src={item?.image_url || NoImage}
+                src={item?.image_url || NoMission}
                 alt="mission-logo"
                 className="size-22.5 rounded-[5px] object-cover"
               />

@@ -25,7 +25,7 @@ const Navbar = () => {
 
   const leftItems: NavItem[] = [
     { icon: StoreIcon, label: "فروشگاه", url: "/" },
-    { icon: ClubIcon, label: "باشگاه ", url: "/plans" },
+    { icon: ClubIcon, label: "باشگاه ", url: "/coupon" },
   ];
   const rightItems: NavItem[] = [
     { icon: SuggestionsIcon, label: "تخفیف ها", url: "/discounts" },
