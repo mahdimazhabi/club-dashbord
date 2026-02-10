@@ -72,10 +72,10 @@ const GameLists = () => {
               <div
                 key={item.id}
                 onClick={() => navigate("/Gamification")}
-                className={`relative flex flex-col rounded-[10px] bg-background border border-main shrink-0 border-2.5 py-[10px] px-[13px] transition-all duration-300 ‍`}
+                className={`relative flex flex-col rounded-[10px] bg-background  shrink-0 border-2.5 transition-all duration-300 ‍ border border-neutral-200 px-3 py-3 shadow-sm`}
               >
                 <img src={item.image} alt={item.alt} className="rounded-md" />
-                <h3 className="text-center font-bold text-sm text-spidar1 mt-2.5">
+                <h3 className="text-center font-bold text-sm text-button mt-2.5">
                   {item.title}
                 </h3>
                 <p className="self-stretch text-center text-neutral-400 text-xs font-semibold">

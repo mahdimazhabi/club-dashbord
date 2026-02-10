@@ -17,6 +17,7 @@ import Tracking from "@/feature/profile/components/Tracking";
 import TrackingDetail from "@/feature/profile/components/TrackingDetail";
 import InboxDetail from "@/feature/profile/components/InboxDetail";
 import MissionLayout from "@/shared/layout/mission/MissionLayout";
+import MissionDetail from "@/feature/mission/components/MissionDetail";
 export const AllRouters: RouteObject[] = [
   {
     path: "/",
@@ -103,6 +104,14 @@ export const AllRouters: RouteObject[] = [
     element: (
       <ProtectedRoute>
         <MissionLayout />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "mission/detail/:id",
+    element: (
+      <ProtectedRoute>
+        <MissionDetail />
       </ProtectedRoute>
     ),
   },

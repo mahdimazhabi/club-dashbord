@@ -3,13 +3,10 @@ import { Button } from "@/components/ui/button";
 import imageMissions from "@/assets/img/Rectangle 177.png";
 import "@/shared/StyleEmbla/embla.css";
 import useEmblaCarousel from "embla-carousel-react";
-import useMission from "@/services/useMission";
 import { useNavigate } from "react-router-dom";
-const ListsMissions = () => {
+const Missions = () => {
   const [emblaRef] = useEmblaCarousel({ direction: "rtl" });
-  const { listMission } = useMission();
   const navigate = useNavigate();
-  console.log(listMission.data);
 
   const ListsMissions = [
     {
@@ -67,36 +64,38 @@ const ListsMissions = () => {
       </div>
       <div className="embla  select-none">
         <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container gap-3 w-4xl">
-            {ListsMissions.map((_, index) => (
-              <div
-                className="  bg-background  rounded-[10px] mt-4 "
-                key={index}
-              >
-                <div className="flex   items-center justify-between p-2">
-                  <img src={imageMissions} />
-                  <div>
-                    <p className="   text-right justify-start text-neutral-500 text-xs font-semibold capitalize">
-                      با سفارش از فروشگاه ۱۰۰ سکه دریافت کنید .
-                    </p>
-                    <span className=" text-right justify-start text-neutral-400 text-[10px] font-normal  capitalize">
-                      لورم ایپسوم متن ساختگی..
-                    </span>
-                  </div>
-                </div>
-                <div className=" border-t border-dashed border-[#DEDEDE]">
-                  <div className="flex  items-center justify-between px-2">
-                    <Button
-                      variant={"link"}
-                      className="text-xs font-bold underline capitalize px-0  text-spidar2"
-                    >
-                      مشاهده جزئیات
-                    </Button>
-                    <div className="flex items-center bg-spidar1 py-1 px-1.5 rounded-full gap-1">
-                      <CoinIcon />
-                      <span className="text-xs font-bold text-[10px] text-[#FFFFFF]  ">
-                        100
+          <div className="embla__container gap-3">
+            {ListsMissions.map((item) => (
+              <div className="embla__slide flex-[0_0_auto]!" key={item.id}>
+                <div className="w-58 bg-background rounded-[10px] mt-4 border border-neutral-200 px-3 py-2 shadow-sm">
+                  <div className="flex items-center  gap-3">
+                    <img
+                      src={item.image}
+                      className="size-16 rounded-md object-cover shrink-0"
+                    />
+                    <div className="min-w-0">
+                      <p className="  text-button text-xs font-semibold capitalize line-clamp-2">
+                        {item.title}
+                      </p>
+                      <span className="  text-neutral-400 text-[10px] font-normal capitalize line-clamp-1">
+                        لورم ایپسوم متن ساختگی..
                       </span>
+                    </div>
+                  </div>
+                  <div className="border-t border-dashed border-[#DEDEDE] mt-3 pt-2">
+                    <div className="flex items-center justify-between px-2">
+                      <Button
+                        variant={"link"}
+                        className="text-[10px] font-bold underline capitalize px-0 text-spidar2"
+                      >
+                        مشاهده جزئیات
+                      </Button>
+                      <div className="flex items-center bg-spidar1 py-1 px-1.5 rounded-full gap-1">
+                        <CoinIcon />
+                        <span className="text-xs font-bold text-[10px] text-white">
+                          {item.reward}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -109,4 +108,4 @@ const ListsMissions = () => {
   );
 };
 
-export default ListsMissions;
+export default Missions;

@@ -19,4 +19,43 @@ export interface Mission {
   description?: string;
   image_url?: string;
   type?: string;
+  label: string;
+}
+
+export interface MissionDetailResponse {
+  id: number;
+  title: string;
+  description: string;
+  image_url: string;
+  mission_type: string;
+  mission_type_label: string;
+  start_at: string;
+  end_at: string;
+  max_attempts: string;
+  is_active: number;
+  type: string;
+  label: string;
+  interval: string;
+  completed_dates: string[];
+  is_completed: boolean;
+  child_missions: ChildMission[];
+}
+
+export interface ChildMission {
+  id: number;
+  title: string;
+  description: string;
+  image_url: string;
+  mission_type: string;
+  mission_type_label: string;
+  start_at: string;
+  end_at: string;
+  max_attempts: string;
+  is_active: number;
+  type: string;
+  label: string;
+  interval: string;
+  completed_dates: string[];
+  is_completed: boolean;
+  child_missions: string[];
 }
