@@ -7,18 +7,16 @@ import { useParams } from "react-router-dom";
 const useMission = () => {
   const { id } = useParams();
   const [query] = useQueryStates({
-    perpage: parseAsInteger.withDefault(5),
     page: parseAsInteger.withDefault(1),
   });
   const listMission = useQuery({
-    queryKey: ["list-mission", query.perpage],
+    queryKey: ["list-mission"],
     queryFn: async () => {
       const response = await fetcher<MissionResponse>({
         method: "get",
         endpoint: `user/missions?page=1`,
         contentType: "json",
         query: {
-          perpage: query.perpage,
           page: query.page,
         },
       });

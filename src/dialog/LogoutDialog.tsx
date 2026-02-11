@@ -30,9 +30,11 @@ const LogoutDialog = ({ setOpen }: LogoutDialogProps) => {
         <InfoEmptyIcons className="w-10 h-10 text-main" />
       </div>
       <DialogHeader className="text-center">
-        <span className="text-main font-bold  ">خروج از حساب کاربری</span>
-        <DialogDescription>
-          <span className="text-[#737373] text-[13px] font-semibold ">
+        <span className="text-main font-bold text-center ">
+          خروج از حساب کاربری
+        </span>
+        <DialogDescription className="flex flex-col">
+          <span className="text-[#737373] text-[13px] font-semibold text-center ">
             آیا مایلید از حساب خود خارج شوید؟
           </span>
           <div className="mt-4 flex justify-center gap-2">

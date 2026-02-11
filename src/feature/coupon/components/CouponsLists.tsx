@@ -78,7 +78,7 @@ const CouponsLists = () => {
       ))}
       <PaginationControl
         currentPage={query.page}
-        totalPages={Number(couponList.data?.total)}
+        totalPages={Number(couponList.data?.last_page)}
         onPageChange={(page) => setQuery({ page })}
       />
     </section>

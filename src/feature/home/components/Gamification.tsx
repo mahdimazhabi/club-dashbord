@@ -6,7 +6,7 @@ import { GameIcon } from "@/assets";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
-const GameLists = () => {
+const Gamification = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ direction: "rtl" });
   const navigate = useNavigate();
   const DataBaner = [
@@ -101,4 +101,4 @@ const GameLists = () => {
   );
 };
 
-export default GameLists;
+export default Gamification;

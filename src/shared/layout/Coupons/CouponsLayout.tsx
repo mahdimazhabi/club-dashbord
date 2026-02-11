@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
-import CouponsLists from "@/feature/Coupon/components/CouponsLists";
+import CouponsLists from "@/feature/coupon/components/CouponsLists";
 
 const CouponsLayout = () => {
   return (

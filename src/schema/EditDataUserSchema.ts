@@ -7,6 +7,7 @@ export const EditDataUserSchema = yup.object().shape({
   profile: yup.object().shape({
     national_code: yup.string(),
     birthdate: yup.date(),
+    avatar: yup.string().nullable(),
   }),
   gender: yup
     .string()

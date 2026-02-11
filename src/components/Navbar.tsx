@@ -45,7 +45,7 @@ const Navbar = () => {
     <Link to={item.url} key={index} className="z-10">
       <li className="flex flex-col items-center p-3">
         <item.icon
-          className={`w-6 h-6 transition-colors duration-300 fill- ${
+          className={`w-5 h-5 transition-colors duration-300 fill- ${
             location.pathname === item.url ? "text-main" : "text-secondary-text"
           }`}
         />

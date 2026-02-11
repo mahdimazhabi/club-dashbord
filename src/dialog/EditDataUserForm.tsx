@@ -12,8 +12,6 @@ import { Resolver, SubmitHandler, useForm } from "react-hook-form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import UplodeProfile from "@/components/UplodeProfile";
-import { toast } from "sonner";
-import { serialize } from "object-to-formdata";
 import Datepicker from "@/components/datepicker";
 interface props {
   setOpen: (value: boolean) => void;
@@ -43,6 +41,7 @@ const EditDataUserForm = ({ setOpen }: props) => {
           birthdate: DataCustomers.data.profile?.birthdate
             ? new Date(DataCustomers.data.profile.birthdate)
             : undefined,
+          avatar: DataCustomers.data.profile?.avatar ?? "",
         },
         gender: (DataCustomers.data?.gender as "male" | "female") ?? undefined,
       });
@@ -67,6 +66,9 @@ const EditDataUserForm = ({ setOpen }: props) => {
     if (data.profile.birthdate) {
       fd.append("profile[birthdate]", data.profile.birthdate.toISOString());
     }
+    if (data.profile.avatar) {
+      fd.append("profile[avatar]", data.profile.avatar);
+    }
 
     edit(
       { data: fd, id: Number(DataCustomers?.data.id) },
@@ -83,22 +85,8 @@ const EditDataUserForm = ({ setOpen }: props) => {
       <div className="flex justify-center my-6">
         <UplodeProfile
           UrlImag={`${DataCustomers?.data.profile?.avatar}`}
-          onChange={async (url) => {
-            const Data = {
-              profile: {
-                ...DataCustomers?.data.profile,
-                avatar: url ? url : "nothing",
-              },
-            };
-            const formData = serialize(Data, {
-              indices: true,
-              booleansAsIntegers: true,
-            });
-            try {
-              edit({ data: formData, id: Number(DataCustomers?.data.id) });
-            } catch {
-              toast.error("خطا در آپلود عکس:");
-            }
+          onChange={(url) => {
+            setValue("profile.avatar", url || "", { shouldDirty: true });
           }}
         />
       </div>

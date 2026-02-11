@@ -1,17 +1,17 @@
 import useMission from "@/services/useMission";
 import NoMission from "@/assets/img/NoMission.png";
 import { parseAsInteger, useQueryStates } from "nuqs";
-
 import PaginationControl from "@/components/PaginationControl";
 import { Button } from "@/components/ui/button";
 import { MissionIcon } from "@/assets";
 import { useNavigate } from "react-router-dom";
+import MissionListsSkeleton from "@/skeleton/MissionListsSkeleton";
+import { Badge } from "@/components/ui/badge";
 
 const ListMission = () => {
   const { listMission } = useMission();
   const navigate = useNavigate();
   const [query, setQuery] = useQueryStates({
-    perpage: parseAsInteger.withDefault(15),
     page: parseAsInteger.withDefault(1),
   });
   const missions = listMission.data;
@@ -20,7 +20,6 @@ const ListMission = () => {
   return (
     <section>
       <div className="mt-6 mb-4">
-        {" "}
         <div className="flex items-center gap-3">
           <MissionIcon className="w-6 h-6" />
           <span className="text-center justify-start text-spidar2 text-xl font-bold  capitalize">
@@ -34,46 +33,53 @@ const ListMission = () => {
         </div>
       </div>
       <div className="flex flex-col gap-2.5 space-y-3.5">
-        {missions?.data?.map((item) => (
-          <div
-            key={item.id}
-            className="flex bg-neutral-200 rounded-[5px] py-2.5 px-2.5 "
-          >
-            <div className="flex flex-1 gap-1.5  items-start border border-l-secondary-text border-dashed ">
-              <img
-                src={item?.image_url || NoMission}
-                alt="mission-logo"
-                className="size-22.5 rounded-[5px] object-cover"
-              />
+        {listMission.isLoading ? (
+          <MissionListsSkeleton count_mission={10} />
+        ) : (
+          missions?.data?.map((item) => (
+            <div
+              key={item.id}
+              className="flex bg-neutral-200 rounded-[5px] p-2.5"
+            >
+              <div className="flex flex-1 gap-1.5   border border-l-secondary-text border-dashed ">
+                <img
+                  src={item?.image_url || NoMission}
+                  alt="mission-logo"
+                  className="size-22.5 rounded-[5px] object-cover"
+                />
 
-              <div className="flex flex-col justify-between gap-y-1.5">
-                <span className="text-secondary-text font-semibold text-xs">
-                  {item?.title}
-                </span>
+                <div className="flex flex-col  justify-between gap-y-1.5">
+                  <div>
+                    <span className="text-main font-semibold text-xs">
+                      {item?.title}
+                    </span>
 
-                {item?.description && (
-                  <span className="text-[10px] text-neutral-600 line-clamp-2 leading-3.5">
-                    {item.description}
-                  </span>
-                )}
+                    {item?.description && (
+                      <span className="text-[10px] text-neutral-600 line-clamp-1 leading-3.5">
+                        {item.description}
+                      </span>
+                    )}
+                  </div>
+                  <Badge variant={"muted"} className="text-[10px]">
+                    {item.label ? item.label : "ماموریت پلکانی"}
+                  </Badge>
+                </div>
+              </div>
+              <div className="flex flex-col justify-end">
+                <Button
+                  variant={"link"}
+                  className="text-[10px] text-main-alt font-bold no-underline hover:no-underline  cursor-pointer"
+                  onClick={() => {
+                    navigate(`/mission/detail/${item.id}`);
+                  }}
+                >
+                  مشاهده جزییات
+                </Button>
               </div>
             </div>
-            <div className="flex flex-col justify-between">
-              <span>{item.label}</span>
-              <Button
-                variant={"link"}
-                className="text-[10px] text-main-alt font-bold no-underline hover:no-underline  cursor-pointer"
-                onClick={() => {
-                  navigate(`/mission/detail/${item.id}`);
-                }}
-              >
-                مشاهده جزییات
-              </Button>
-            </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
-
       <PaginationControl
         currentPage={query.page}
         totalPages={totalPages}
