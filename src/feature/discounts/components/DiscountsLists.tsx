@@ -1,9 +1,9 @@
-import SliderSearch from "@/shared/components/SliderSearch";
 import DisImg from "@/assets/img/discountImg.png";
 import MailkImg from "@/assets/img/Mailk.png";
 import { Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CopyIcon } from "lucide-react";
+import SliderSearch from "@/components/SliderSearch";
 const DiscountsLists = () => {
   return (
     <section className="space-y-5">

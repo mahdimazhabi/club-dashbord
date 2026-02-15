@@ -1,24 +1,24 @@
 import { RouteObject } from "react-router-dom";
-import HomeLayout from "@/shared/layout/home/HomeLayout";
-import ProfileLayout from "@/shared/layout/profile/ProfileLayout";
+import HomeLayout from "@/layout/home/HomeLayout";
+import ProfileLayout from "@/layout/profile/ProfileLayout";
 import Inbox from "@/feature/profile/components/Inbox";
 import Support from "@/feature/profile/components/Support";
-import DiscountsLayout from "@/shared/layout/discounts/DiscountsLayout";
+import DiscountsLayout from "@/layout/discounts/DiscountsLayout";
 
-import GamificationLayout from "@/shared/layout/gamification/GamificationLayout";
-import AuthLayout from "@/shared/layout/auth/AuthLayout";
+import GamificationLayout from "@/layout/gamification/GamificationLayout";
+import AuthLayout from "@/layout/auth/AuthLayout";
 import OtpForm from "@/feature/auth/form/OtpForm";
 import LoginForm from "@/feature/auth/form/LoginForm";
-import ProtectedRoute from "@/shared/common/ProtectedRoute";
 import GamificationWheel from "@/feature/gamification/GamificationWhell";
 import PasswordForm from "@/feature/auth/form/PasswordForm";
 import RegisterForm from "@/feature/auth/form/RegisterForm";
 import Tracking from "@/feature/profile/components/Tracking";
 import TrackingDetail from "@/feature/profile/components/TrackingDetail";
 import InboxDetail from "@/feature/profile/components/InboxDetail";
-import MissionLayout from "@/shared/layout/mission/MissionLayout";
+import MissionLayout from "@/layout/mission/MissionLayout";
 import MissionDetail from "@/feature/mission/components/MissionDetail";
-import CouponsLayout from "@/shared/layout/Coupons/CouponsLayout";
+import CouponsLayout from "@/layout/Coupons/CouponsLayout";
+import ProtectedRoute from "@/middleware/ProtectedRoute";
 export const AllRouters: RouteObject[] = [
   {
     path: "/",

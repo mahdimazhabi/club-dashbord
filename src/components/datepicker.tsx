@@ -5,7 +5,7 @@ import type { DateObject } from "react-multi-date-picker";
 import "react-multi-date-picker/styles/backgrounds/bg-dark.css";
 import "react-multi-date-picker/styles/colors/green.css";
 import { FieldError } from "react-hook-form";
-import ErrorMessage from "@/shared/common/ErrorMessage";
+import ErrorMessage from "./ErrorMessage";
 
 interface DatePickerProps {
   placeholder?: string;

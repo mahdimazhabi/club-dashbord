@@ -1,9 +1,9 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
-import { AttachmentsData } from "@/shared/interface/interface";
 import api from "@/config/htpp/axios";
 import { ApiConfig } from "@/config/ApiConfig";
 import { useInvalidateQuery } from "@/config/htpp/useInvalidateQuerie";
+import { AttachmentsData } from "@/interface/interface";
 
 export const useAttachments = () => {
   const { headersFormData, headers } = ApiConfig();

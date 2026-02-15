@@ -2,7 +2,6 @@ import PageHeader from "@/components/PageHeader";
 import Stepper from "@/components/Stepper";
 import { fullPersianDate } from "@/lib/date";
 import useTrackingStore from "@/store/useTrackingStore";
-import { toPersianNumber } from "@/util/toPersianNumber";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 const orderStatusMap: Record<string, string> = {
@@ -64,7 +63,7 @@ const TrackingDetail = () => {
               کد پیگیری سفارش:
             </span>
             <span className="text-xs font-semibold">
-              {toPersianNumber(tracking?.tracking_number ?? "")}
+              {tracking?.tracking_number ?? ""}
             </span>
           </li>
 
@@ -86,10 +85,7 @@ const TrackingDetail = () => {
               مبلغ:
             </span>
             <span className="text-xs font-semibold">
-              {tracking?.total
-                ? toPersianNumber(tracking.total.toLocaleString())
-                : "۰"}{" "}
-              تومان
+              {tracking?.total ? tracking.total.toLocaleString() : "۰"} تومان
             </span>
           </li>
 
@@ -100,7 +96,7 @@ const TrackingDetail = () => {
             </span>
             <span className="text-xs font-semibold">
               {tracking?.shipping_address?.zip
-                ? toPersianNumber(tracking.shipping_address.zip)
+                ? tracking.shipping_address.zip
                 : "-"}
             </span>
           </li>
@@ -138,10 +134,7 @@ const TrackingDetail = () => {
               </div>
               <div>
                 <span className="text-spidar1 font-bold">
-                  {toPersianNumber(
-                    item?.pivot?.unit_price?.toLocaleString() ?? "۰",
-                  )}{" "}
-                  تومان
+                  {item?.pivot?.unit_price?.toLocaleString() ?? "۰"}تومان
                 </span>
               </div>
             </div>
@@ -151,7 +144,7 @@ const TrackingDetail = () => {
         <div className="px-4 py-3.5 bg-main-alt text-white text-xs font-bold rounded flex justify-between">
           <span>مبلغ کل سفارش</span>
           <span>
-            {toPersianNumber(tracking.total.toLocaleString())}
+            {tracking.total.toLocaleString()}
             تومان
           </span>
         </div>

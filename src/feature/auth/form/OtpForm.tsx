@@ -49,10 +49,10 @@ const OtpForm = () => {
               {...field}
             >
               <InputOTPGroup>
-                <InputOTPSlot index={0} />
-                <InputOTPSlot index={1} />
-                <InputOTPSlot index={2} />
-                <InputOTPSlot index={3} />
+                <InputOTPSlot index={0} inputMode="numeric" />
+                <InputOTPSlot index={1} inputMode="numeric" />
+                <InputOTPSlot index={2} inputMode="numeric" />
+                <InputOTPSlot index={3} inputMode="numeric" />
               </InputOTPGroup>
             </InputOTP>
           )}

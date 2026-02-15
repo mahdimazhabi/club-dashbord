@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import useEmblaCarousel from "embla-carousel-react";
 import useFirstPage from "@/services/useFirstPage";
 import CouponCardSkeleton from "@/skeleton/CouponCardSkeleton";
+import NoPlan from "@/assets/img/NoPlan.png";
 
 const Coupons = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ direction: "rtl" });
@@ -40,7 +41,6 @@ const Coupons = () => {
       <div className="embla select-none">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container gap-2.5">
-            {/* 🔥 Loading State */}
             {!campaigns
               ? Array.from({ length: 3 }).map((_, index) => (
                   <CouponCardSkeleton key={index} />
@@ -55,7 +55,7 @@ const Coupons = () => {
                   >
                     <div className="flex items-start justify-between">
                       <img
-                        src={item.image}
+                        src={item.image || NoPlan}
                         alt={item.title}
                         className="size-16 rounded-md object-cover"
                       />

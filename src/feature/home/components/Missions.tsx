@@ -79,6 +79,9 @@ const Missions = () => {
                           <Button
                             variant="link"
                             className="text-[10px] font-bold underline px-0 text-spidar2"
+                            onClick={() => {
+                              navigate(`/mission/detail/${item.id}`);
+                            }}
                           >
                             مشاهده جزئیات
                           </Button>

@@ -9,7 +9,6 @@ import useTrackingStore from "@/store/useTrackingStore";
 import PageHeader from "@/components/PageHeader";
 import { Input } from "@/components/ui/input";
 import TrackingSkeleton from "@/skeleton/TrackingSkeleton";
-import { toPersianNumber } from "@/util/toPersianNumber";
 import { useQueryStates, parseAsString } from "nuqs";
 const Tracking = () => {
   const navigate = useNavigate();
@@ -113,7 +112,7 @@ const Tracking = () => {
                       مبلغ:
                     </span>
                     <span className="text-xs font-medium ">
-                      {toPersianNumber(item.total.toLocaleString())} تومان
+                      {item.total.toLocaleString()} تومان
                     </span>
                   </li>
 
@@ -131,7 +130,7 @@ const Tracking = () => {
                       کدپستی:
                     </span>
                     <span className="text-xs font-medium ">
-                      {toPersianNumber(item.shipping_address.zip)}
+                      {item.shipping_address.zip}
                     </span>
                   </li>
                 </ul>

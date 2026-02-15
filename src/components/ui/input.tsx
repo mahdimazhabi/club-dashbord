@@ -1,7 +1,7 @@
 import * as React from "react";
 import { FieldError } from "react-hook-form";
 import { cn } from "@/lib/utils";
-import ErrorMessage from "@/shared/common/ErrorMessage";
+import ErrorMessage from "../ErrorMessage";
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: FieldError;
